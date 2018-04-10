@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="body">
+  <h1>Sign Up</h1>
+  <ion-item class="emailInput">
+    <ion-icon item-end name="md-person"></ion-icon>
+    <ion-input type="email" [(ngModel)]="email" placeholder="Email" name="emailInput"></ion-input>
+  </ion-item>
+  <ion-item class="color">
+    <ion-icon item-end name="md-lock"></ion-icon>
+    <ion-input type="password" [(ngModel)]="password" placeholder="Password" name="passwordInput"></ion-input>
+  </ion-item>
+  <ion-item class="color">
+    <ion-input type="text" [(ngModel)]="fName" placeholder="Firstname" name="fNameInput"></ion-input>
+  </ion-item>
+  <ion-item class="color"> 
+    <ion-input type="text" [(ngModel)]="lName" placeholder="Lastname" name="LnameInput"></ion-input>
+  </ion-item>
+  <button ion-button round small class="signUpButton" (click)="register(email,password,fName,lName)">Sign Up</button>
+
+</ion-content>

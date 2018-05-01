@@ -17,12 +17,26 @@
     <ion-icon item-end name="md-lock"></ion-icon>
     <ion-input type="password" [(ngModel)]="password" placeholder="Password" name="passwordInput"></ion-input>
   </ion-item>
-  <ion-item class="color">
-    <ion-input type="text" [(ngModel)]="fName" placeholder="Firstname" name="fNameInput"></ion-input>
+  <ion-item class="fNameInput">
+    <ion-icon item-start name="md-lock"></ion-icon>
+    <ion-input [(ngModel)]="fName" type="text" placeholder="Firstname" required ></ion-input>
   </ion-item>
-  <ion-item class="color"> 
-    <ion-input type="text" [(ngModel)]="lName" placeholder="Lastname" name="LnameInput"></ion-input>
+  <ion-item class="lNameInput">
+    <ion-icon item-start name="md-lock"></ion-icon>
+    <ion-input [(ngModel)]="lName" type="text" placeholder="Lastname" required ></ion-input>
   </ion-item>
-  <button ion-button round small class="signUpButton" (click)="register(email,password,fName,lName)">Sign Up</button>
+  <ion-item class="weightInput">
+    <ion-icon item-start name="md-lock"></ion-icon>
+    <ion-input [(ngModel)]="weight" type="text" placeholder="Weight" required ></ion-input>
+  </ion-item>
+  <ion-item class="heightInput">
+    <ion-icon item-start name="md-lock"></ion-icon>
+    <ion-input [(ngModel)]="height" type="text" placeholder="Height" required ></ion-input>
+  </ion-item>
+  <ion-item class="waistInput">
+    <ion-icon item-start name="md-lock"></ion-icon>
+    <ion-input [(ngModel)]="waistMeasurement" type="text" placeholder="WaistMeasurement" required ></ion-input>
+  </ion-item>
+  <button ion-button round small class="signUpButton" (click)="register(email,password,fName,lName,weight,height,waistMeasurement)">Sign Up</button>
 
 </ion-content>

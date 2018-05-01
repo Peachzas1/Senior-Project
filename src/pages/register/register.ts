@@ -27,7 +27,8 @@ export class RegisterPage {
     console.log('ionViewDidLoad RegisterPage');
   }
 
-  async register(email: string, password: string, fName: string, lName: string) {
+  async register(email: string, password: string, fName: string, 
+    lName: string, weight:string, height:string,waistMeasurement:string) {
     let check :boolean = true;
     let result;
     try {
@@ -78,8 +79,12 @@ export class RegisterPage {
     }
     if(check){
       this.newUser.email = email;
+      this.newUser.password = password;
       this.newUser.fName = fName;
       this.newUser.lName = lName;
+      this.newUser.height = height;
+      this.newUser.weight = weight;
+      this.newUser.waistMeasurement = waistMeasurement;
       this.newUser.uid = this.afAuth.auth.currentUser.uid;
       this.items.push(this.newUser);
       var alert = this.alertCtrl.create({
@@ -100,7 +105,7 @@ export class RegisterPage {
         user.UserKey = this.getItemsUser[i].$key;
         this.itemsUsers.update(user.UserKey, user);
       }
-      console.log(this.newUser);
+      console.log(this.newUser.UserKey);
     }
     }
   }

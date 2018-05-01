@@ -13,6 +13,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
+import { QuestionPage } from '../pages/question/question';
 
 export const config = {
   apiKey: "AIzaSyACQbDFnbhv5uJCBcyd6Sy1ylmBzvd44AM",
@@ -28,7 +29,8 @@ export const config = {
     MyApp,
     HomePage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    QuestionPage
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,8 @@ export const config = {
     MyApp,
     HomePage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    QuestionPage
   ],
   providers: [
     StatusBar,

@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { Questionnaires } from '../DataProvider/Question';
 import { User } from '../DataProvider/User';
+import { FitnessPlanPage } from '../fitness-plan/fitness-plan';
+
 /**
  * Generated class for the QuestionPage page.
  *
@@ -47,6 +49,7 @@ export class QuestionPage {
   }
 
   submit(){
+    this.navCtrl.push(FitnessPlanPage,this.onlogUser);
   }
 
 }

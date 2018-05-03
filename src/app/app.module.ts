@@ -14,6 +14,7 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { QuestionPage } from '../pages/question/question';
+import { FitnessPlanPage } from '../pages/fitness-plan/fitness-plan';
 
 export const config = {
   apiKey: "AIzaSyACQbDFnbhv5uJCBcyd6Sy1ylmBzvd44AM",
@@ -30,7 +31,8 @@ export const config = {
     HomePage,
     LoginPage,
     RegisterPage,
-    QuestionPage
+    QuestionPage,
+    FitnessPlanPage
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ export const config = {
     HomePage,
     LoginPage,
     RegisterPage,
-    QuestionPage
+    QuestionPage,
+    FitnessPlanPage
   ],
   providers: [
     StatusBar,

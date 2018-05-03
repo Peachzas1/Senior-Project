@@ -4,9 +4,69 @@ webpackJsonp([4],{
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FitnessPlanPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(57);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/**
+ * Generated class for the FitnessPlanPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var FitnessPlanPage = /** @class */ (function () {
+    function FitnessPlanPage(navCtrl, navParams, angularfire, events) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.angularfire = angularfire;
+        this.events = events;
+        this.dataFitnessPlan = [];
+        this.onlogUser = this.navParams.data;
+        this.events.publish('onLogUser : userAlreadyLog', this.onlogUser);
+        console.dir(this.onlogUser);
+        this.fireFitnessPlan = this.angularfire.list('/FitnessPlan/');
+        this.fireFitnessPlan.subscribe(function (data) {
+            _this.dataFitnessPlan = data;
+            console.log(data);
+        });
+    }
+    FitnessPlanPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad FitnessPlanPage');
+    };
+    FitnessPlanPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-fitness-plan',template:/*ion-inline-start:"C:\Users\Book\Documents\GitHub\Senior-Project\src\pages\fitness-plan\fitness-plan.html"*/'<!--\n\n  Generated template for the FitnessPlanPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>FitnessPlan</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Book\Documents\GitHub\Senior-Project\src\pages\fitness-plan\fitness-plan.html"*/,
+        }),
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */]) === "function" && _d || Object])
+    ], FitnessPlanPage);
+    return FitnessPlanPage;
+    var _a, _b, _c, _d;
+}());
+
+//# sourceMappingURL=fitness-plan.js.map
+
+/***/ }),
+
+/***/ 118:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegisterPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__DataProvider_User__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__ = __webpack_require__(57);
@@ -171,7 +231,7 @@ var RegisterPage = /** @class */ (function () {
     };
     RegisterPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-register',template:/*ion-inline-start:"/Users/jirayupeach/Desktop/Project/src/pages/register/register.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title></ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding class="body">\n  <h1>Sign Up</h1>\n  <ion-item class="emailInput">\n    <ion-icon item-end name="md-person"></ion-icon>\n    <ion-input type="email" [(ngModel)]="email" placeholder="Email" name="emailInput"></ion-input>\n  </ion-item>\n  <ion-item class="color">\n    <ion-icon item-end name="md-lock"></ion-icon>\n    <ion-input type="password" [(ngModel)]="password" placeholder="Password" name="passwordInput"></ion-input>\n  </ion-item>\n  <ion-item class="fNameInput">\n    <ion-icon item-start name="md-lock"></ion-icon>\n    <ion-input [(ngModel)]="fName" type="text" placeholder="Firstname" required ></ion-input>\n  </ion-item>\n  <ion-item class="lNameInput">\n    <ion-icon item-start name="md-lock"></ion-icon>\n    <ion-input [(ngModel)]="lName" type="text" placeholder="Lastname" required ></ion-input>\n  </ion-item>\n  <ion-item class="weightInput">\n    <ion-icon item-start name="md-lock"></ion-icon>\n    <ion-input [(ngModel)]="weight" type="text" placeholder="Weight" required ></ion-input>\n  </ion-item>\n  <ion-item class="heightInput">\n    <ion-icon item-start name="md-lock"></ion-icon>\n    <ion-input [(ngModel)]="height" type="text" placeholder="Height" required ></ion-input>\n  </ion-item>\n  <ion-item class="waistInput">\n    <ion-icon item-start name="md-lock"></ion-icon>\n    <ion-input [(ngModel)]="waistMeasurement" type="text" placeholder="WaistMeasurement" required ></ion-input>\n  </ion-item>\n  <button ion-button round small class="signUpButton" (click)="register(email,password,fName,lName,weight,height,waistMeasurement)">Sign Up</button>\n\n</ion-content>\n'/*ion-inline-end:"/Users/jirayupeach/Desktop/Project/src/pages/register/register.html"*/,
+            selector: 'page-register',template:/*ion-inline-start:"C:\Users\Book\Documents\GitHub\Senior-Project\src\pages\register\register.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title></ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding class="body">\n\n  <h1>Sign Up</h1>\n\n  <ion-item class="emailInput">\n\n    <ion-icon item-end name="md-person"></ion-icon>\n\n    <ion-input type="email" [(ngModel)]="email" placeholder="Email" name="emailInput"></ion-input>\n\n  </ion-item>\n\n  <ion-item class="color">\n\n    <ion-icon item-end name="md-lock"></ion-icon>\n\n    <ion-input type="password" [(ngModel)]="password" placeholder="Password" name="passwordInput"></ion-input>\n\n  </ion-item>\n\n  <ion-item class="fNameInput">\n\n    <ion-icon item-start name="md-lock"></ion-icon>\n\n    <ion-input [(ngModel)]="fName" type="text" placeholder="Firstname" required ></ion-input>\n\n  </ion-item>\n\n  <ion-item class="lNameInput">\n\n    <ion-icon item-start name="md-lock"></ion-icon>\n\n    <ion-input [(ngModel)]="lName" type="text" placeholder="Lastname" required ></ion-input>\n\n  </ion-item>\n\n  <ion-item class="weightInput">\n\n    <ion-icon item-start name="md-lock"></ion-icon>\n\n    <ion-input [(ngModel)]="weight" type="text" placeholder="Weight" required ></ion-input>\n\n  </ion-item>\n\n  <ion-item class="heightInput">\n\n    <ion-icon item-start name="md-lock"></ion-icon>\n\n    <ion-input [(ngModel)]="height" type="text" placeholder="Height" required ></ion-input>\n\n  </ion-item>\n\n  <ion-item class="waistInput">\n\n    <ion-icon item-start name="md-lock"></ion-icon>\n\n    <ion-input [(ngModel)]="waistMeasurement" type="text" placeholder="WaistMeasurement" required ></ion-input>\n\n  </ion-item>\n\n  <button ion-button round small class="signUpButton" (click)="register(email,password,fName,lName,weight,height,waistMeasurement)">Sign Up</button>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Book\Documents\GitHub\Senior-Project\src\pages\register\register.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["a" /* AngularFireDatabase */]])
@@ -183,14 +243,15 @@ var RegisterPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 118:
+/***/ 119:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return QuestionPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__fitness_plan_fitness_plan__ = __webpack_require__(117);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -200,6 +261,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -236,10 +298,11 @@ var QuestionPage = /** @class */ (function () {
         console.log('ionViewDidLoad QuestionPage');
     };
     QuestionPage.prototype.submit = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__fitness_plan_fitness_plan__["a" /* FitnessPlanPage */], this.onlogUser);
     };
     QuestionPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-question',template:/*ion-inline-start:"/Users/jirayupeach/Desktop/Project/src/pages/question/question.html"*/'<!--\n  Generated template for the QuestionPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Question</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding *ngFor= "let a of dataQuestion">\n	{{onlogUser.email}}\n	<ion-label>\n		{{a.Question1.question}}\n	</ion-label>\n	<ion-item>\n		<ion-label>{{a.Question1.choices[0]}}</ion-label>\n		<ion-checkbox value="None" ></ion-checkbox>\n	</ion-item>\n	<ion-item>\n		<ion-label>{{a.Question1.choices[1]}}</ion-label>\n		<ion-checkbox value="Dumbbell"></ion-checkbox>\n	</ion-item>\n	<ion-item>\n		<ion-label>{{a.Question1.choices[2]}}</ion-label>\n		<ion-checkbox value="Pyrobox"></ion-checkbox>\n	</ion-item><br>\n	<ion-list radio-group [(ngModel)]="workoutPerDay">\n		<ion-list-header>\n			{{a.Question2.question}}\n		</ion-list-header>\n		<ion-item>\n			<ion-label>{{a.Question2.choices[0]}}</ion-label>\n			<ion-radio value="1-2"></ion-radio>\n		</ion-item>\n		<ion-item>\n			<ion-label>{{a.Question2.choices[1]}}</ion-label>\n			<ion-radio value="2-3"></ion-radio>\n		</ion-item>\n		<ion-item>\n			<ion-label>{{a.Question2.choices[2]}}</ion-label>\n			<ion-radio value="3-4"></ion-radio>\n		</ion-item>\n		<ion-item>\n			<ion-label>{{a.Question2.choices[3]}}</ion-label>\n			<ion-radio value="4-5"></ion-radio>\n		</ion-item>\n	</ion-list>\n	<ion-list radio-group [(ngModel)]="planDifficult">\n		<ion-list-header>\n			{{a.Question3.question}}\n		</ion-list-header>\n		<ion-item>\n			<ion-label>{{a.Question3.choices[0]}}</ion-label>\n			<ion-radio value="Beginner"></ion-radio>\n		</ion-item>\n		<ion-item>\n			<ion-label>{{a.Question3.choices[1]}}</ion-label>\n			<ion-radio value="Intermiadate"></ion-radio>\n		</ion-item>\n	</ion-list>\n	<ion-list radio-group [(ngModel)]="planIntensity">\n		<ion-list-header>\n			{{a.Question4.question}}\n		</ion-list-header>\n		<ion-item>\n			<ion-label>{{a.Question4.choices[0]}}</ion-label>\n			<ion-radio value="1"></ion-radio>\n		</ion-item>\n		<ion-item>\n			<ion-label>{{a.Question4.choices[1]}}</ion-label>\n			<ion-radio value="2"></ion-radio>\n		</ion-item>\n		<ion-item>\n			<ion-label>{{a.Question4.choices[2]}}</ion-label>\n			<ion-radio value="3"></ion-radio>\n		</ion-item>\n	</ion-list>\n	<ion-item >\n		<ion-label>{{a.Question5.question}}</ion-label>\n		<ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="startDate"></ion-datetime>\n	</ion-item>\n	<br>\n	<button ion-button type="submit" (click)="submit(workoutPerDay,planDifficult,planIntensity)">submit</button>\n</ion-content>\n'/*ion-inline-end:"/Users/jirayupeach/Desktop/Project/src/pages/question/question.html"*/,
+            selector: 'page-question',template:/*ion-inline-start:"C:\Users\Book\Documents\GitHub\Senior-Project\src\pages\question\question.html"*/'<!--\n\n  Generated template for the QuestionPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Question</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding *ngFor= "let a of dataQuestion">\n\n	{{onlogUser.email}}\n\n	<ion-label>\n\n		{{a.Question1.question}}\n\n	</ion-label>\n\n	<ion-item>\n\n		<ion-label>{{a.Question1.choices[0]}}</ion-label>\n\n		<ion-checkbox value="None" ></ion-checkbox>\n\n	</ion-item>\n\n	<ion-item>\n\n		<ion-label>{{a.Question1.choices[1]}}</ion-label>\n\n		<ion-checkbox value="Dumbbell"></ion-checkbox>\n\n	</ion-item>\n\n	<ion-item>\n\n		<ion-label>{{a.Question1.choices[2]}}</ion-label>\n\n		<ion-checkbox value="Pyrobox"></ion-checkbox>\n\n	</ion-item><br>\n\n	<ion-list radio-group [(ngModel)]="workoutPerDay">\n\n		<ion-list-header>\n\n			{{a.Question2.question}}\n\n		</ion-list-header>\n\n		<ion-item>\n\n			<ion-label>{{a.Question2.choices[0]}}</ion-label>\n\n			<ion-radio value="1-2"></ion-radio>\n\n		</ion-item>\n\n		<ion-item>\n\n			<ion-label>{{a.Question2.choices[1]}}</ion-label>\n\n			<ion-radio value="2-3"></ion-radio>\n\n		</ion-item>\n\n		<ion-item>\n\n			<ion-label>{{a.Question2.choices[2]}}</ion-label>\n\n			<ion-radio value="3-4"></ion-radio>\n\n		</ion-item>\n\n		<ion-item>\n\n			<ion-label>{{a.Question2.choices[3]}}</ion-label>\n\n			<ion-radio value="4-5"></ion-radio>\n\n		</ion-item>\n\n	</ion-list>\n\n	<ion-list radio-group [(ngModel)]="planDifficult">\n\n		<ion-list-header>\n\n			{{a.Question3.question}}\n\n		</ion-list-header>\n\n		<ion-item>\n\n			<ion-label>{{a.Question3.choices[0]}}</ion-label>\n\n			<ion-radio value="Beginner"></ion-radio>\n\n		</ion-item>\n\n		<ion-item>\n\n			<ion-label>{{a.Question3.choices[1]}}</ion-label>\n\n			<ion-radio value="Intermiadate"></ion-radio>\n\n		</ion-item>\n\n	</ion-list>\n\n	<ion-list radio-group [(ngModel)]="planIntensity">\n\n		<ion-list-header>\n\n			{{a.Question4.question}}\n\n		</ion-list-header>\n\n		<ion-item>\n\n			<ion-label>{{a.Question4.choices[0]}}</ion-label>\n\n			<ion-radio value="1"></ion-radio>\n\n		</ion-item>\n\n		<ion-item>\n\n			<ion-label>{{a.Question4.choices[1]}}</ion-label>\n\n			<ion-radio value="2"></ion-radio>\n\n		</ion-item>\n\n		<ion-item>\n\n			<ion-label>{{a.Question4.choices[2]}}</ion-label>\n\n			<ion-radio value="3"></ion-radio>\n\n		</ion-item>\n\n	</ion-list>\n\n	<ion-item >\n\n		<ion-label>{{a.Question5.question}}</ion-label>\n\n		<ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="startDate"></ion-datetime>\n\n	</ion-item>\n\n	<br>\n\n	<button ion-button type="submit" (click)="submit(workoutPerDay,planDifficult,planIntensity)">submit</button>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Book\Documents\GitHub\Senior-Project\src\pages\question\question.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */]])
@@ -251,7 +314,7 @@ var QuestionPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 124:
+/***/ 125:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -264,29 +327,29 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 124;
+webpackEmptyAsyncContext.id = 125;
 
 /***/ }),
 
-/***/ 165:
+/***/ 166:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/fitness-plan/fitness-plan.module": [
-		321,
-		0
-	],
-	"../pages/login/login.module": [
 		322,
 		3
 	],
-	"../pages/question/question.module": [
+	"../pages/login/login.module": [
 		323,
 		2
 	],
-	"../pages/register/register.module": [
+	"../pages/question/question.module": [
 		324,
 		1
+	],
+	"../pages/register/register.module": [
+		325,
+		0
 	]
 };
 function webpackAsyncContext(req) {
@@ -300,20 +363,20 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 165;
+webpackAsyncContext.id = 166;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 177:
+/***/ 178:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__question_question__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__question_question__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__DataProvider_User__ = __webpack_require__(90);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -348,7 +411,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/jirayupeach/Desktop/Project/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Ionic Blank\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n	{{onlogUser.email}}\n  <button ion-button (click) = login()>Login</button>\n  <button ion-button (click) = startPlan()>Start Plan</button>\n</ion-content>\n'/*ion-inline-end:"/Users/jirayupeach/Desktop/Project/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Book\Documents\GitHub\Senior-Project\src\pages\home\home.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>\n\n      Ionic Blank\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n	{{onlogUser.email}}\n\n  <button ion-button (click) = login()>Login</button>\n\n  <button ion-button (click) = startPlan()>Start Plan</button>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Book\Documents\GitHub\Senior-Project\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */]])
     ], HomePage);
@@ -359,13 +422,13 @@ var HomePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 221:
+/***/ 222:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(222);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(223);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(243);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -373,7 +436,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 242:
+/***/ 243:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -381,23 +444,25 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(217);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(220);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angularfire2__ = __webpack_require__(319);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angularfire2__ = __webpack_require__(320);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angularfire2_database__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angularfire2_auth__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__(320);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_home_home__ = __webpack_require__(177);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__(321);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_home_home__ = __webpack_require__(178);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_login_login__ = __webpack_require__(45);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_register_register__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_question_question__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_register_register__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_question_question__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_fitness_plan_fitness_plan__ = __webpack_require__(117);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -430,7 +495,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_9__pages_home_home__["a" /* HomePage */],
                 __WEBPACK_IMPORTED_MODULE_10__pages_login_login__["a" /* LoginPage */],
                 __WEBPACK_IMPORTED_MODULE_11__pages_register_register__["a" /* RegisterPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_question_question__["a" /* QuestionPage */]
+                __WEBPACK_IMPORTED_MODULE_12__pages_question_question__["a" /* QuestionPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_fitness_plan_fitness_plan__["a" /* FitnessPlanPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -453,7 +519,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_9__pages_home_home__["a" /* HomePage */],
                 __WEBPACK_IMPORTED_MODULE_10__pages_login_login__["a" /* LoginPage */],
                 __WEBPACK_IMPORTED_MODULE_11__pages_register_register__["a" /* RegisterPage */],
-                __WEBPACK_IMPORTED_MODULE_12__pages_question_question__["a" /* QuestionPage */]
+                __WEBPACK_IMPORTED_MODULE_12__pages_question_question__["a" /* QuestionPage */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_fitness_plan_fitness_plan__["a" /* FitnessPlanPage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
@@ -471,15 +538,15 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 320:
+/***/ 321:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(220);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(221);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(218);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(45);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -514,7 +581,7 @@ var MyApp = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/jirayupeach/Desktop/Project/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/jirayupeach/Desktop/Project/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Book\Documents\GitHub\Senior-Project\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\Users\Book\Documents\GitHub\Senior-Project\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -531,11 +598,11 @@ var MyApp = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register_register__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__register_register__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__DataProvider_User__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_home__ = __webpack_require__(177);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_home__ = __webpack_require__(178);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angularfire2_database__ = __webpack_require__(57);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -628,7 +695,7 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/Users/jirayupeach/Desktop/Project/src/pages/login/login.html"*/'\n<ion-content  class="body">\n  <h1>Login</h1>\n  <ion-item class="emailInput">\n    <ion-icon item-start name="md-person"></ion-icon>\n    <ion-input [(ngModel)]="email" type="text" placeholder="Email" required></ion-input>\n  </ion-item>\n  <br>\n  <ion-item class="passInput">\n    <ion-icon item-start name="md-lock"></ion-icon>\n    <ion-input [(ngModel)]="password" type="password" placeholder="Password" required ></ion-input>\n  </ion-item>\n   <ion-grid>\n        <ion-row>\n            <ion-col >\n                <button ion-button round small class="loginButton" (click)="login(email,password)">Login</button>\n            </ion-col>\n        </ion-row>\n        <ion-row>\n            <ion-col >\n                <button ion-button round small class="signUpButton" (click)="redirectToRegister()">Sign Up</button>\n            </ion-col>\n        </ion-row>\n    </ion-grid>\n  \n\n</ion-content>\n'/*ion-inline-end:"/Users/jirayupeach/Desktop/Project/src/pages/login/login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"C:\Users\Book\Documents\GitHub\Senior-Project\src\pages\login\login.html"*/'\n\n<ion-content  class="body">\n\n  <h1>Login</h1>\n\n  <ion-item class="emailInput">\n\n    <ion-icon item-start name="md-person"></ion-icon>\n\n    <ion-input [(ngModel)]="email" type="text" placeholder="Email" required></ion-input>\n\n  </ion-item>\n\n  <br>\n\n  <ion-item class="passInput">\n\n    <ion-icon item-start name="md-lock"></ion-icon>\n\n    <ion-input [(ngModel)]="password" type="password" placeholder="Password" required ></ion-input>\n\n  </ion-item>\n\n   <ion-grid>\n\n        <ion-row>\n\n            <ion-col >\n\n                <button ion-button round small class="loginButton" (click)="login(email,password)">Login</button>\n\n            </ion-col>\n\n        </ion-row>\n\n        <ion-row>\n\n            <ion-col >\n\n                <button ion-button round small class="signUpButton" (click)="redirectToRegister()">Sign Up</button>\n\n            </ion-col>\n\n        </ion-row>\n\n    </ion-grid>\n\n  \n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\Book\Documents\GitHub\Senior-Project\src\pages\login\login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_angularfire2_auth__["a" /* AngularFireAuth */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
@@ -661,5 +728,5 @@ var PlanAnswer = /** @class */ (function () {
 
 /***/ })
 
-},[221]);
+},[222]);
 //# sourceMappingURL=main.js.map

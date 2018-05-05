@@ -36,9 +36,10 @@ var FitnessPlanPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-fitness-plan',template:/*ion-inline-start:"/Users/jirayupeach/Desktop/Project/src/pages/fitness-plan/fitness-plan.html"*/'<!--\n  Generated template for the FitnessPlanPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>FitnessPlan</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/jirayupeach/Desktop/Project/src/pages/fitness-plan/fitness-plan.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object])
     ], FitnessPlanPage);
     return FitnessPlanPage;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=fitness-plan.js.map
@@ -275,20 +276,20 @@ var QuestionPage = /** @class */ (function () {
         this.fireQuestion.subscribe(function (data) {
             _this.dataQuestion = data;
             console.log(data);
-            _this.fireUser = _this.angularfire.list('/User/' + _this.onlogUser.UserKey);
-            _this.questionForm = _this.builder.group({
-                'Equipment': ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required],
-                'WPD': ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required],
-                'PD': ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required],
-                'PI': ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required],
-                'SD': ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required]
-            });
-            // this.fireQuestion.push({Question1:{question:"Equipment Available?",choices:['None','Dumbbell','Pyrobox']},
-            // 	Question2:{question:"Workout Per Week?",choices:['1-2','2-3','3-4','4-5']},
-            // 	Question3:{question:"Plan Difficult ?",choices:['Beginner','Intermiadate']},
-            // 	Question4:{question:"Plan Intensity ?",choices:['1','2','3']},
-            // 	Question5:{question:"Start Date ?",choices:['1','2','3','4']}});
         });
+        this.fireUser = this.angularfire.list('/User/' + this.onlogUser.UserKey + '/userAnswer/');
+        this.questionForm = this.builder.group({
+            'Equipment': ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required],
+            'WPD': ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required],
+            'PD': ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required],
+            'PI': ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required],
+            'SD': ['', __WEBPACK_IMPORTED_MODULE_3__angular_forms__["f" /* Validators */].required]
+        });
+        // this.fireQuestion.push({Question1:{question:"Equipment Available?",choices:['None','Dumbbell','Pyrobox']},
+        // 	Question2:{question:"Workout Per Week?",choices:['1-2','2-3','3-4','4-5']},
+        // 	Question3:{question:"Plan Difficult ?",choices:['Beginner','Intermiadate']},
+        // 	Question4:{question:"Plan Intensity ?",choices:['1','2','3']},
+        // 	Question5:{question:"Start Date ?",choices:['1','2','3','4']}});
     }
     QuestionPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad QuestionPage');
@@ -296,8 +297,8 @@ var QuestionPage = /** @class */ (function () {
     QuestionPage.prototype.submit = function () {
         if (this.questionForm.valid) {
             console.log('Valdiate : Pass');
-            this.onlogUser.userAnswer = this.questionForm.value;
-            this.fireUser.push(this.onlogUser.userAnswer);
+            this.fireUser.push(this.questionForm.value);
+            console.log(this.onlogUser);
             this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__fitness_plan_fitness_plan__["a" /* FitnessPlanPage */], this.onlogUser);
         }
         else {

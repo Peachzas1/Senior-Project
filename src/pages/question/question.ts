@@ -37,26 +37,24 @@ export class QuestionPage {
 
   	this.fireQuestion = this.angularfire.list('/Questionnaires/');
   	this.fireQuestion.subscribe(data => {
-    this.dataQuestion = data;
-    console.log(data)
-
-
-   this.fireUser = this.angularfire.list('/User/'+this.onlogUser.UserKey);
+      this.dataQuestion = data;
+      console.log(data)
+    });
+    this.fireUser = this.angularfire.list('/User/'+this.onlogUser.UserKey+'/userAnswer/');
 
     this.questionForm = this.builder.group({
-    	'Equipment' : ['',Validators.required],
-    	'WPD' : ['',Validators.required],
-    	'PD' : ['',Validators.required],
-    	'PI' : ['',Validators.required],
-    	'SD' : ['',Validators.required]
-    })
-    
+      'Equipment' : ['',Validators.required],
+      'WPD' : ['',Validators.required],
+      'PD' : ['',Validators.required],
+      'PI' : ['',Validators.required],
+      'SD' : ['',Validators.required]
+    });
     // this.fireQuestion.push({Question1:{question:"Equipment Available?",choices:['None','Dumbbell','Pyrobox']},
   	// 	Question2:{question:"Workout Per Week?",choices:['1-2','2-3','3-4','4-5']},
   	// 	Question3:{question:"Plan Difficult ?",choices:['Beginner','Intermiadate']},
   	// 	Question4:{question:"Plan Intensity ?",choices:['1','2','3']},
   	// 	Question5:{question:"Start Date ?",choices:['1','2','3','4']}});
-    });
+    
   }
 
   ionViewDidLoad() {
@@ -66,8 +64,8 @@ export class QuestionPage {
   submit(){
   	if(this.questionForm.valid){
       console.log('Valdiate : Pass')
-      this.onlogUser.userAnswer = this.questionForm.value;
-      this.fireUser.push(this.onlogUser.userAnswer);
+      this.fireUser.push(this.questionForm.value);
+      console.log(this.onlogUser);
       this.navCtrl.setRoot(FitnessPlanPage,this.onlogUser);
   	}else{
   		console.log('Valdiate : Invalid');

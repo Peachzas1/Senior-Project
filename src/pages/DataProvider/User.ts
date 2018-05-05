@@ -7,14 +7,10 @@ export class User{
 	height:string;
 	waistMeasurement:string;
 	uid:string;
-	UserKey:string;
+	UserKey:any;
 	userAnswer:PlanAnswer;
 }
 
 class PlanAnswer{
-	Answer1:string[];
-	Answer2:string;
-	Answer3:string;
-	Answer4:string;
-	Answer5:string;
+	Answer:any[];
 }

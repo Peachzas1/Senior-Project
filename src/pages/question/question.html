@@ -14,23 +14,23 @@
 
 
 <ion-content padding *ngFor= "let a of dataQuestion">
-	{{onlogUser.email}}
+	<form class="list" [formGroup] = "questionForm" (ngSubmit)="submit()">
 	<ion-label>
 		{{a.Question1.question}}
 	</ion-label>
 	<ion-item>
 		<ion-label>{{a.Question1.choices[0]}}</ion-label>
-		<ion-checkbox value="None" ></ion-checkbox>
+		<ion-checkbox value="None" formControlName="Equipment" ></ion-checkbox>
 	</ion-item>
 	<ion-item>
 		<ion-label>{{a.Question1.choices[1]}}</ion-label>
-		<ion-checkbox value="Dumbbell"></ion-checkbox>
+		<ion-checkbox value="Dumbbell" formControlName="Equipment"></ion-checkbox>
 	</ion-item>
 	<ion-item>
 		<ion-label>{{a.Question1.choices[2]}}</ion-label>
-		<ion-checkbox value="Pyrobox"></ion-checkbox>
+		<ion-checkbox value="Pyrobox" formControlName="Equipment"></ion-checkbox>
 	</ion-item><br>
-	<ion-list radio-group [(ngModel)]="workoutPerDay">
+	<ion-list radio-group [(ngModel)]="workoutPerDay" formControlName="WPD">
 		<ion-list-header>
 			{{a.Question2.question}}
 		</ion-list-header>
@@ -51,7 +51,7 @@
 			<ion-radio value="4-5"></ion-radio>
 		</ion-item>
 	</ion-list>
-	<ion-list radio-group [(ngModel)]="planDifficult">
+	<ion-list radio-group [(ngModel)]="planDifficult" formControlName="PD">
 		<ion-list-header>
 			{{a.Question3.question}}
 		</ion-list-header>
@@ -64,7 +64,7 @@
 			<ion-radio value="Intermiadate"></ion-radio>
 		</ion-item>
 	</ion-list>
-	<ion-list radio-group [(ngModel)]="planIntensity">
+	<ion-list radio-group [(ngModel)]="planIntensity" formControlName="PI">
 		<ion-list-header>
 			{{a.Question4.question}}
 		</ion-list-header>
@@ -83,8 +83,9 @@
 	</ion-list>
 	<ion-item >
 		<ion-label>{{a.Question5.question}}</ion-label>
-		<ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="startDate"></ion-datetime>
+		<ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="startDate" formControlName="SD"></ion-datetime>
 	</ion-item>
 	<br>
-	<button ion-button type="submit" (click)="submit(workoutPerDay,planDifficult,planIntensity)">submit</button>
+	<button ion-button type="submit" (click)="submit()">submit</button>
+	</form>
 </ion-content>

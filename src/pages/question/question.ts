@@ -5,6 +5,7 @@ import { Questionnaires } from '../DataProvider/Question';
 import { User } from '../DataProvider/User';
 import { Validators, FormControl, FormBuilder, FormGroup} from '@angular/forms';
 import { FitnessPlanPage } from '../fitness-plan/fitness-plan';
+import { AlertController } from 'ionic-angular';
 /**
  * Generated class for the QuestionPage page.
  *
@@ -31,7 +32,7 @@ export class QuestionPage {
   
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-     public angularfire: AngularFireDatabase, public events: Events, public builder:FormBuilder) {
+     public angularfire: AngularFireDatabase, public events: Events, public builder:FormBuilder, private alertCtrl: AlertController) {
     this.onlogUser = this.navParams.data;
     this.events.publish('onLogUser : userAlreadyLog',this.onlogUser);
     console.dir(this.onlogUser); 
@@ -69,6 +70,12 @@ export class QuestionPage {
       console.log(this.onlogUser);
       this.navCtrl.setRoot(FitnessPlanPage,this.onlogUser);
     }else{
+      let alert = this.alertCtrl.create({
+            title: 'Fail',
+            subTitle: 'กรุณากรอกข้อมูลให้ครบถ้วน',
+            buttons: ['OK']
+          });
+      alert.present();
       console.log('Valdiate : Invalid');
     }
   }

@@ -20,15 +20,15 @@
 	</ion-label>
 	<ion-item>
 		<ion-label>{{a.Question1.choices[0]}}</ion-label>
-		<ion-checkbox value="None" formControlName="Equipment" ></ion-checkbox>
+		<ion-checkbox value="none" formControlName="Equipment" ></ion-checkbox>
 	</ion-item>
 	<ion-item>
 		<ion-label>{{a.Question1.choices[1]}}</ion-label>
-		<ion-checkbox value="Dumbbell" formControlName="Equipment"></ion-checkbox>
+		<ion-checkbox value="dumbbell" formControlName="Equipment"></ion-checkbox>
 	</ion-item>
 	<ion-item>
 		<ion-label>{{a.Question1.choices[2]}}</ion-label>
-		<ion-checkbox value="Pyrobox" formControlName="Equipment"></ion-checkbox>
+		<ion-checkbox value="pyrobox" formControlName="Equipment"></ion-checkbox>
 	</ion-item>
 	<ion-list radio-group [(ngModel)]="workoutPerDay" formControlName="WPD">
 		<ion-list-header>
@@ -36,7 +36,7 @@
 		</ion-list-header>
 		<ion-item>
 			<ion-label>{{a.Question2.choices[0]}}</ion-label>
-			<ion-radio value="1-2" checked="true"></ion-radio>
+			<ion-radio value="1-2"></ion-radio>
 		</ion-item>
 		<ion-item>
 			<ion-label>{{a.Question2.choices[1]}}</ion-label>
@@ -57,11 +57,11 @@
 		</ion-list-header>
 		<ion-item>
 			<ion-label>{{a.Question3.choices[0]}}</ion-label>
-			<ion-radio value="Beginner" checked="true"></ion-radio>
+			<ion-radio value="beginner"></ion-radio>
 		</ion-item>
 		<ion-item>
 			<ion-label>{{a.Question3.choices[1]}}</ion-label>
-			<ion-radio value="Intermiadate"></ion-radio>
+			<ion-radio value="intermiadate"></ion-radio>
 		</ion-item>
 	</ion-list>
 	<ion-list radio-group [(ngModel)]="planIntensity" formControlName="PI">
@@ -70,15 +70,15 @@
 		</ion-list-header>
 		<ion-item>
 			<ion-label>{{a.Question4.choices[0]}}</ion-label>
-			<ion-radio value="1" checked="true"></ion-radio>
+			<ion-radio value=1></ion-radio>
 		</ion-item>
 		<ion-item>
 			<ion-label>{{a.Question4.choices[1]}}</ion-label>
-			<ion-radio value="2"></ion-radio>
+			<ion-radio value=2></ion-radio>
 		</ion-item>
 		<ion-item>
 			<ion-label>{{a.Question4.choices[2]}}</ion-label>
-			<ion-radio value="3"></ion-radio>
+			<ion-radio value=3></ion-radio>
 		</ion-item>
 	</ion-list>
 	<ion-item >

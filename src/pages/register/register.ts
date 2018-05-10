@@ -14,9 +14,10 @@ export class RegisterPage {
   firebaseUser: AngularFireDatabase;
   getItemsUsers: any[] = [];
   getItemsUser: any;
-	newUser: User = new User();
+  newUser: User = new User();
   itemsUsers: FirebaseListObservable<any[]>;
   items: FirebaseListObservable<any[]>;
+  dateofbirth: Date = new Date();
 
   constructor(private afAuth:AngularFireAuth ,public navCtrl: NavController,
    public navParams: NavParams,private alertCtrl: AlertController,public angularfire: AngularFireDatabase) {
@@ -28,7 +29,8 @@ export class RegisterPage {
   }
 
   async register(email: string, password: string, fName: string, 
-    lName: string, weight:string, height:string,waistMeasurement:string) {
+    lName: string,weight:number, height:number,waistMeasurement:number, dateofbirth:Date, gender:string, fitplan:string) {
+    fitplan = "null";
     let check :boolean = true;
     let result;
     try {
@@ -75,7 +77,6 @@ export class RegisterPage {
         alert.present();
         check = false;
       }
-
     }
     if(check){
       this.newUser.email = email;
@@ -85,6 +86,9 @@ export class RegisterPage {
       this.newUser.height = height;
       this.newUser.weight = weight;
       this.newUser.waistMeasurement = waistMeasurement;
+      this.newUser.dateofbirth = dateofbirth;
+      this.newUser.gender = gender;
+      this.newUser.fitplan = fitplan;
       this.newUser.uid = this.afAuth.auth.currentUser.uid;
       this.items.push(this.newUser);
       var alert = this.alertCtrl.create({

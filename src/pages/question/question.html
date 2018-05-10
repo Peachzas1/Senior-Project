@@ -14,7 +14,7 @@
 
 
 <ion-content padding *ngFor= "let a of dataQuestion">
-	<form class="list" [formGroup] = "questionForm" (ngSubmit)="submit()">
+	<form class="list" [formGroup] = "questionForm">
 	<ion-label>
 		{{a.Question1.question}}
 	</ion-label>
@@ -29,14 +29,14 @@
 	<ion-item>
 		<ion-label>{{a.Question1.choices[2]}}</ion-label>
 		<ion-checkbox value="Pyrobox" formControlName="Equipment"></ion-checkbox>
-	</ion-item><br>
+	</ion-item>
 	<ion-list radio-group [(ngModel)]="workoutPerDay" formControlName="WPD">
 		<ion-list-header>
 			{{a.Question2.question}}
 		</ion-list-header>
 		<ion-item>
 			<ion-label>{{a.Question2.choices[0]}}</ion-label>
-			<ion-radio value="1-2"></ion-radio>
+			<ion-radio value="1-2" checked="true"></ion-radio>
 		</ion-item>
 		<ion-item>
 			<ion-label>{{a.Question2.choices[1]}}</ion-label>
@@ -57,7 +57,7 @@
 		</ion-list-header>
 		<ion-item>
 			<ion-label>{{a.Question3.choices[0]}}</ion-label>
-			<ion-radio value="Beginner"></ion-radio>
+			<ion-radio value="Beginner" checked="true"></ion-radio>
 		</ion-item>
 		<ion-item>
 			<ion-label>{{a.Question3.choices[1]}}</ion-label>
@@ -70,7 +70,7 @@
 		</ion-list-header>
 		<ion-item>
 			<ion-label>{{a.Question4.choices[0]}}</ion-label>
-			<ion-radio value="1"></ion-radio>
+			<ion-radio value="1" checked="true"></ion-radio>
 		</ion-item>
 		<ion-item>
 			<ion-label>{{a.Question4.choices[1]}}</ion-label>
@@ -83,7 +83,7 @@
 	</ion-list>
 	<ion-item >
 		<ion-label>{{a.Question5.question}}</ion-label>
-		<ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="startDate" formControlName="SD"></ion-datetime>
+		<ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="startDate" formControlName="SD" checked="true"></ion-datetime>
 	</ion-item>
 	<br>
 	<button ion-button type="submit" (click)="submit()">submit</button>

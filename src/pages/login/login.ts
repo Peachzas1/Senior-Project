@@ -25,7 +25,7 @@ export class LoginPage {
       this.getItemsUser = data;
     });
   }
- 
+
   login(email:string,password:string){
     if (email == null || password == null) {
       email = "";

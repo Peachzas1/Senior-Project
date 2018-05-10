@@ -13,6 +13,17 @@
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+	<br><br><br><br><br><br>
+	<ion-item><ion-label>{{keyFit.gender?.gender1}}</ion-label></ion-item>
+	<ion-item><ion-label>{{keyFit.week?.week1.day1.bodyparts.part1}}</ion-label></ion-item>
+	<ion-item><ion-label>{{keyFit.intensity}}</ion-label></ion-item>
+	<ion-item><ion-label>{{keyFit.category}}</ion-label></ion-item>
+	<button ion-button type="submit" (click)="submit()">showplan</button>
 </ion-content>
+
+	<!--<ion-content>
+		<br><br><br><br>
+		<ion-item><ion-label>{{keyFit.difficult}}</ion-label></ion-item>
+		<button ion-button type="submit" (click)="submit()">submit</button>
+	</ion-content>-->

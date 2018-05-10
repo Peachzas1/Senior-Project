@@ -27,7 +27,7 @@
   </ion-item>
   <ion-item class="weightInput">
     <ion-icon item-start name="md-lock"></ion-icon>
-    <ion-input [(ngModel)]="weight" type="text" placeholder="Weight" required ></ion-input>
+    <ion-input [(ngModel)]="weight" type="text" max="250" placeholder="Weight" required  ></ion-input>
   </ion-item>
   <ion-item class="heightInput">
     <ion-icon item-start name="md-lock"></ion-icon>
@@ -37,6 +37,16 @@
     <ion-icon item-start name="md-lock"></ion-icon>
     <ion-input [(ngModel)]="waistMeasurement" type="text" placeholder="WaistMeasurement" required ></ion-input>
   </ion-item>
-  <button ion-button round small class="signUpButton" (click)="register(email,password,fName,lName,weight,height,waistMeasurement)">Sign Up</button>
+  <ion-item class="gender">
+    <ion-select [(ngModel)]="gender" required >
+        <ion-option value="male">male</ion-option>
+        <ion-option value="female">female</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item class="date">
+    <ion-label>Date of birth</ion-label>
+    <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="dateofbirth"></ion-datetime>
+  </ion-item>
+  <button ion-button round small class="signUpButton" (click)="register(email,password,fName,lName,weight,height,waistMeasurement,dateofbirth,gender)">Sign Up</button>
 
 </ion-content>

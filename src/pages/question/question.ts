@@ -19,24 +19,25 @@ import { FitnessPlanPage } from '../fitness-plan/fitness-plan';
 })
 export class QuestionPage {
 
-	question : Questionnaires[];
-	fireQuestion: FirebaseListObservable<any[]>;
-	dataQuestion: any[] =[];
-	onlogUser: User;
-	fireUser: FirebaseListObservable<any[]>;
-	startDate: String = new Date().toISOString();
-	questionForm : FormGroup;
-	userAnswer : User;
+  question : Questionnaires[];
+  fireQuestion: FirebaseListObservable<any[]>;
+  dataQuestion: any[] =[];
+  onlogUser: User;
+  fireUser: FirebaseListObservable<any[]>;
+  startDate: String = new Date().toISOString();
+  questionForm : FormGroup;
+  userAnswer : User;
+  userAnswerKey: String="" ;
   
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-  	 public angularfire: AngularFireDatabase, public events: Events, public builder:FormBuilder) {
-  	this.onlogUser = this.navParams.data;
+     public angularfire: AngularFireDatabase, public events: Events, public builder:FormBuilder) {
+    this.onlogUser = this.navParams.data;
     this.events.publish('onLogUser : userAlreadyLog',this.onlogUser);
     console.dir(this.onlogUser); 
 
-  	this.fireQuestion = this.angularfire.list('/Questionnaires/');
-  	this.fireQuestion.subscribe(data => {
+    this.fireQuestion = this.angularfire.list('/Questionnaires/');
+    this.fireQuestion.subscribe(data => {
       this.dataQuestion = data;
       console.log(data)
     });
@@ -49,11 +50,11 @@ export class QuestionPage {
       'PI' : ['',Validators.required],
       'SD' : ['',Validators.required]
     });
-    // this.fireQuestion.push({Question1:{question:"Equipment Available?",choices:['None','Dumbbell','Pyrobox']},
-  	// 	Question2:{question:"Workout Per Week?",choices:['1-2','2-3','3-4','4-5']},
-  	// 	Question3:{question:"Plan Difficult ?",choices:['Beginner','Intermiadate']},
-  	// 	Question4:{question:"Plan Intensity ?",choices:['1','2','3']},
-  	// 	Question5:{question:"Start Date ?",choices:['1','2','3','4']}});
+    // this.fireQuestion.push({Question1:{question:"Equipment Available?",choices:['none','dumbbell','pyrobox']},
+    //   Question2:{question:"Workout Per Week?",choices:['1-2','2-3','3-4','4-5']},
+    //   Question3:{question:"Plan Difficult ?",choices:['beginner','intermiadate']},
+    //   Question4:{question:"Plan Intensity ?",choices:[1,2,3]},
+    //   Question5:{question:"Start Date ?",choices:['1','2','3','4']}});
     
   }
 
@@ -62,14 +63,13 @@ export class QuestionPage {
   }
 
   submit(){
-  	if(this.questionForm.valid){
+    if(this.questionForm.valid){
       console.log('Valdiate : Pass')
       this.fireUser.push(this.questionForm.value);
       console.log(this.onlogUser);
       this.navCtrl.setRoot(FitnessPlanPage,this.onlogUser);
-  	}else{
-  		console.log('Valdiate : Invalid');
-  	}
+    }else{
+      console.log('Valdiate : Invalid');
+    }
   }
-
 }

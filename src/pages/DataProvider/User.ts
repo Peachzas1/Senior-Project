@@ -3,12 +3,16 @@ export class User{
 	password:string;
 	fName:string;
 	lName:string;
-	weight:string;
-	height:string;
-	waistMeasurement:string;
+	weight:number;
+	height:number;
+	waistMeasurement:number;
+	gender:string;
+	dateofbirth:Date;
+	fitplan:string;
 	uid:string;
-	UserKey:any;
+	UserKey:string;
 	userAnswer:PlanAnswer;
+	keyFit:string;
 }
 
 class PlanAnswer{

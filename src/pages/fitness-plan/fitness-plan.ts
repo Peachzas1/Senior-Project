@@ -20,28 +20,30 @@ import { AlertController } from 'ionic-angular';
 })
 export class FitnessPlanPage {
 
-	fitnessPlan: FitnessPlan[];
-	fireFitnessPlan: FirebaseListObservable<any[]>;
-  fireFitnessPlanUser: FirebaseListObservable<any[]>;
-	dataFitnessPlan: any[] =[];
-  dataFitnessPlanUser: any[] =[];
-  itemKey : any[]
-	onlogUser: User;
-  onlogPlan: FitnessPlan = new FitnessPlan();
-	fireUser: FirebaseListObservable<any[]>;
-  age: number;
-  bmi: number;
-  today: number = Date.now();
-  keyFit: any[] =[];
+  fitnessPlan: FitnessPlan[];
+  fireFitnessPlan: FirebaseListObservable<any[]>;
+    fireFitnessPlanUser: FirebaseListObservable<any[]>;
+  dataFitnessPlan: any[] =[];
+    dataFitnessPlanUser: any[] =[];
+    itemKey : any[]
+  onlogUser: User;
+    onlogPlan: FitnessPlan = new FitnessPlan();
+  fireUser: FirebaseListObservable<any[]>;
+  fireUser2: FirebaseListObservable<any[]>;
+    age: number;
+    bmi: number;
+    today: number = Date.now();
+    keyFit: any[] =[];
+    items:any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-  	 		  public angularfire: AngularFireDatabase, public events: Events, private alertCtrl: AlertController) {
-  	this.onlogUser = this.navParams.data;
+           public angularfire: AngularFireDatabase, public events: Events, private alertCtrl: AlertController) {
+    this.onlogUser = this.navParams.data;
     this.events.publish('onLogUser : userAlreadyLog',this.onlogUser);
     console.dir(this.onlogUser);
-  	this.fireFitnessPlan = this.angularfire.list('/FitnessPlan/');
+    this.fireFitnessPlan = this.angularfire.list('/FitnessPlan/');
     this.fireFitnessPlanUser = this.angularfire.list('/user/');
-  	this.fireFitnessPlan.subscribe(data => {
+    this.fireFitnessPlan.subscribe(data => {
     this.dataFitnessPlan = data;
     console.log(data);
     });
@@ -54,9 +56,12 @@ export class FitnessPlanPage {
     this.itemKey = data;    
     this.itemKey.map(item => {
        console.log(item.$key);
+       this.items = item.$key;
       })
     });
     this.fireUser = this.angularfire.list('/User/'+this.onlogUser.UserKey+'/fitnessKey/');
+    this.fireUser2 = this.angularfire.list('/User/'+this.onlogUser.UserKey);
+
   }
 
   /*calculate(bmi: number){
@@ -117,8 +122,9 @@ export class FitnessPlanPage {
             if(this.itemKey[0].PI==this.dataFitnessPlan[i].intensity){
               if(this.age>=this.dataFitnessPlan[i].age.start&&this.age<=this.dataFitnessPlan[i].age.end){
                 if(this.bmi>=this.dataFitnessPlan[i].bmi.start&&this.age<=this.dataFitnessPlan[i].bmi.end){
-                  console.log("success")
                   this.keyFit = this.dataFitnessPlan[i];
+                  console.log("success")
+                  this.fireUser2.push({FitnessPlanKey:this.items});
                 }
               }
             }
@@ -133,7 +139,9 @@ export class FitnessPlanPage {
           });
       alert.present();
     }
-    console.log(this.fireUser)
+    console.log(this.fireUser);
+    console.log(this.itemKey);
+    console.log(this.items);
     //console.log(this.itemKey[0].PD);
     //if(this.dataFitnessPlan[1].intensity==2){
     /*if(this.onlogUser.fitplan=="null"){

@@ -26,8 +26,7 @@ export class QuestionPage {
   onlogUser: User;
   fireUser: FirebaseListObservable<any[]>;
   questionForm : FormGroup;
-  userAnswer : User;
-  userAnswerKey: String="" ;
+  
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
      public angularfire: AngularFireDatabase, public events: Events, public builder:FormBuilder, private alertCtrl: AlertController) {

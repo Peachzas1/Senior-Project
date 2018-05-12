@@ -22,14 +22,11 @@ export class FitnessPlanPage {
 
   fitnessPlan: FitnessPlan[];
   fireFitnessPlan: FirebaseListObservable<any[]>;
-  fireFitnessPlanUser: FirebaseListObservable<any[]>;
   dataFitnessPlan: any[] =[];
-  dataFitnessPlanUser: any[] =[];
-  itemKey : any[]
+  answerData : any[]
   onlogUser: User;
   onlogPlan: FitnessPlan = new FitnessPlan();
   fireUser: FirebaseListObservable<any[]>;
-  fireUser2: FirebaseListObservable<any[]>;
   age: number;
   bmi: number;
   today: number = Date.now();
@@ -42,24 +39,15 @@ export class FitnessPlanPage {
     this.events.publish('onLogUser : userAlreadyLog',this.onlogUser);
     console.dir(this.onlogUser);
     this.fireFitnessPlan = this.angularfire.list('/FitnessPlan/');
-    this.fireFitnessPlanUser = this.angularfire.list('/user/AbortController');
-    this.fireUser2 = this.angularfire.list('/FitnessPlan')
     this.fireFitnessPlan.subscribe(data => {
     this.dataFitnessPlan = data;
     console.log(data);
     });
-    this.fireFitnessPlanUser.subscribe(data => {
-    this.dataFitnessPlanUser = data;
-    console.log(data);
-    });
     console.log(this.dataFitnessPlan);
     this.angularfire.list('/User/'+this.onlogUser.UserKey+'/userAnswer/').subscribe(data => {
-    this.itemKey = data;    
-    this.itemKey.map(item => {
-       console.log(item.$key);
-      })
+    this.answerData = data;    
     });
-    this.fireUser = this.angularfire.list('/User/'+this.onlogUser.UserKey+'/fitnessKey/');
+    this.fireUser = this.angularfire.list('/User/');
   }
 
   /*calculate(bmi: number){
@@ -105,9 +93,6 @@ export class FitnessPlanPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FitnessPlanPage');
-  }
-
-  submit(){
     this.bmi = this.onlogUser.weight/((this.onlogUser.height/100)*(this.onlogUser.height/100));
     console.log(this.bmi);
     var timeDiff = Math.abs(this.today - new Date(this.onlogUser.dateofbirth).getTime());
@@ -116,13 +101,14 @@ export class FitnessPlanPage {
     if(this.onlogUser.fitplan=="null"){
       for(let i = 0; i < this.dataFitnessPlan.length; i++){
         if(this.onlogUser.gender==this.dataFitnessPlan[i].gender.gender1||this.onlogUser.gender==this.dataFitnessPlan[i].gender.gender2){console.log("gender")
-          if(this.itemKey[0].PD==this.dataFitnessPlan[i].difficult){console.log("difficult")
-            if(this.itemKey[0].PI==this.dataFitnessPlan[i].intensity){console.log("intensity")
-              if(this.itemKey[0].Equipment==this.dataFitnessPlan[i].equipment){console.log("equipment")
+          if(this.answerData[0].PD==this.dataFitnessPlan[i].difficult){console.log("difficult")
+            if(this.answerData[0].PI==this.dataFitnessPlan[i].intensity){console.log("intensity")
+              if(this.answerData[0].Equipment==this.dataFitnessPlan[i].equipment){console.log("equipment")
                 if(this.age>=this.dataFitnessPlan[i].age.start&&this.age<=this.dataFitnessPlan[i].age.end){console.log("age")
                   if(this.bmi>=this.dataFitnessPlan[i].bmi.start&&this.bmi<=this.dataFitnessPlan[i].bmi.end){console.log("bmi")
                     console.log("success")
                     this.keyFit = this.dataFitnessPlan[i];
+                    this.fireUser.update(this.onlogUser.UserKey,{fitplan:this.dataFitnessPlan[i].$key});
                     break;
                   }
                 }

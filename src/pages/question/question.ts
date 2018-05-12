@@ -25,11 +25,9 @@ export class QuestionPage {
   dataQuestion: any[] =[];
   onlogUser: User;
   fireUser: FirebaseListObservable<any[]>;
-  startDate: String = new Date().toISOString();
   questionForm : FormGroup;
   userAnswer : User;
   userAnswerKey: String="" ;
-  
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
      public angularfire: AngularFireDatabase, public events: Events, public builder:FormBuilder, private alertCtrl: AlertController) {
@@ -48,8 +46,7 @@ export class QuestionPage {
       'Equipment' : ['',Validators.required],
       'WPD' : ['',Validators.required],
       'PD' : ['',Validators.required],
-      'PI' : ['',Validators.required],
-      'SD' : ['',Validators.required]
+      'PI' : ['',Validators.required]
     });
     // this.fireQuestion.push({Question1:{question:"Equipment Available?",choices:['none','dumbbell','pyrobox']},
     //   Question2:{question:"Workout Per Week?",choices:['1-2','2-3','3-4','4-5']},

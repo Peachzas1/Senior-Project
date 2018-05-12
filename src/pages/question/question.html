@@ -15,21 +15,23 @@
 
 <ion-content padding *ngFor= "let a of dataQuestion">
 	<form class="list" [formGroup] = "questionForm">
-	<ion-label>
-		{{a.Question1.question}}
-	</ion-label>
-	<ion-item>
-		<ion-label>{{a.Question1.choices[0]}}</ion-label>
-		<ion-checkbox value="none" formControlName="Equipment" ></ion-checkbox>
-	</ion-item>
-	<ion-item>
-		<ion-label>{{a.Question1.choices[1]}}</ion-label>
-		<ion-checkbox value="dumbbell" formControlName="Equipment"></ion-checkbox>
-	</ion-item>
-	<ion-item>
-		<ion-label>{{a.Question1.choices[2]}}</ion-label>
-		<ion-checkbox value="pyrobox" formControlName="Equipment"></ion-checkbox>
-	</ion-item>
+	<ion-list radio-group [(ngModel)]="equipment" formControlName="Equipment">
+		<ion-list-header>
+			{{a.Question1.question}}
+		</ion-list-header>
+		<ion-item>
+			<ion-label>{{a.Question1.choices[0]}}</ion-label>
+			<ion-radio value="none"></ion-radio>
+		</ion-item>
+		<ion-item>
+			<ion-label>{{a.Question1.choices[1]}}</ion-label>
+			<ion-radio value="dumbbell"></ion-radio>
+		</ion-item>
+		<ion-item>
+			<ion-label>{{a.Question1.choices[2]}}</ion-label>
+			<ion-radio value="pyrobox"></ion-radio>
+		</ion-item>
+	</ion-list>
 	<ion-list radio-group [(ngModel)]="workoutPerDay" formControlName="WPD">
 		<ion-list-header>
 			{{a.Question2.question}}
@@ -81,10 +83,6 @@
 			<ion-radio value=3></ion-radio>
 		</ion-item>
 	</ion-list>
-	<ion-item >
-		<ion-label>{{a.Question5.question}}</ion-label>
-		<ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="startDate" formControlName="SD" checked="true"></ion-datetime>
-	</ion-item>
 	<br>
 	<button ion-button type="submit" (click)="submit()">submit</button>
 	</form>

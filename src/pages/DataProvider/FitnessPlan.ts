@@ -3,11 +3,12 @@ export class FitnessPlan{
 	bmi: bmis;
 	category: string;
 	difficult: string;
-	equipment: equipments;
+	equipment: string;
 	intensity: string;
 	gender:genders;
 	user:  users;
 	week: weeks;
+	PlanKey: string;
 }
 
 class ages{
@@ -23,10 +24,6 @@ class genders{
 class bmis{
 	end: number;
 	start: number;
-}
-
-class equipments{
-	equipment?: string;;
 }
 
 class users{

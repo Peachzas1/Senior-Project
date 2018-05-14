@@ -1,6 +1,7 @@
 export class FitnessPlan{
 	age: ages;
 	bmi: bmis;
+	avgTime:number;
 	category: string;
 	difficult: string;
 	equipment: string;

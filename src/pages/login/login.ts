@@ -80,7 +80,7 @@ export class LoginPage {
   
   }
   redirectToRegister() {
-    this.navCtrl.push(RegisterPage);
+    this.navCtrl.setRoot(RegisterPage);
     console.log("Redirect Complete");
   }
 }

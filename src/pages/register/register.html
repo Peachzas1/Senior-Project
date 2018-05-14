@@ -1,52 +1,46 @@
-<ion-header>
-
-  <ion-navbar>
-    <ion-title></ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
 <ion-content padding class="body">
-  <h1>Sign Up</h1>
+  <img src="../../assets/imgs/workout.png" class="LoginLogo">
+  <h1>Register to TrainHere</h1>
   <ion-item class="emailInput">
-    <ion-icon item-end name="md-person"></ion-icon>
+    <ion-label>Email : </ion-label>
     <ion-input type="email" [(ngModel)]="email" placeholder="Email" name="emailInput"></ion-input>
   </ion-item>
-  <ion-item class="color">
-    <ion-icon item-end name="md-lock"></ion-icon>
+  <ion-item class="otherInput">
+    <ion-label>Password : </ion-label>
     <ion-input type="password" [(ngModel)]="password" placeholder="Password" name="passwordInput"></ion-input>
   </ion-item>
-  <ion-item class="fNameInput">
-    <ion-icon item-start name="md-lock"></ion-icon>
+  <ion-item class="otherInput">
+    <ion-label>Firstname : </ion-label>
     <ion-input [(ngModel)]="fName" type="text" placeholder="Firstname" required ></ion-input>
   </ion-item>
-  <ion-item class="lNameInput">
-    <ion-icon item-start name="md-lock"></ion-icon>
+  <ion-item class="otherInput">
+    <ion-label>Lastname : </ion-label>
     <ion-input [(ngModel)]="lName" type="text" placeholder="Lastname" required ></ion-input>
   </ion-item>
-  <ion-item class="weightInput">
-    <ion-icon item-start name="md-lock"></ion-icon>
-    <ion-input [(ngModel)]="weight" type="number" min="20" max="300" placeholder="Weight" required ></ion-input>
+  <ion-item class="otherInput">
+    <ion-label>Weight (kg) : </ion-label>
+    <ion-input [(ngModel)]="weight" type="number" min="20" max="300" placeholder="Weight" required ></ion-input><
   </ion-item>
-  <ion-item class="heightInput">
-    <ion-icon item-start name="md-lock"></ion-icon>
-    <ion-input [(ngModel)]="height" type="number" min="50" max="300" placeholder="Height" required ></ion-input>
+  <ion-item class="otherInput">
+    <ion-label>Hegiht (cm) : </ion-label>
+    <ion-input [(ngModel)]="height" type="number" min="50" max="300" placeholder="Height" required ></ion-input>CM
   </ion-item>
-  <ion-item class="waistInput">
-    <ion-icon item-start name="md-lock"></ion-icon>
-    <ion-input [(ngModel)]="waistMeasurement" type="number" min="10" max="50" placeholder="WaistMeasurement" required ></ion-input>
+  <ion-item class="otherInput">
+    <ion-label>Waist (inch) : </ion-label>
+    <ion-input [(ngModel)]="waistMeasurement" type="number" min="10" max="50" required placeholder = "Waist Measurement"></ion-input>Inch
   </ion-item>
-  <ion-item class="gender">
+  <ion-item class="otherInput">
+    <ion-label>Gender : </ion-label>
     <ion-select [(ngModel)]="gender" required >
         <ion-option value="male">male</ion-option>
         <ion-option value="female">female</ion-option>
     </ion-select>
   </ion-item>
-  <ion-item class="date">
-    <ion-label>Date of birth</ion-label>
-    <ion-datetime displayFormat="DD/MM/YYYY" max="2010-12-31" [(ngModel)]="dateofbirth"></ion-datetime>
+  <ion-item class="dateInput">
+    <ion-label>Date of birth : </ion-label>
+    <ion-datetime displayFormat="DD/MM/YYYY" max="2010-12-31" [(ngModel)]="dateofbirth" placeholder = "DD/MM/YYYY"></ion-datetime>
   </ion-item>
+  <button ion-button round small class="backButton" (click)="back()">Back</button>
   <button ion-button round small class="signUpButton" (click)="register(email,password,fName,lName,weight,height,waistMeasurement,dateofbirth,gender)">Sign Up</button>
 
 </ion-content>

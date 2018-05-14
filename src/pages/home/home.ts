@@ -12,17 +12,32 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
   templateUrl: 'home.html'
 })
 export class HomePage {
-
+  dataUser : any[] = [];
+  dataUserSend: User;
   onlogUser: User = new User();
   fireFitnessPlan: FirebaseListObservable<any[]>;
+  fireUser : FirebaseListObservable<any[]>;
   dataQuestion: any[] =[];
+  Collections = [{ imageCollections: "../../assets/imgs/TrainLike1.jpg" }
+                ,{ imageCollections: "../../assets/imgs/TrainLike2.jpg" }
+                ,{ imageCollections: "../../assets/imgs/TrainLike3.jpg" }
+                ];
+  Workouts = [{ imageWorkouts: "../../assets/imgs/Workouts1.jpg" }
+                ,{ imageWorkouts: "../../assets/imgs/Workouts2.jpg" }
+                ,{ imageWorkouts: "../../assets/imgs/Workouts3.jpg" }
+                ];
 
   constructor(public navCtrl: NavController, public angularfire: AngularFireDatabase, public navParams: NavParams,public events: Events) {
-    this.onlogUser = this.navParams.data;
-    this.events.publish('onLogUser : userAlreadyLog',this.onlogUser);
-    this.fireFitnessPlan = this.angularfire.list('/FitnessPlan/');
-    console.dir(this.onlogUser);
-
+      this.onlogUser = this.navParams.data;
+      this.events.publish('onLogUser : userAlreadyLog',this.onlogUser);
+      this.dataUserSend = this.navParams.data;
+      console.dir(this.dataUserSend);
+      console.dir(this.onlogUser);
+      this.fireUser = this.angularfire.list('/User/');
+      this.fireUser.subscribe(data => {
+        this.dataUser = data;
+        console.log(data);
+      });
      /*this.fireFitnessPlan.push({
        age:{start:30,end:60},
        bmi:{start:18.5,end:40},
@@ -48,9 +63,20 @@ export class HomePage {
     this.navCtrl.setRoot(LoginPage);
   }
   startPlan(){
+    for(let i=0; i<this.dataUser.length;i++){
+        console.log("for");
+        if(this.onlogUser.UserKey==this.dataUser[i].$key){
+          this.dataUserSend = this.dataUser[i];
+        }
+      }
+    console.log("start");
+    console.log(this.dataUserSend);
+    if(this.dataUserSend.fitplan!="null"){
+      console.log("if");
+      this.navCtrl.push(FitnessPlanPage,this.dataUserSend);
+    }else{
+      console.log("else");
     this.navCtrl.push(QuestionPage,this.onlogUser);
-  }
-  fitplan(){
-    this.navCtrl.setRoot(FitnessPlanPage,this.onlogUser);
+    }
   }
 }

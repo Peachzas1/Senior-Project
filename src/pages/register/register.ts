@@ -112,5 +112,8 @@ export class RegisterPage {
       console.log(this.newUser.UserKey);
     }
     }
+    back(){
+      this.navCtrl.setRoot(LoginPage);
+    }
   }
 

@@ -4,23 +4,38 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>FitnessPlan</ion-title>
-  </ion-navbar>
-
-</ion-header>
 
 
-<ion-content>
-	<br><br><br><br><br><br>
-	<ion-item><ion-label>{{keyFit.gender?.gender1}}</ion-label></ion-item>
-	<ion-item><ion-label>{{keyFit.week?.week1.day1.bodyparts.part1}}</ion-label></ion-item>
-	<ion-item><ion-label>{{keyFit.intensity}}</ion-label></ion-item>
-	<ion-item><ion-label>{{keyFit.category}}</ion-label></ion-item>
-	<button ion-button type="submit" (click)="submit()">showplan</button>
+
+<ion-content >
+	<div class="container1" *ngIf="buttonClicked1" [style.background]="'url(' + imagePath + ')'">
+		<ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>
+		<h1>"{{dataFitnessPlanUser.category}}"</h1>
+		<div class="planDetail">
+			<div class="detailBox">
+				<p class = "detail">{{dataFitnessPlanUser.avgtime}} Min</p>
+				<p class="header">Avg. Minute</p>
+			</div>
+			<div class="detailBox">
+				<p class = "detail">{{dataFitnessPlanUser.difficult}}</p>
+				<p class="header">difficult</p>
+			</div>
+			<div class="detailBox">
+				<p class = "detail">Level {{dataFitnessPlanUser.intensity}}</p>
+				<p class="header">intensity</p>
+			</div>
+			<button ion-button type="submit" (click)="submit()" class="submitButton1">"Start Your Plan"</button>
+		</div>
+		
+	</div>
+	<div class="container2" *ngIf="buttonClicked2" [style.background]="'url(' + imagePath + ')'">
+		<ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>
+		<h1>"Welcome to fitness plan"</h1>
+		<button ion-button type="submit" (click)="submit()" class="submitButton2">"Show your plan"</button>
+	</div>
+	
 </ion-content>
+
 
 	<!--<ion-content>
 		<br><br><br><br>

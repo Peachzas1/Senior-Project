@@ -1,3 +1,52 @@
 page-register {
-
+	.body{
+		background-color: #353945;
+		}
+	.input{
+		color:white;
+	}
+	ion-icon{
+		color:white;
+	}
+	.LoginLogo{
+		margin-top:5%;
+		width: 40%;
+		height: 20%;
+		margin-left:30%;
+	}
+	h1{
+		text-align:center;
+		color:white;
+	}
+	.emailInput{
+		background-color: #353945;
+		color:white;
+		margin-top:10px;
+		width:93%;
+		margin-left:12px;
+		border-radius:7px;
+	}
+	.otherInput{
+		background-color: #353945;
+		color:white;
+		width:93%;
+		margin-left:12px;
+		border-radius:7px;
+	}
+	.dateInput{
+		background-color: #353945;
+		color:white;
+		width:93%;
+		margin-left:12px;
+		border-radius:7px;
+		margin-bottom:10%;
+	}
+	.backButton{
+		margin-left:15%;
+		margin-right:3%;
+		font-size:16px;
+	}
+	.signUpButton{
+		font-size:16px;
+	}
 }

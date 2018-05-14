@@ -1,3 +1,49 @@
 page-home {
+	.toolbar-background {
+  		background-color: #353945;
+	}
+	h1{
+		color:white;
+		padding-bottom:10px;
+	}
+	ion-icon{
+		margin-left:20px;
+		color:white;
+	}
+	.body{
+		background-color: #353945;
+	}
+	#stripe {
+    	background-color: #353945;
+    	text-align: center;
+    	height: 50px;
+    	color: black;
+	}
+	.button.navButton{
+		margin-top:20px;
+		width:30%;
+		font-size:12px;
+		border: solid;
+		border-width:1px;
+    	background: none;
+    	letter-spacing: 1px;
+    	transition: all 0.3s;
+    	color:white;
+	}
+	.button.navButton:hover{
+		color: white;
+    	background: black;
+	}
+	p{
+		margin-left:20px;
+		color:white;
+		font-size:16px;
+	}
+	ion-slides{
+		height:200px;
+	}
 
+	img{
+  		width: 100%;
+	}
 }

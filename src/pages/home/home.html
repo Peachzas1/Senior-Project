@@ -1,14 +1,26 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+<ion-header >
+  		<ion-navbar>
+  			<ion-icon item-end name="md-person" (click) = "profile()"></ion-icon>
+    		<ion-title><h1>TrainHere</h1></ion-title>
+  		</ion-navbar>
 </ion-header>
+<ion-content  class="body">
+	<div id="stripe">
+		<button ion-button class="navButton" (click) = home()>Workout Feed</button>
+		<button ion-button class="navButton" (click) = Workouts()>Workouts</button>
+		<button ion-button class="navButton" (click) = startPlan()>Plan</button>	
+	</div>
+	<p class="label">Popular workout collections</p>
+	<ion-slides autoplay="5000" loop="true" speed="3000">
+   		<ion-slide *ngFor="let slide of Collections">
+   			<img src="{{slide.imageCollections}}"/>
+    	</ion-slide>
+  	</ion-slides>
+	<p class="label">New workouts</p>
+	<ion-slides autoplay="5000" loop="true" speed="3000">
+    	<ion-slide *ngFor="let slide of Workouts">
+      		<img src="{{slide.imageWorkouts}}" />
+    	</ion-slide>
+  	</ion-slides>
 
-<ion-content padding>
-	{{onlogUser.email}}
-  <button ion-button (click) = login()>Login</button>
-  <button ion-button (click) = startPlan()>Start Plan</button>
-  <button ion-button (click) = fitplan()>fitplan</button>
 </ion-content>

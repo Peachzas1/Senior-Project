@@ -6,6 +6,7 @@ import { User } from '../DataProvider/User';
 import { Questionnaires } from '../DataProvider/Question';
 import { AlertController } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import { FitnessPlan2Page } from '../fitness-plan2/fitness-plan2';
 /**
  * Generated class for the FitnessPlanPage page.
  *
@@ -20,7 +21,7 @@ import { HomePage } from '../home/home';
 })
 export class FitnessPlanPage {
 
-  fitnessPlan: FitnessPlan[];
+  //fitnessPlan: FitnessPlan[];
   fireFitnessPlan: FirebaseListObservable<any[]>;
   fireFitnessPlanUser: FirebaseListObservable<any[]>;
   dataFitnessPlan: any[] =[];
@@ -28,9 +29,9 @@ export class FitnessPlanPage {
   itemKey : any[]
   dataUserSend :User;
   onlogUser: User;
-  onlogPlan: FitnessPlan = new FitnessPlan();
+  //onlogPlan: FitnessPlan = new FitnessPlan();
   fireUser: FirebaseListObservable<any[]>;
-  fireUser2: FirebaseListObservable<any[]>;
+  //fireUser2: FirebaseListObservable<any[]>;
   age: number;
   bmi: number;
   today: number = Date.now();
@@ -112,9 +113,9 @@ export class FitnessPlanPage {
   }
 
   submit(){
-      this.buttonClicked1 = !this.buttonClicked1;
-      this.buttonClicked2 = !this.buttonClicked2;
-      console.log("else");
+      //this.buttonClicked1 = !this.buttonClicked1;
+      //this.buttonClicked2 = !this.buttonClicked2;
+      //console.log("else");
       this.userPlanKey = this.onlogUser.fitplan;
       console.log(this.userPlanKey);
       for(let j = 0; j < this.dataFitnessPlan.length; j++){
@@ -132,8 +133,10 @@ export class FitnessPlanPage {
           }
           console.log(this.dataFitnessPlanUser);
           console.log(this.userPlanKey);
+          console.log(this.onlogUser);
         }
       }
+      this.navCtrl.push(FitnessPlan2Page,this.dataUserSend);
     //console.log(this.itemKey[0].PD);
     //if(this.dataFitnessPlan[1].intensity==2){
     /*if(this.onlogUser.fitplan=="null"){

@@ -33,6 +33,16 @@ export class RegisterPage {
     fitplan = "null";
     let check :boolean = true;
     let result;
+    if(email==null||password==null||fName==null||lName==null||weight==null||height==null||waistMeasurement==null||dateofbirth==null
+        ||gender==null){
+      let alert = this.alertCtrl.create({
+            title: 'กรอกข้อมูลให้ครบถ้วน',
+            subTitle: 'กรอกข้อมูลให้ครบถ้วน',
+            buttons: ['OK']
+          });
+          console.log(alert);
+          alert.present();
+    }else{
     try {
       const result = await this.afAuth.auth.createUserWithEmailAndPassword(email,password); 
     }
@@ -110,6 +120,7 @@ export class RegisterPage {
         this.itemsUsers.update(user.UserKey, user);
       }
       console.log(this.newUser.UserKey);
+    }
     }
     }
     back(){

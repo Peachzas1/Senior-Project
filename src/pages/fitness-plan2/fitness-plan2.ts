@@ -6,6 +6,8 @@ import { User } from '../DataProvider/User';
 import { Questionnaires } from '../DataProvider/Question';
 import { AlertController } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import { FitnessPlanPage } from '../fitness-plan/fitness-plan';
+import { FitnessPlan3Page } from '../fitness-plan3/fitness-plan3';
 
 /**
  * Generated class for the FitnessPlan2Page page.
@@ -25,10 +27,8 @@ export class FitnessPlan2Page {
   fireFitnessPlanUser: FirebaseListObservable<any[]>;
   dataFitnessPlan: any[] =[];
   dataFitnessPlanUser: any[] =[];
-  itemKey : any[]
   dataUserSend :User;
   onlogUser: User;
-  fireUser: FirebaseListObservable<any[]>;
   userPlanKey: string;
   buttonClicked1: boolean = true;
 
@@ -70,6 +70,7 @@ export class FitnessPlan2Page {
 
   submit(){
   	console.log(this.onlogUser);
+    this.navCtrl.push(FitnessPlan3Page,this.dataUserSend);
   }
 
   back(){

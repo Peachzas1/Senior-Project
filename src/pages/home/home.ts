@@ -6,6 +6,7 @@ import { User } from '../DataProvider/User';
 import { Events } from 'ionic-angular';
 import { FitnessPlanPage } from '../fitness-plan/fitness-plan';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { TestPage } from '../test/test';
 
 @Component({
   selector: 'page-home',
@@ -62,6 +63,11 @@ export class HomePage {
   login(){
     this.navCtrl.setRoot(LoginPage);
   }
+
+  workouts(){
+    this.navCtrl.push(TestPage,this.onlogUser);
+  }
+
   startPlan(){
     for(let i=0; i<this.dataUser.length;i++){
         console.log("for");

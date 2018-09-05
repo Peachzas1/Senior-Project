@@ -50,6 +50,10 @@ class FitnessPlan4{
 }
 
 class set{
-	deadlift: number;
-	squat: number;
+	workout?: workout[];
+}
+
+class workout{
+	amount: string;
+	title: string;
 }

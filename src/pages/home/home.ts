@@ -18,6 +18,7 @@ export class HomePage {
   onlogUser: User = new User();
   fireFitnessPlan: FirebaseListObservable<any[]>;
   fireUser : FirebaseListObservable<any[]>;
+  fireFoodPlan: FirebaseListObservable<any[]>;
   dataQuestion: any[] =[];
   Collections = [{ imageCollections: "../../assets/imgs/TrainLike1.jpg" }
                 ,{ imageCollections: "../../assets/imgs/TrainLike2.jpg" }
@@ -77,7 +78,7 @@ export class HomePage {
       }
     console.log("start");
     console.log(this.dataUserSend);
-    if(this.dataUserSend.fitplan!="null"){
+    if(this.dataUserSend.fitplan!="null"&&this.dataUserSend.foodplan!="null"){
       console.log("if");
       this.navCtrl.push(FitnessPlanPage,this.dataUserSend);
     }else{

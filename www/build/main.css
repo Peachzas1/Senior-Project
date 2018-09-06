@@ -25721,6 +25721,7 @@ page-fitness-plan .container1 .planDetail .detailBox {
 }
 
 page-fitness-plan .container1 .submitButton1 {
+  margin-left: 30%;
   color: black;
   background-color: white;
   border-radius: 10px;
@@ -25744,7 +25745,6 @@ page-fitness-plan .container2 h1 {
 
 page-fitness-plan .container2 .submitButton2 {
   margin-left: 30%;
-  margin-top: 50%;
   color: black;
   background-color: white;
   border-radius: 10px;

@@ -27,9 +27,9 @@ export class FitnessPlan3Page {
   fireFitnessPlanUser: FirebaseListObservable<any[]>;
   fireFitnessPlanVideo: FirebaseListObservable<any[]>;
   dataFitnessPlan: any[] = [];
-  dataFitnessPlanUser: any[] = [];
+  dataFitnessPlanUser: any = [];
   dataFitnessPlanVideo: any[] = [];
-  dataFitnessPlanUserVideo: any[] = [];
+  dataFitnessPlanUserVideo: any = [];
   dataFitnessPlanTitleVideo: any[] = [];
   dataFitnessPlanLinkVideo: any[] = [];
   dataUserSend: User;
@@ -63,6 +63,7 @@ export class FitnessPlan3Page {
         console.log(data);
         this.videoKey();
         this.video = this.dataFitnessPlanUserVideo.Link;
+        this.ionViewWillEnter();
       });
     });
     console.log(this.dataFitnessPlanVideo);
@@ -89,17 +90,17 @@ export class FitnessPlan3Page {
   ionViewWillEnter(): void {
     this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.video);
 
-    this.loading = this.loadingCtrl.create({
+    /*this.loading = this.loadingCtrl.create({
         content: 'Please wait...'
     });
 
-    this.loading.present();
+    this.loading.present();*/
     console.log(this.trustedVideoUrl);
   }
 
-  handleIFrameLoadEvent(): void {
+  /*handleIFrameLoadEvent(): void {
     this.loading.dismiss();
-  }
+  }*/
 
   videoKey() {
     for (let i = 0; i < this.dataFitnessPlanVideo.length; i++) {

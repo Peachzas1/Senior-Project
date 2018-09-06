@@ -13,6 +13,7 @@ export class User{
 	UserKey:string;
 	userAnswer:PlanAnswer;
 	keyFit:string;
+	foodplan:string;
 }
 
 class PlanAnswer{

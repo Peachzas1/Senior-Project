@@ -734,6 +734,7 @@ var FitnessPlan3Page = /** @class */ (function () {
                 console.log(data);
                 _this.videoKey();
                 _this.video = _this.dataFitnessPlanUserVideo.Link;
+                _this.ionViewWillEnter();
             });
         });
         console.log(this.dataFitnessPlanVideo);
@@ -758,15 +759,16 @@ var FitnessPlan3Page = /** @class */ (function () {
     }
     FitnessPlan3Page.prototype.ionViewWillEnter = function () {
         this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.video);
-        this.loading = this.loadingCtrl.create({
+        /*this.loading = this.loadingCtrl.create({
             content: 'Please wait...'
         });
-        this.loading.present();
+    
+        this.loading.present();*/
         console.log(this.trustedVideoUrl);
     };
-    FitnessPlan3Page.prototype.handleIFrameLoadEvent = function () {
-        this.loading.dismiss();
-    };
+    /*handleIFrameLoadEvent(): void {
+      this.loading.dismiss();
+    }*/
     FitnessPlan3Page.prototype.videoKey = function () {
         for (var i = 0; i < this.dataFitnessPlanVideo.length; i++) {
             console.log("for");
@@ -799,7 +801,7 @@ var FitnessPlan3Page = /** @class */ (function () {
     };
     FitnessPlan3Page = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-fitness-plan3',template:/*ion-inline-start:"/Users/apple/Projects/Senior-Project/src/pages/fitness-plan3/fitness-plan3.html"*/'<!--\n  Generated template for the FitnessPlan3Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>fitness-plan3</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <button ion-button type="submit" (click)="submit()" class="submitButton1">"Start Your Plan"</button>\n  <iframe width="100%"\n            height="315"\n            [src]="trustedVideoUrl ? trustedVideoUrl : null"\n            (load)="trustedVideoUrl ? handleIFrameLoadEvent() : null"\n            frameborder="0"\n            allowfullscreen>\n  </iframe>\n  <h2>{{dataFitnessPlanUserVideo.title}}</h2>\n  <h1>{{dataFitnessPlanUserVideo.Link}}</h1>\n  \n  <ion-list *ngFor = "let title of dataFitnessPlanTitleVideo">\n    <h1>{{title}}<br></h1>  \n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/apple/Projects/Senior-Project/src/pages/fitness-plan3/fitness-plan3.html"*/,
+            selector: 'page-fitness-plan3',template:/*ion-inline-start:"/Users/apple/Projects/Senior-Project/src/pages/fitness-plan3/fitness-plan3.html"*/'<!--\n  Generated template for the FitnessPlan3Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>fitness-plan3</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <button ion-button type="submit" (click)="submit()" class="submitButton1">"Start Your Plan"</button>\n  <iframe width="100%"\n            height="315"\n            [src]="trustedVideoUrl ? trustedVideoUrl : null"\n            frameborder="0"\n            allowfullscreen>\n  </iframe>\n  <h2>{{dataFitnessPlanUserVideo.title}}</h2>\n  <h1>{{dataFitnessPlanUserVideo.Link}}</h1>\n  \n  <ion-list *ngFor = "let title of dataFitnessPlanTitleVideo">\n    <h1>{{title}}<br></h1>  \n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/apple/Projects/Senior-Project/src/pages/fitness-plan3/fitness-plan3.html"*/,
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["c" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["c" /* DomSanitizer */]) === "function" && _g || Object])
     ], FitnessPlan3Page);
@@ -841,11 +843,11 @@ var map = {
 		5
 	],
 	"../pages/fitness-plan3/fitness-plan3.module": [
-		328,
+		327,
 		4
 	],
 	"../pages/login/login.module": [
-		327,
+		328,
 		3
 	],
 	"../pages/question/question.module": [
@@ -970,8 +972,8 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/fitness-plan/fitness-plan.module#FitnessPlanPageModule', name: 'FitnessPlanPage', segment: 'fitness-plan', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fitness-plan2/fitness-plan2.module#FitnessPlan2PageModule', name: 'FitnessPlan2Page', segment: 'fitness-plan2', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fitness-plan3/fitness-plan3.module#FitnessPlan3PageModule', name: 'FitnessPlan3Page', segment: 'fitness-plan3', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/question/question.module#QuestionPageModule', name: 'QuestionPage', segment: 'question', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/test/test.module#TestPageModule', name: 'TestPage', segment: 'test', priority: 'low', defaultHistory: [] }

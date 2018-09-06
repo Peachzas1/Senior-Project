@@ -7,6 +7,9 @@ import { Questionnaires } from '../DataProvider/Question';
 import { AlertController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { FitnessPlan2Page } from '../fitness-plan2/fitness-plan2';
+import { FoodPlanPage } from '../food-plan/food-plan';
+import { FoodPlan } from '../DataProvider/FoodPlan';
+
 /**
  * Generated class for the FitnessPlanPage page.
  *
@@ -41,6 +44,14 @@ export class FitnessPlanPage {
   buttonClicked1: boolean = false;
   buttonClicked2: boolean = true;
 
+
+  fireFoodPlan: FirebaseListObservable<any[]>;
+  fireFoodPlanUser: FirebaseListObservable<any[]>;
+  dataFoodPlan: any[] =[];
+  dataFoodPlanUser: any[] =[];
+  keyFood: any[] =[];
+
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
            public angularfire: AngularFireDatabase, public events: Events, private alertCtrl: AlertController) {
     this.onlogUser = this.navParams.data;
@@ -65,6 +76,17 @@ export class FitnessPlanPage {
       })
     });
     this.fireUser = this.angularfire.list('/User/');
+
+    this.fireFoodPlan = this.angularfire.list('/FoodPlan/');
+      this.fireFoodPlan.subscribe(data => {
+      this.dataFoodPlan = data;
+      console.log(data);
+      });
+      this.fireFoodPlanUser = this.angularfire.list('/FoodPlan/'+this.onlogUser.foodplan);
+        this.fireFoodPlanUser.subscribe(data => {
+        this.dataFoodPlanUser = data;
+        console.log(data);
+        });
   }
 
   /*calculate(bmi: number){
@@ -145,6 +167,26 @@ export class FitnessPlanPage {
       console.log("fail")
     }*/
   }
+  submit2(){
+    this.userPlanKey = this.onlogUser.foodplan;
+     for(let j = 0; j < this.dataFoodPlan.length; j++){
+         console.log("for");
+         if(this.userPlanKey == this.dataFoodPlan[j].$key){
+          this.dataFoodPlanUser = this.dataFoodPlan[j];
+          console.log(this.dataFoodPlanUser);
+          console.log(this.userPlanKey);
+       }
+      
+      
+    
+         
+       
+      
+      
+    
+    this.navCtrl.push(FoodPlanPage,this.dataUserSend);
+  }
+}
   back(){
     this.navCtrl.setRoot(HomePage,this.dataUserSend);
   }

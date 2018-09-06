@@ -37,6 +37,12 @@ export class QuestionPage {
   keyFit: any[] =[];
   itemKey : any[]
 
+  fireFoodPlan: FirebaseListObservable<any[]>;
+  dataFoodPlan: any[] =[];
+  keyFood: any[] =[];
+  weight: number;
+  height: number;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
      public angularfire: AngularFireDatabase, public events: Events, public builder:FormBuilder, private alertCtrl: AlertController) {
     this.onlogUser = this.navParams.data;
@@ -53,6 +59,11 @@ export class QuestionPage {
     this.fireFitnessPlan = this.angularfire.list('/FitnessPlan/');
     this.fireFitnessPlan.subscribe(data => {
       this.dataFitnessPlan = data;
+    console.log(data);
+    });
+     this.fireFoodPlan = this.angularfire.list('/FoodPlan/');
+    this.fireFoodPlan.subscribe(data => {
+      this.dataFoodPlan = data;
     console.log(data);
     });
     this.fireUserAnswer.subscribe(data => {
@@ -89,10 +100,13 @@ export class QuestionPage {
       console.log(this.onlogUser);
       this.bmi = this.onlogUser.weight/((this.onlogUser.height/100)*(this.onlogUser.height/100));
       console.log(this.bmi);
+      this.weight = this.onlogUser.weight;
+      this.height = this.onlogUser.height;
       var timeDiff = Math.abs(this.today - new Date(this.onlogUser.dateofbirth).getTime());
       this.age = Math.floor((timeDiff / (1000 * 3600 * 24))/365);
       console.log(this.age);
       console.log(this.dataFitnessPlan);
+      console.log(this.dataFoodPlan);
       for(let i = 0; i < this.dataFitnessPlan.length; i++){
         console.log("for");
         console.log(this.itemKey[0]);
@@ -106,14 +120,35 @@ export class QuestionPage {
                     this.keyFit = this.dataFitnessPlan[i];
                     console.log(this.keyFit)
                     this.fireUser.update(this.onlogUser.UserKey,{fitplan:this.dataFitnessPlan[i].$key});
-                    this.navCtrl.setRoot(HomePage,this.onlogUser);
+                    
                   }
                 }
               }
             }
           }
         }
+    }
+    for(let j = 0; j < this.dataFoodPlan.length; j++){
+    console.log("for");
+        console.log(this.itemKey[0]);
+        if(this.onlogUser.gender==this.dataFoodPlan[j].gender.gender1||this.onlogUser.gender==this.dataFoodPlan[j].gender.gender2){console.log("gender")
+          if(this.age>=this.dataFoodPlan[j].age.start&&this.age<=this.dataFoodPlan[j].age.end){console.log("age")
+            if(this.weight>=this.dataFoodPlan[j].weight.start&&this.weight<=this.dataFoodPlan[j].weight.end){console.log("weight")
+               if(this.height>=this.dataFoodPlan[j].height.start&&this.height<=this.dataFoodPlan[j].height.end){console.log("height")
+              console.log("success");
+              this.keyFood = this.dataFoodPlan[j];
+              console.log(this.keyFood)
+              this.fireUser.update(this.onlogUser.UserKey,{foodplan:this.dataFoodPlan[j].$key});
+              this.navCtrl.setRoot(HomePage,this.onlogUser);
+              }
+            }
+          }
+        }
       }
+      
+        
+      
+       
     }else{
       let alert = this.alertCtrl.create({
             title: 'Fail',

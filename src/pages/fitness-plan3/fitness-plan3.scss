@@ -1,3 +1,45 @@
 page-fitness-plan3 {
+    .container1{
+        float: right;
+    }
 
+    .container2{
+        float: left;
+    }
+
+    .toolbar-background {
+        background-color: #353945;
+    }
+
+    h1{
+        color: white;
+    }
+
+    .container{
+        background-color: #353945; 
+		width:100%;
+		height:100%;
+		color:white;
+    }
+
+    .container .back{
+        color:white;
+        //background-image: url("../img/plan1.jpg");
+        background-color: #353945;
+        font-size: 15px;
+    }
+
+    ion-icon{
+		margin-left:5%;
+        zoom:2.0;
+        color:white;
+    }
+    
+    .container1 .submitButton1{
+		color:rgb(255, 255, 255);
+    }
+
+    .container .a{
+        margin-left: 60%;
+    }
 }

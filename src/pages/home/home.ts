@@ -5,8 +5,11 @@ import { QuestionPage } from '../question/question';
 import { User } from '../DataProvider/User';
 import { Events } from 'ionic-angular';
 import { FitnessPlanPage } from '../fitness-plan/fitness-plan';
+import { FitnessPlan3Page } from '../fitness-plan3/fitness-plan3';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { TestPage } from '../test/test';
+import { WorkoutPage } from '../workout/workout';
+import { ProfilePage } from '../profile/profile';
 
 @Component({
   selector: 'page-home',
@@ -20,13 +23,13 @@ export class HomePage {
   fireUser : FirebaseListObservable<any[]>;
   fireFoodPlan: FirebaseListObservable<any[]>;
   dataQuestion: any[] =[];
-  Collections = [{ imageCollections: "../../assets/imgs/TrainLike1.jpg" }
-                ,{ imageCollections: "../../assets/imgs/TrainLike2.jpg" }
-                ,{ imageCollections: "../../assets/imgs/TrainLike3.jpg" }
+  Collections = [{ imageCollections: "img/TrainLike1.jpg" }
+                ,{ imageCollections: "img/TrainLike2.jpg" }
+                ,{ imageCollections: "img/TrainLike3.jpg" }
                 ];
-  Workouts = [{ imageWorkouts: "../../assets/imgs/Workouts1.jpg" }
-                ,{ imageWorkouts: "../../assets/imgs/Workouts2.jpg" }
-                ,{ imageWorkouts: "../../assets/imgs/Workouts3.jpg" }
+  Workouts = [{ imageWorkouts: "img/Workouts1.jpg" }
+                ,{ imageWorkouts: "img//Workouts2.jpg" }
+                ,{ imageWorkouts: "img/Workouts3.jpg" }
                 ];
 
   constructor(public navCtrl: NavController, public angularfire: AngularFireDatabase, public navParams: NavParams,public events: Events) {
@@ -40,33 +43,10 @@ export class HomePage {
         this.dataUser = data;
         console.log(data);
       });
-     /*this.fireFitnessPlan.push({
-       age:{start:30,end:60},
-       bmi:{start:18.5,end:40},
-       category:"lose weight",
-       difficult:"beginner",
-       equipment:{equipment1:"dumbbell"},
-       intensity:1,
-       gender:{gender1:"female"},
-       user:{user1:this.onlogUser.UserKey},
-       week:{week1:{day1:{bodyparts:{part1:"legs",part2:"hips"},workouts:{resttime:60,set1:{deadlift:15,squat:20},set2:{deadlift:15,squat:20},
-       set3:{deadlift:15,squat:20},set4:{deadlift:15,squat:20},set5:{deadlift:15,squat:20},set6:{deadlift:15,squat:20},
-       set7:{deadlift:15,squat:20}}},
-       day2:{bodyparts:{part1:"triceps",part2:"back",part3:"biceps"},workouts:{resttime:60,set1:{deadlift:15,squat:20},set2:{deadlift:15,squat:20},
-       set3:{deadlift:15,squat:20},set4:{deadlift:15,squat:20},set5:{deadlift:15,squat:20},set6:{deadlift:15,squat:20},
-       set7:{deadlift:15,squat:20}}},
-       day3:{bodyparts:{part1:"chest",part2:"shoulders",part3:"biceps"},workouts:{resttime:60,set1:{deadlift:15,squat:20},set2:{deadlift:15,squat:20},
-       set3:{deadlift:15,squat:20},set4:{deadlift:15,squat:20},set5:{deadlift:15,squat:20},set6:{deadlift:15,squat:20},
-       set7:{deadlift:15,squat:20}}},}}
-     });*/
-
-  }
-  login(){
-    this.navCtrl.setRoot(LoginPage);
   }
 
   workouts(){
-    this.navCtrl.push(TestPage,this.onlogUser);
+    this.navCtrl.push(WorkoutPage,this.onlogUser);
   }
 
   startPlan(){
@@ -85,5 +65,9 @@ export class HomePage {
       console.log("else");
     this.navCtrl.push(QuestionPage,this.onlogUser);
     }
+  }
+
+  profile(){
+    this.navCtrl.push(ProfilePage,this.onlogUser);
   }
 }

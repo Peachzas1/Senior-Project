@@ -68,6 +68,7 @@ export class FoodPlanPage {
           console.log(this.userPlanKey);
        }
 	}
+	console.log(this.dataFoodPlan[0].length);
 }
 
   ionViewDidLoad() {

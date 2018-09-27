@@ -17,7 +17,7 @@
 	<form class="list" [formGroup] = "questionForm">
 	<ion-list radio-group [(ngModel)]="equipment" formControlName="Equipment">
 		<ion-list-header>
-			{{a.Question1.question}}
+			1. {{a.Question1.question}}
 		</ion-list-header>
 		<ion-item>
 			<ion-label>{{a.Question1.choices[0]}}</ion-label>
@@ -34,7 +34,7 @@
 	</ion-list>
 	<ion-list radio-group [(ngModel)]="workoutPerDay" formControlName="WPD">
 		<ion-list-header>
-			{{a.Question2.question}}
+			2. {{a.Question2.question}}
 		</ion-list-header>
 		<ion-item>
 			<ion-label>{{a.Question2.choices[0]}}</ion-label>
@@ -55,7 +55,7 @@
 	</ion-list>
 	<ion-list radio-group [(ngModel)]="planDifficult" formControlName="PD">
 		<ion-list-header>
-			{{a.Question3.question}}
+			3. {{a.Question3.question}}
 		</ion-list-header>
 		<ion-item>
 			<ion-label>{{a.Question3.choices[0]}}</ion-label>
@@ -68,7 +68,7 @@
 	</ion-list>
 	<ion-list radio-group [(ngModel)]="planIntensity" formControlName="PI">
 		<ion-list-header>
-			{{a.Question4.question}}
+			4. {{a.Question4.question}}
 		</ion-list-header>
 		<ion-item>
 			<ion-label>{{a.Question4.choices[0]}}</ion-label>

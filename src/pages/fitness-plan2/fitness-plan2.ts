@@ -70,10 +70,10 @@ export class FitnessPlan2Page {
 
   submit(){
   	console.log(this.onlogUser);
-    this.navCtrl.push(FitnessPlan3Page,this.dataUserSend);
+    this.navCtrl.setRoot(FitnessPlan3Page,this.dataUserSend);
   }
 
   back(){
-    this.navCtrl.setRoot(HomePage,this.dataUserSend);
+    this.navCtrl.setRoot(FitnessPlanPage,this.dataUserSend);
   }
 }

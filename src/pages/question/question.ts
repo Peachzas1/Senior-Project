@@ -139,6 +139,12 @@ export class QuestionPage {
               this.keyFood = this.dataFoodPlan[j];
               console.log(this.keyFood)
               this.fireUser.update(this.onlogUser.UserKey,{foodplan:this.dataFoodPlan[j].$key});
+              let alert = this.alertCtrl.create({
+                title: 'Success',
+                subTitle: 'Success',
+                buttons: ['OK']
+              });
+              alert.present();
               this.navCtrl.setRoot(HomePage,this.onlogUser);
               }
             }
@@ -152,7 +158,7 @@ export class QuestionPage {
     }else{
       let alert = this.alertCtrl.create({
             title: 'Fail',
-            subTitle: 'กรุณากรอกข้อมูลให้ครบถ้วน',
+            subTitle: 'Please fill up this form',
             buttons: ['OK']
           });
       alert.present();

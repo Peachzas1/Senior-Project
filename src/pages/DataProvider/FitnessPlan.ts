@@ -1,15 +1,13 @@
 export class FitnessPlan{
 	age: ages;
 	bmi: bmis;
-	avgTime:number;
+	avgtime:number;
 	category: string;
 	difficult: string;
 	equipment: string;
 	intensity: string;
 	gender:genders;
-	user:  users;
-	week: weeks;
-	PlanKey: string;
+	weeks: weeks[];
 }
 
 class ages{
@@ -27,30 +25,38 @@ class bmis{
 	start: number;
 }
 
-class users{
-	user?: string;
-}
-
 class weeks{
-	week?: weekss;
+	1: weekss[];
 }
 
 class weekss{
-	day?: day[];
+	days: days[];
+}
+
+class days{
+	1: day[];
 }
 
 class day{
-	bodyparts: string;
-	workouts: FitnessPlan4[];
+	bodyparts: parts[];
+	sets: sets[];
 }
 
-class FitnessPlan4{
-	resttime: number;
-	set?: set[];
+class parts{
+	1: string;
+	2: string;
+}
+
+class sets{
+	1: set[];
 }
 
 class set{
-	workout?: workout[];
+	workouts: workouts[];
+}
+
+class workouts{
+	1: workout[];
 }
 
 class workout{

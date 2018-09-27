@@ -40,7 +40,7 @@ export class FitnessPlanPage {
   today: number = Date.now();
   keyFit: any[] =[];
   userPlanKey: string;
-  imagePath: string = "../../assets/imgs/plan4.jpg";
+  imagePath: string = "img/plan4.jpg";
   buttonClicked1: boolean = false;
   buttonClicked2: boolean = true;
 
@@ -158,7 +158,7 @@ export class FitnessPlanPage {
           console.log(this.onlogUser);
         }
       }
-      this.navCtrl.push(FitnessPlan2Page,this.dataUserSend);
+      this.navCtrl.setRoot(FitnessPlan2Page,this.dataUserSend);
     //console.log(this.itemKey[0].PD);
     //if(this.dataFitnessPlan[1].intensity==2){
     /*if(this.onlogUser.fitplan=="null"){
@@ -176,14 +176,6 @@ export class FitnessPlanPage {
           console.log(this.dataFoodPlanUser);
           console.log(this.userPlanKey);
        }
-      
-      
-    
-         
-       
-      
-      
-    
     this.navCtrl.push(FoodPlanPage,this.dataUserSend);
   }
 }

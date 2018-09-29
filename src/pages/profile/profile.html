@@ -7,12 +7,25 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>profile</ion-title>
+    <ion-icon large item-start name="ios-arrow-back" (click)="back()"></ion-icon>
+    <ion-title>
+      <h1>Profile</h1>
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content class="container" padding>
+  <ion-list *ngFor="let a of data">
+    <h5>First Name : {{a.fName}}</h5>
+    <h5>Last Name : {{a.lName}}</h5>
+    <h5>Email : {{a.email}}</h5>
+    <h5>Gender : {{a.gender}}</h5>
+    <h5>height : {{a.height}}</h5>
+    <h5>weight : {{a.weight}}</h5>
+    <h5>waistMeasurement : {{a.waistMeasurement}}</h5>
+    <h5>dateofbirth : {{a.dateofbirth}}</h5>
+  </ion-list>
+  <button ion-button type="submit" (click)="logout()" class="submit">Logout</button>
 </ion-content>

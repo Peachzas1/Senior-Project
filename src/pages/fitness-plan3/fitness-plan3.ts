@@ -9,6 +9,7 @@ import { HomePage } from '../home/home';
 import { AlertController } from 'ionic-angular';
 import { FitnessPlan2Page } from '../fitness-plan2/fitness-plan2';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
+import { FoodPlan } from '../DataProvider/FoodPlan';
 
 /**
  * Generated class for the FitnessPlan3Page page.
@@ -24,6 +25,8 @@ import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 })
 export class FitnessPlan3Page {
   fitnessPlan: FitnessPlan[];
+  fireUser: FirebaseListObservable<any[]>;
+  fireTest: FirebaseListObservable<any[]>;
   fireFitnessPlan: FirebaseListObservable<any[]>;
   fireFitnessPlanUser: FirebaseListObservable<any[]>;
   fireFitnessPlanVideo: FirebaseListObservable<any[]>;
@@ -34,9 +37,9 @@ export class FitnessPlan3Page {
   dataFitnessPlanAmount: any = [];
   dataFitnessPlanTitleVideo: any[] = [];
   dataFitnessPlanLinkVideo: any[] = [];
+  dataUser: any[] = [];
   dataUserSend: User;
   data: any[] = [];
-  dataa: any[] = [];
   onlogUser: User;
   userPlanKey: string;
   buttonClicked1: boolean = true;
@@ -53,6 +56,12 @@ export class FitnessPlan3Page {
     public loadingCtrl: LoadingController, private domSanitizer: DomSanitizer) {
     this.onlogUser = this.navParams.data;
     this.events.publish('onLogUser : userAlreadyLog', this.onlogUser);
+    this.fireUser = this.angularfire.list('/User/');
+    this.fireTest = this.angularfire.list('/User/'+this.onlogUser.UserKey+'/userAnswer/');
+      /*this.fireUser.subscribe(data => {
+        this.dataUser = data;
+        console.log(data);
+      });*/
     this.dataUserSend = this.navParams.data;
     console.dir(this.onlogUser);
     this.fireFitnessPlan = this.angularfire.list('/FitnessPlan/');
@@ -69,31 +78,25 @@ export class FitnessPlan3Page {
       this.fireFitnessPlanVideo.subscribe(data => {
         this.dataFitnessPlanVideo = data;
         console.log(data);
-        this.title();
+
         //this.video = this.dataFitnessPlanUserVideo.Link;
+
+        console.log(this.dataFitnessPlanVideo);
+        console.log(this.video);
+        this.userPlanKey = this.onlogUser.fitplan;
+        console.log(this.userPlanKey);
+        for (let j = 0; j < this.dataFitnessPlan.length; j++) {
+          console.log("for");
+          if (this.userPlanKey == this.dataFitnessPlan[j].$key) {
+            this.dataFitnessPlanUser = this.dataFitnessPlan[j];
+            console.log(this.dataFitnessPlanUser);
+            console.log(this.userPlanKey);
+          }
+        }
+        this.title();
         this.ionViewWillEnter();
       });
     });
-    console.log(this.dataFitnessPlanVideo);
-    console.log(this.video);
-    this.userPlanKey = this.onlogUser.fitplan;
-    console.log(this.userPlanKey);
-    for (let j = 0; j < this.dataFitnessPlan.length; j++) {
-      console.log("for");
-      if (this.userPlanKey == this.dataFitnessPlan[j].$key) {
-        this.dataFitnessPlanUser = this.dataFitnessPlan[j];
-        console.log(this.dataFitnessPlanUser);
-        console.log(this.userPlanKey);
-      }
-    }
-    /*for(let i = 0; i < this.dataFitnessPlanVideo.length; i++){
-      console.log("for");
-      if(this.dataFitnessPlanUser.week.week1.day1.set1.workout1.title == this.dataFitnessPlanVideo[i].$key){
-        this.dataFitnessPlanUserVideo = this.dataFitnessPlanVideo[i];
-        console.log(this.dataFitnessPlanUserVideo);
-      }
-    }*/
-    this.dataa.push("checked");
   }
 
   ionViewWillEnter(): void {
@@ -134,39 +137,6 @@ export class FitnessPlan3Page {
     }
     console.log("titlevideo");
   }
-
-  /*title(){
-        for(let k = 0; k < this.dataFitnessPlanUser.weeks[this.a].days[this.b].sets.length; k++){console.log("3");
-          for(let m = 0; m < this.dataFitnessPlanUser.weeks[this.a].days[this.b].sets[k].workouts.length; m++){console.log("4");
-            for(let a = 0; a < this.dataFitnessPlanVideo.length; a++){console.log("5")
-              if(this.dataFitnessPlanUser.weeks[this.a].days[this.b].sets[k].workouts[m].title == "Rest day"){console.log("5.1");
-                this.rest = "Rest day";
-                this.buttonClicked1 = false;
-                this.buttonClicked2 = true;
-              }else{
-                this.rest = "Day "+(this.b+1);
-                this.buttonClicked1 = true;
-                this.buttonClicked2 = false;
-              }
-              if(this.dataFitnessPlanUser.weeks[this.a].days[this.b].sets[k].workouts[m].title == this.dataFitnessPlanVideo[a].Title){console.log("6");
-                this.dataFitnessPlanUserVideo.push(this.dataFitnessPlanVideo[a].Title);
-                if(this.dataFitnessPlanUser.weeks[this.a].days[this.b].sets[k].workouts[m].amount == "None"){
-                  this.dataFitnessPlanAmount = [];
-                }
-                else{  
-                  this.dataFitnessPlanAmount.push(this.dataFitnessPlanUser.weeks[this.a].days[this.b].sets[k].workouts[m].amount);
-                }
-                console.log(this.dataFitnessPlanAmount);
-              }
-            }
-          }
-        }
-   for(let a = 0;a < this.dataFitnessPlanVideo.length; a++){console.log("12");
-     if(this.dataFitnessPlanUserVideo[0] == this.dataFitnessPlanVideo[a].Title){
-       this.video = this.dataFitnessPlanVideo[a].Link;
-     }
-   }
-  }*/
 
   title() {
     for (let k = 0; k < this.dataFitnessPlanUser.weeks[0].days[this.b].sets.length; k++) {
@@ -257,10 +227,13 @@ export class FitnessPlan3Page {
         subTitle: 'Finish Plan',
         buttons: ['OK']
       });
+      
       alert.present();
-      this.navCtrl.setRoot(HomePage, this.dataUserSend);
+      this.fireUser.update(this.onlogUser.UserKey,{fitplan:"null"});
+      this.fireUser.update(this.onlogUser.UserKey,{foodplan:"null"});
+      this.fireTest.remove();
+      this.navCtrl.setRoot(HomePage, this.onlogUser);
     } else {
-      console.log("b");
       this.b++;
       this.dataFitnessPlanUserVideo = [];
       this.dataFitnessPlanAmount = [];
@@ -280,6 +253,6 @@ export class FitnessPlan3Page {
   }
 
   back() {
-    this.navCtrl.setRoot(FitnessPlan2Page, this.dataUserSend);
+    this.navCtrl.setRoot(FitnessPlan2Page, this.onlogUser);
   }
 }

@@ -4,32 +4,31 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<ion-header >
+		<ion-navbar>
+		  <ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>
+		</ion-navbar>
+	</ion-header>
 
-  <ion-navbar>
-    <ion-title>Question</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding *ngFor= "let a of dataQuestion">
+<ion-content class="c" padding *ngFor= "let a of dataQuestion">
+	
 	<form class="list" [formGroup] = "questionForm">
+		<h3>Question</h3>
 	<ion-list radio-group [(ngModel)]="equipment" formControlName="Equipment">
-		<ion-list-header>
+		<ion-list-header class="a">
 			1. {{a.Question1.question}}
 		</ion-list-header>
-		<ion-item>
+		<ion-item class="a">
 			<ion-label>{{a.Question1.choices[0]}}</ion-label>
-			<ion-radio value="none"></ion-radio>
+			<ion-radio value="None"></ion-radio>t
 		</ion-item>
-		<ion-item>
+		<ion-item class="a">
 			<ion-label>{{a.Question1.choices[1]}}</ion-label>
-			<ion-radio value="dumbbell"></ion-radio>
+			<ion-radio value="Dumbbell"></ion-radio>
 		</ion-item>
-		<ion-item>
+		<ion-item class="a">
 			<ion-label>{{a.Question1.choices[2]}}</ion-label>
-			<ion-radio value="pyrobox"></ion-radio>
+			<ion-radio value="Pyrobox"></ion-radio>
 		</ion-item>
 	</ion-list>
 	<ion-list radio-group [(ngModel)]="workoutPerDay" formControlName="WPD">
@@ -59,11 +58,11 @@
 		</ion-list-header>
 		<ion-item>
 			<ion-label>{{a.Question3.choices[0]}}</ion-label>
-			<ion-radio value="beginner"></ion-radio>
+			<ion-radio value="Beginner"></ion-radio>
 		</ion-item>
 		<ion-item>
 			<ion-label>{{a.Question3.choices[1]}}</ion-label>
-			<ion-radio value="intermiadate"></ion-radio>
+			<ion-radio value="Intermiadate"></ion-radio>
 		</ion-item>
 	</ion-list>
 	<ion-list radio-group [(ngModel)]="planIntensity" formControlName="PI">

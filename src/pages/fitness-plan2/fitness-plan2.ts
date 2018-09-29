@@ -48,20 +48,15 @@ export class FitnessPlan2Page {
       this.dataFitnessPlanUser = data;
       console.log(data);
       });
-    console.log(this.dataUserSend);
-    console.log(this.onlogUser.fitplan);
-    console.log(this.dataFitnessPlan);
-    console.log(this.dataFitnessPlanUser);
     this.userPlanKey = this.onlogUser.fitplan;
       console.log(this.userPlanKey);
       for(let j = 0; j < this.dataFitnessPlan.length; j++){
         console.log("for");
         if(this.userPlanKey == this.dataFitnessPlan[j].$key){
           this.dataFitnessPlanUser = this.dataFitnessPlan[j];
-          console.log(this.dataFitnessPlanUser);
-          console.log(this.userPlanKey);
         }
       }
+      console.log(this.onlogUser);
   }
 
   ionViewDidLoad() {
@@ -70,10 +65,10 @@ export class FitnessPlan2Page {
 
   submit(){
   	console.log(this.onlogUser);
-    this.navCtrl.setRoot(FitnessPlan3Page,this.dataUserSend);
+    this.navCtrl.setRoot(FitnessPlan3Page,this.onlogUser);
   }
 
   back(){
-    this.navCtrl.setRoot(FitnessPlanPage,this.dataUserSend);
+    this.navCtrl.setRoot(FitnessPlanPage,this.onlogUser);
   }
 }

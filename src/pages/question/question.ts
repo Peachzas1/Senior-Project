@@ -110,20 +110,20 @@ export class QuestionPage {
       for(let i = 0; i < this.dataFitnessPlan.length; i++){
         console.log("for");
         console.log(this.itemKey[0]);
-        if(this.onlogUser.gender==this.dataFitnessPlan[i].gender.gender1||this.onlogUser.gender==this.dataFitnessPlan[i].gender.gender2){console.log("gender")
+        if(this.onlogUser.gender==this.dataFitnessPlan[i].gender[0]||this.onlogUser.gender==this.dataFitnessPlan[i].gender[1]){console.log("gender")
           if(this.itemKey[0].PD==this.dataFitnessPlan[i].difficult){console.log("difficult")
             if(this.itemKey[0].PI==this.dataFitnessPlan[i].intensity){console.log("intensity")
-              if(this.itemKey[0].Equipment==this.dataFitnessPlan[i].equipment){console.log("equipment")
+              for(let a = 0;a < this.dataFitnessPlan[i].equipment.length;a++){
+              if(this.itemKey[0].Equipment==this.dataFitnessPlan[i].equipment[a]){console.log("equipment")
                 if(this.age>=this.dataFitnessPlan[i].age.start&&this.age<=this.dataFitnessPlan[i].age.end){console.log("age")
                   if(this.bmi>=this.dataFitnessPlan[i].bmi.start&&this.bmi<=this.dataFitnessPlan[i].bmi.end){console.log("bmi")
                     console.log("success")
                     this.keyFit = this.dataFitnessPlan[i];
                     console.log(this.keyFit)
                     this.fireUser.update(this.onlogUser.UserKey,{fitplan:this.dataFitnessPlan[i].$key});
-                    
                   }
                 }
-              }
+              }}
             }
           }
         }
@@ -131,7 +131,6 @@ export class QuestionPage {
     for(let j = 0; j < this.dataFoodPlan.length; j++){
     console.log("for");
         console.log(this.itemKey[0]);
-        if(this.onlogUser.gender==this.dataFoodPlan[j].gender.gender1||this.onlogUser.gender==this.dataFoodPlan[j].gender.gender2){console.log("gender")
           if(this.age>=this.dataFoodPlan[j].age.start&&this.age<=this.dataFoodPlan[j].age.end){console.log("age")
             if(this.weight>=this.dataFoodPlan[j].weight.start&&this.weight<=this.dataFoodPlan[j].weight.end){console.log("weight")
                if(this.height>=this.dataFoodPlan[j].height.start&&this.height<=this.dataFoodPlan[j].height.end){console.log("height")
@@ -149,7 +148,6 @@ export class QuestionPage {
               }
             }
           }
-        }
       }
       
         
@@ -164,5 +162,9 @@ export class QuestionPage {
       alert.present();
       console.log('Valdiate : Invalid');
     }
+  }
+  
+  back(){
+    this.navCtrl.setRoot(HomePage,this.onlogUser);
   }
 }

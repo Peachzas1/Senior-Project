@@ -87,6 +87,7 @@ export class FitnessPlanPage {
         this.dataFoodPlanUser = data;
         console.log(data);
         });
+        console.log(this.onlogUser);
   }
 
   /*calculate(bmi: number){
@@ -138,6 +139,7 @@ export class FitnessPlanPage {
       //this.buttonClicked1 = !this.buttonClicked1;
       //this.buttonClicked2 = !this.buttonClicked2;
       //console.log("else");
+      console.log(this.onlogUser.fitplan);
       this.userPlanKey = this.onlogUser.fitplan;
       console.log(this.userPlanKey);
       for(let j = 0; j < this.dataFitnessPlan.length; j++){
@@ -158,7 +160,7 @@ export class FitnessPlanPage {
           console.log(this.onlogUser);
         }
       }
-      this.navCtrl.setRoot(FitnessPlan2Page,this.dataUserSend);
+      this.navCtrl.setRoot(FitnessPlan2Page,this.onlogUser);
     //console.log(this.itemKey[0].PD);
     //if(this.dataFitnessPlan[1].intensity==2){
     /*if(this.onlogUser.fitplan=="null"){
@@ -180,6 +182,6 @@ export class FitnessPlanPage {
   }
 }
   back(){
-    this.navCtrl.setRoot(HomePage,this.dataUserSend);
+    this.navCtrl.setRoot(HomePage,this.onlogUser);
   }
 }

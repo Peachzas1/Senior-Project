@@ -43,10 +43,11 @@ export class HomePage {
         this.dataUser = data;
         console.log(data);
       });
+      console.log(this.onlogUser);
   }
 
   workouts(){
-    this.navCtrl.push(WorkoutPage,this.onlogUser);
+    this.navCtrl.setRoot(WorkoutPage,this.onlogUser);
   }
 
   startPlan(){
@@ -57,17 +58,17 @@ export class HomePage {
         }
       }
     console.log("start");
-    console.log(this.dataUserSend);
     if(this.dataUserSend.fitplan!="null"&&this.dataUserSend.foodplan!="null"){
       console.log("if");
-      this.navCtrl.push(FitnessPlanPage,this.dataUserSend);
+      this.navCtrl.push(FitnessPlanPage,this.onlogUser);
     }else{
       console.log("else");
     this.navCtrl.push(QuestionPage,this.onlogUser);
     }
+    console.log(this.onlogUser);
   }
 
   profile(){
-    this.navCtrl.push(ProfilePage,this.onlogUser);
+    this.navCtrl.setRoot(ProfilePage,this.onlogUser);
   }
 }

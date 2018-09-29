@@ -5,29 +5,80 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>workout</ion-title>
-  </ion-navbar>
-
+    <ion-navbar>
+      <ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>
+      <ion-title><h1>Workout</h1></ion-title>
+    </ion-navbar>
 </ion-header>
 
 
-<ion-content padding>
-  <div class="container1" *ngIf="buttonClicked1" [style.background]="'url(' + imagePath + ')'">
-      <ion-list *ngFor = "let title of dataFitnessPlanTitle">
+<ion-content class="container1" padding>
+  <div *ngIf="buttonClicked1" [style.background]="'url(' + imagePath + ')'">
+    <!--<ion-list *ngFor = "let title of dataFitnessPlanTitle">
         <button (click)="click(title)">{{title}}</button>
-      </ion-list>
+      </ion-list>-->
+    <h5>Arms</h5>
+    <ion-list *ngFor="let arm of dataFitnessPlanArms">
+      <button class="a" (click)="click(arm)">{{arm}}</button>
+    </ion-list>
+    <h5>Shoulder</h5>
+    <ion-list *ngFor="let shoulder of dataFitnessPlanShoulder">
+      <button  class="a" (click)="click(shoulder)">{{shoulder}}</button>
+    </ion-list>
+    <h5>Back</h5>
+    <ion-list *ngFor="let back of dataFitnessPlanBack">
+      <button  class="a" (click)="click(back)">{{back}}</button>
+    </ion-list>
+    <h5>Legs</h5>
+    <ion-list *ngFor="let leg of dataFitnessPlanLegs">
+      <button  class="a" (click)="click(leg)">{{leg}}</button>
+    </ion-list>
+    <h5>Cardio</h5>
+    <ion-list *ngFor="let cardio of dataFitnessPlanCardio">
+      <button  class="a" (click)="click(cardio)">{{cardio}}</button>
+    </ion-list>
+    <h5>Chest</h5>
+    <ion-list *ngFor="let chest of dataFitnessPlanChest">
+      <button  class="a" (click)="click(chest)">{{chest}}</button>
+    </ion-list>
+    <h5>Abs</h5>
+    <ion-list *ngFor="let abs of dataFitnessPlanAbs">
+      <button  class="a" (click)="click(abs)">{{abs}}</button>
+    </ion-list>
   </div>
-  <div class="container2" *ngIf="buttonClicked2" [style.background]="'url(' + imagePath + ')'">
-    <iframe width="100%"
-              height="315"
-              [src]="trustedVideoUrl ? trustedVideoUrl : null"
-              frameborder="0"
-              allowfullscreen>
+  <div *ngIf="buttonClicked2" [style.background]="'url(' + imagePath + ')'">
+    <iframe width="100%" height="315" [src]="trustedVideoUrl ? trustedVideoUrl : null" frameborder="0" allowfullscreen>
     </iframe>
-    <ion-list *ngFor = "let title of dataFitnessPlanTitle">
+    <!--<ion-list *ngFor = "let title of dataFitnessPlanTitle">
       <button (click)="click(title)">{{title}}</button>
+    </ion-list>-->
+    <h5>Arms</h5>
+    <ion-list *ngFor="let arm of dataFitnessPlanArms">
+      <button  class="a" (click)="click(arm)">{{arm}}</button>
+    </ion-list>
+    <h5>Shoulder</h5>
+    <ion-list *ngFor="let shoulder of dataFitnessPlanShoulder">
+      <button  class="a" (click)="click(shoulder)">{{shoulder}}</button>
+    </ion-list>
+    <h5>Back</h5>
+    <ion-list *ngFor="let back of dataFitnessPlanBack">
+      <button  class="a" (click)="click(back)">{{back}}</button>
+    </ion-list>
+    <h5>Legs</h5>
+    <ion-list *ngFor="let leg of dataFitnessPlanLegs">
+      <button  class="a" (click)="click(leg)">{{leg}}</button>
+    </ion-list>
+    <h5>Cardio</h5>
+    <ion-list *ngFor="let cardio of dataFitnessPlanCardio">
+      <button  class="a" (click)="click(cardio)">{{cardio}}</button>
+    </ion-list>
+    <h5>Chest</h5>
+    <ion-list *ngFor="let chest of dataFitnessPlanChest">
+      <button  class="a" (click)="click(chest)">{{chest}}</button>
+    </ion-list>
+    <h5>Abs</h5>
+    <ion-list *ngFor="let abs of dataFitnessPlanAbs">
+      <button  class="a" (click)="click(abs)">{{abs}}</button>
     </ion-list>
   </div>
 </ion-content>

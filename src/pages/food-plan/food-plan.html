@@ -7,6 +7,7 @@
 	<ion-header>
 
 	  <ion-navbar>
+			<ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>
 	    <ion-title>foodPlan</ion-title>
 	  </ion-navbar>
 
@@ -15,7 +16,7 @@
 
 	<ion-content>
 		<div class="container1" *ngIf="buttonClicked1">
-			<ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>
+			
 			<h1>"FoodPlan"</h1>
 			<div class="planDetail">
 				<div class="detailBox">

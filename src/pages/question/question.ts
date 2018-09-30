@@ -25,6 +25,7 @@ export class QuestionPage {
   question : Questionnaires[];
   fireQuestion: FirebaseListObservable<any[]>;
   dataQuestion: any[] =[];
+  dataUserSend: User;
   onlogUser: User;
   fireUser: FirebaseListObservable<any[]>;
   fireUserAnswer: FirebaseListObservable<any[]>;

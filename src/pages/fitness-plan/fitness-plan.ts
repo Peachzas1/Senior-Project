@@ -34,6 +34,7 @@ export class FitnessPlanPage {
   onlogUser: User;
   //onlogPlan: FitnessPlan = new FitnessPlan();
   fireUser: FirebaseListObservable<any[]>;
+  fireTest: FirebaseListObservable<any[]>;
   //fireUser2: FirebaseListObservable<any[]>;
   age: number;
   bmi: number;
@@ -76,6 +77,7 @@ export class FitnessPlanPage {
       })
     });
     this.fireUser = this.angularfire.list('/User/');
+    this.fireTest = this.angularfire.list('/User/' + this.onlogUser.UserKey + '/userAnswer/');
 
     this.fireFoodPlan = this.angularfire.list('/FoodPlan/');
       this.fireFoodPlan.subscribe(data => {
@@ -178,10 +180,22 @@ export class FitnessPlanPage {
           console.log(this.dataFoodPlanUser);
           console.log(this.userPlanKey);
        }
-    this.navCtrl.push(FoodPlanPage,this.dataUserSend);
+    this.navCtrl.setRoot(FoodPlanPage,this.dataUserSend);
   }
 }
   back(){
     this.navCtrl.setRoot(HomePage,this.onlogUser);
+  }
+  endplan(){
+    let alert = this.alertCtrl.create({
+      title: 'End Plan',
+      subTitle: 'End Plan',
+      buttons: ['OK']
+    });
+    alert.present();
+    this.fireUser.update(this.onlogUser.UserKey, { fitplan: "null" });
+    this.fireUser.update(this.onlogUser.UserKey, { foodplan: "null" });
+    this.fireTest.remove();
+    this.navCtrl.setRoot(HomePage, this.onlogUser);
   }
 }

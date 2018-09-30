@@ -107,7 +107,7 @@ export class FoodPlanPage {
     console.log('ionViewDidLoad FoodPlanPage');
   }
   submit(){
-    this.navCtrl.push(FoodPlan2Page,this.dataUserSend);
+    this.navCtrl.setRoot(FoodPlan2Page,this.dataUserSend);
   }
   back(){
     this.navCtrl.setRoot(HomePage,this.dataUserSend);

@@ -60,10 +60,17 @@ export class HomePage {
     console.log("start");
     if(this.dataUserSend.fitplan!="null"&&this.dataUserSend.foodplan!="null"){
       console.log("if");
-      this.navCtrl.push(FitnessPlanPage,this.onlogUser);
+      for(let i = 0; i < this.dataUser.length; i++){
+        if(this.onlogUser.UserKey == this.dataUser[i].$key){
+          this.onlogUser = this.dataUser[i];
+          this.onlogUser.UserKey = this.dataUser[i].$key;
+        }
+        }
+      console.log(this.onlogUser)
+      this.navCtrl.setRoot(FitnessPlanPage,this.onlogUser);
     }else{
       console.log("else");
-    this.navCtrl.push(QuestionPage,this.onlogUser);
+      this.navCtrl.setRoot(QuestionPage,this.onlogUser);
     }
     console.log(this.onlogUser);
   }

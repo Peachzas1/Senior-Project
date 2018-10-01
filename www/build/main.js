@@ -143,12 +143,12 @@ var QuestionPage = /** @class */ (function () {
                             this.keyFood = this.dataFoodPlan[j];
                             console.log(this.keyFood);
                             this.fireUser.update(this.onlogUser.UserKey, { foodplan: this.dataFoodPlan[j].$key });
-                            var alert = this.alertCtrl.create({
+                            var alert_1 = this.alertCtrl.create({
                                 title: 'Success',
                                 subTitle: 'Success',
                                 buttons: ['OK']
                             });
-                            alert.present();
+                            alert_1.present();
                             this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__home_home__["a" /* HomePage */], this.onlogUser);
                         }
                     }
@@ -156,12 +156,12 @@ var QuestionPage = /** @class */ (function () {
             }
         }
         else {
-            var alert = this.alertCtrl.create({
+            var alert_2 = this.alertCtrl.create({
                 title: 'Fail',
                 subTitle: 'Please fill up this form',
                 buttons: ['OK']
             });
-            alert.present();
+            alert_2.present();
             console.log('Valdiate : Invalid');
         }
     };
@@ -170,12 +170,12 @@ var QuestionPage = /** @class */ (function () {
     };
     QuestionPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-question',template:/*ion-inline-start:"/Users/apple/Projects/Senior-Project/src/pages/question/question.html"*/'<!--\n  Generated template for the QuestionPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header >\n		<ion-navbar>\n		  <ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>\n		</ion-navbar>\n	</ion-header>\n\n<ion-content class="c" padding *ngFor= "let a of dataQuestion">\n	\n	<form class="list" [formGroup] = "questionForm">\n		<h3>Question</h3>\n	<ion-list radio-group [(ngModel)]="equipment" formControlName="Equipment">\n		<ion-list-header class="a">\n			1. {{a.Question1.question}}\n		</ion-list-header>\n		<ion-item class="a">\n			<ion-label>{{a.Question1.choices[0]}}</ion-label>\n			<ion-radio value="None"></ion-radio>t\n		</ion-item>\n		<ion-item class="a">\n			<ion-label>{{a.Question1.choices[1]}}</ion-label>\n			<ion-radio value="Dumbbell"></ion-radio>\n		</ion-item>\n		<ion-item class="a">\n			<ion-label>{{a.Question1.choices[2]}}</ion-label>\n			<ion-radio value="Pyrobox"></ion-radio>\n		</ion-item>\n	</ion-list>\n	<ion-list radio-group [(ngModel)]="workoutPerDay" formControlName="WPD">\n		<ion-list-header>\n			2. {{a.Question2.question}}\n		</ion-list-header>\n		<ion-item>\n			<ion-label>{{a.Question2.choices[0]}}</ion-label>\n			<ion-radio value="1-2"></ion-radio>\n		</ion-item>\n		<ion-item>\n			<ion-label>{{a.Question2.choices[1]}}</ion-label>\n			<ion-radio value="2-3"></ion-radio>\n		</ion-item>\n		<ion-item>\n			<ion-label>{{a.Question2.choices[2]}}</ion-label>\n			<ion-radio value="3-4"></ion-radio>\n		</ion-item>\n		<ion-item>\n			<ion-label>{{a.Question2.choices[3]}}</ion-label>\n			<ion-radio value="4-5"></ion-radio>\n		</ion-item>\n	</ion-list>\n	<ion-list radio-group [(ngModel)]="planDifficult" formControlName="PD">\n		<ion-list-header>\n			3. {{a.Question3.question}}\n		</ion-list-header>\n		<ion-item>\n			<ion-label>{{a.Question3.choices[0]}}</ion-label>\n			<ion-radio value="Beginner"></ion-radio>\n		</ion-item>\n		<ion-item>\n			<ion-label>{{a.Question3.choices[1]}}</ion-label>\n			<ion-radio value="Intermiadate"></ion-radio>\n		</ion-item>\n	</ion-list>\n	<ion-list radio-group [(ngModel)]="planIntensity" formControlName="PI">\n		<ion-list-header>\n			4. {{a.Question4.question}}\n		</ion-list-header>\n		<ion-item>\n			<ion-label>{{a.Question4.choices[0]}}</ion-label>\n			<ion-radio value=1></ion-radio>\n		</ion-item>\n		<ion-item>\n			<ion-label>{{a.Question4.choices[1]}}</ion-label>\n			<ion-radio value=2></ion-radio>\n		</ion-item>\n		<ion-item>\n			<ion-label>{{a.Question4.choices[2]}}</ion-label>\n			<ion-radio value=3></ion-radio>\n		</ion-item>\n	</ion-list>\n	<br>\n	<button ion-button type="submit" (click)="submit()">submit</button>\n	</form>\n</ion-content>\n'/*ion-inline-end:"/Users/apple/Projects/Senior-Project/src/pages/question/question.html"*/,
+            selector: 'page-question',template:/*ion-inline-start:"/Users/apple/Projects/Senior-Project/src/pages/question/question.html"*/'<!--\n  Generated template for the QuestionPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header >\n		<ion-navbar>\n		  <ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>\n		  <ion-title><h1>Question</h1></ion-title>\n		</ion-navbar>\n	</ion-header>\n\n<ion-content class="c" padding *ngFor= "let a of dataQuestion">\n	\n	<form class="list" [formGroup] = "questionForm">\n\n	<ion-list radio-group [(ngModel)]="equipment" formControlName="Equipment">\n		<ion-list-header class="b">\n			1. {{a.Question1.question}}\n		</ion-list-header>\n		<ion-item class="a">\n			<ion-label>{{a.Question1.choices[0]}}</ion-label>\n			<ion-radio value="None"></ion-radio>\n		</ion-item>\n		<ion-item class="a">\n			<ion-label>{{a.Question1.choices[1]}}</ion-label>\n			<ion-radio value="Dumbbell"></ion-radio>\n		</ion-item>\n		<ion-item class="a">\n			<ion-label>{{a.Question1.choices[2]}}</ion-label>\n			<ion-radio value="Pyrobox"></ion-radio>\n		</ion-item>\n	</ion-list>\n	<ion-list radio-group [(ngModel)]="workoutPerDay" formControlName="WPD">\n		<ion-list-header class="a">\n			2. {{a.Question2.question}}\n		</ion-list-header>\n		<ion-item class="a">\n			<ion-label>{{a.Question2.choices[0]}}</ion-label>\n			<ion-radio value="1-2"></ion-radio>\n		</ion-item>\n		<ion-item class="a">\n			<ion-label>{{a.Question2.choices[1]}}</ion-label>\n			<ion-radio value="2-3"></ion-radio>\n		</ion-item>\n		<ion-item class="a">\n			<ion-label>{{a.Question2.choices[2]}}</ion-label>\n			<ion-radio value="3-4"></ion-radio>\n		</ion-item>\n		<ion-item class="a">\n			<ion-label>{{a.Question2.choices[3]}}</ion-label>\n			<ion-radio value="4-5"></ion-radio>\n		</ion-item>\n	</ion-list>\n	<ion-list radio-group [(ngModel)]="planDifficult" formControlName="PD">\n		<ion-list-header class="a">\n			3. {{a.Question3.question}}\n		</ion-list-header>\n		<ion-item class="a">\n			<ion-label>{{a.Question3.choices[0]}}</ion-label>\n			<ion-radio value="Beginner"></ion-radio>\n		</ion-item>\n		<ion-item class="a">\n			<ion-label>{{a.Question3.choices[1]}}</ion-label>\n			<ion-radio value="Intermiadate"></ion-radio>\n		</ion-item>\n	</ion-list>\n	<ion-list radio-group [(ngModel)]="planIntensity" formControlName="PI">\n		<ion-list-header class="a">\n			4. {{a.Question4.question}}\n		</ion-list-header>\n		<ion-item class="a">\n			<ion-label>{{a.Question4.choices[0]}}</ion-label>\n			<ion-radio value=1></ion-radio>\n		</ion-item>\n		<ion-item class="a">\n			<ion-label>{{a.Question4.choices[1]}}</ion-label>\n			<ion-radio value=2></ion-radio>\n		</ion-item>\n		<ion-item class="a">\n			<ion-label>{{a.Question4.choices[2]}}</ion-label>\n			<ion-radio value=3></ion-radio>\n		</ion-item>\n	</ion-list>\n	<br>\n	<button ion-button type="submit" (click)="submit()">submit</button>\n	</form>\n</ion-content>\n'/*ion-inline-end:"/Users/apple/Projects/Senior-Project/src/pages/question/question.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _f || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], QuestionPage);
     return QuestionPage;
-    var _a, _b, _c, _d, _e, _f;
 }());
 
 //# sourceMappingURL=question.js.map
@@ -610,144 +610,12 @@ var RegisterPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FoodPlan2Page; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__food_plan_food_plan__ = __webpack_require__(66);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-/**
- * Generated class for the FoodPlan2Page page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var FoodPlan2Page = /** @class */ (function () {
-    function FoodPlan2Page(navCtrl, navParams, angularfire, events, alertCtrl) {
-        var _this = this;
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.angularfire = angularfire;
-        this.events = events;
-        this.alertCtrl = alertCtrl;
-        this.dataFoodNutrition = [];
-        this.dataFoodPlan = [];
-        this.dataFoodPlanUser = [];
-        this.buttonClicked1 = true;
-        this.onlogUser = this.navParams.data;
-        this.events.publish('onLogUser : userAlreadyLog', this.onlogUser);
-        this.dataUserSend = this.navParams.data;
-        console.dir(this.onlogUser);
-        this.fireFoodNutrition = this.angularfire.list('/FoodNutrition/');
-        this.fireFoodNutrition.subscribe(function (data) {
-            _this.dataFoodNutrition = data;
-            console.log(data);
-        });
-        this.fireFoodPlan = this.angularfire.list('/FoodPlan/');
-        this.fireFoodPlan.subscribe(function (data) {
-            _this.dataFoodPlan = data;
-            console.log(data);
-        });
-        this.fireFoodPlanUser = this.angularfire.list('/FoodPlan/' + this.onlogUser.foodplan);
-        this.fireFoodPlanUser.subscribe(function (data) {
-            _this.dataFoodPlanUser = data;
-            console.log(data);
-        });
-        this.angularfire.list('/User/' + this.onlogUser.UserKey + '/userAnswer/').subscribe(function (data) {
-            _this.itemKey = data;
-            _this.itemKey.map(function (item) {
-                console.log(item.$key);
-            });
-        });
-        this.fireUser = this.angularfire.list('/User/');
-        this.userPlanKey = this.onlogUser.foodplan;
-        for (var j = 0; j < this.dataFoodPlan.length; j++) {
-            console.log("for");
-            if (this.userPlanKey == this.dataFoodPlan[j].$key) {
-                this.dataFoodPlanUser = this.dataFoodPlan[j];
-                console.log(this.dataFoodPlanUser);
-                console.log(this.userPlanKey);
-                for (var i = 0; i < this.dataFoodNutrition.length; i++) {
-                    console.log("for");
-                    if (i == 0) {
-                        console.log("test");
-                        console.log(this.dataFoodNutrition[i].volume);
-                        this.proteinAfter = (this.dataFoodPlan[j].meals.afterWorkout.protein * this.dataFoodNutrition[i].volume) / this.dataFoodNutrition[i].protein;
-                        console.log("proteinAfter" + this.proteinAfter);
-                        this.proteinBefore = (this.dataFoodPlan[j].meals.beforeWorkout.protein * this.dataFoodNutrition[i].volume) / this.dataFoodNutrition[i].protein;
-                        console.log("proteinBefore" + this.proteinBefore);
-                        this.proteinBreakfast = (this.dataFoodPlan[j].meals.breakfast.protein * this.dataFoodNutrition[i].volume) / this.dataFoodNutrition[i].protein;
-                        console.log("proteinBreakfast" + this.proteinBreakfast);
-                        this.proteinLunch = (this.dataFoodPlan[j].meals.lunch.protein * this.dataFoodNutrition[i].volume) / this.dataFoodNutrition[i].protein;
-                        console.log("proteinLunch" + this.proteinLunch);
-                    }
-                    if (i == 1) {
-                        this.fatAfter = (this.dataFoodPlan[j].meals.afterWorkout.fat * this.dataFoodNutrition[i].volume) / this.dataFoodNutrition[i].fat;
-                        console.log("fatAfter" + this.fatAfter);
-                        this.fatBefore = (this.dataFoodPlan[j].meals.beforeWorkout.fat * this.dataFoodNutrition[i].volume) / this.dataFoodNutrition[i].fat;
-                        console.log("fatBefore" + this.fatBefore);
-                        this.fatBreakfast = (this.dataFoodPlan[j].meals.breakfast.fat * this.dataFoodNutrition[i].volume) / this.dataFoodNutrition[i].fat;
-                        console.log("fatBreakfast" + this.fatBreakfast);
-                        this.fatLunch = (this.dataFoodPlan[j].meals.lunch.fat * this.dataFoodNutrition[i].volume) / this.dataFoodNutrition[i].fat;
-                        console.log("fatLunch" + this.fatLunch);
-                    }
-                    if (i == 2) {
-                        this.carbohydrateAfter = (this.dataFoodPlan[j].meals.afterWorkout.carbohydrate * this.dataFoodNutrition[i].volume) / this.dataFoodNutrition[i].carbohydrates;
-                        console.log("carbohydrateAfter" + this.carbohydrateAfter);
-                        this.carbohydrateBefore = (this.dataFoodPlan[j].meals.beforeWorkout.carbohydrate * this.dataFoodNutrition[i].volume) / this.dataFoodNutrition[i].carbohydrates;
-                        console.log("carbohydrateBefore" + this.carbohydrateBefore);
-                        this.carbohydrateBreakfast = (this.dataFoodPlan[j].meals.breakfast.carbohydrate * this.dataFoodNutrition[i].volume) / this.dataFoodNutrition[i].carbohydrates;
-                        console.log("carbohydrateBreakfast" + this.carbohydrateBreakfast);
-                        this.carbohydrateLunch = (this.dataFoodPlan[j].meals.lunch.carbohydrate * this.dataFoodNutrition[i].volume) / this.dataFoodNutrition[i].carbohydrates;
-                        console.log("carbohydrateLunch" + this.carbohydrateLunch);
-                    }
-                }
-            }
-        }
-    }
-    FoodPlan2Page.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad FoodPlan2Page');
-    };
-    FoodPlan2Page.prototype.back = function () {
-        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_3__food_plan_food_plan__["a" /* FoodPlanPage */], this.dataUserSend);
-    };
-    FoodPlan2Page = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-food-plan2',template:/*ion-inline-start:"/Users/apple/Projects/Senior-Project/src/pages/food-plan2/food-plan2.html"*/'<!--\n  Generated template for the FoodPlan2Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n		<ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>\n    <ion-title>food-plan2</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content >\n	<div class="container1" *ngIf="buttonClicked1">\n		\n		<h1>"FoodNutrition"</h1>\n		<div class="foodDetail">\n			<div class="detailBox">\n				<h2 class="header">After Workout</h2>\n				<p class = "detail">Chicken raw {{proteinAfter.toFixed()}} grams</p>\n				<p class = "detail">Plam oil {{fatAfter.toFixed()}} grams</p>\n				<p class = "detail">Rice boiled {{carbohydrateAfter.toFixed()}} grams</p>\n			</div>\n			<div class="detailBox">\n				<h2 class="header">Before Workout</h2>\n				<p class = "detail">Chicken raw {{proteinBefore.toFixed()}} grams</p>\n				<p class = "detail">Plam oil {{fatBefore.toFixed()}} grams</p>\n				<p class = "detail">Rice boiled {{carbohydrateBefore.toFixed()}} grams</p>\n			</div>\n			<div class="detailBox">\n				<h2 class="header">Breakfast</h2>\n				<p class = "detail">Chicken raw {{proteinBreakfast.toFixed()}} grams</p>\n				<p class = "detail">Plam oil {{fatBreakfast.toFixed()}} grams</p>\n				<p class = "detail">Rice boiled {{carbohydrateBreakfast.toFixed()}} grams</p>\n			</div>\n			<div class="detailBox">\n				<h2 class="header">Lunch</h2>\n				<p class = "detail">Chicken raw {{proteinLunch.toFixed()}} grams</p>\n				<p class = "detail">Plam oil {{fatLunch.toFixed()}} grams</p>\n				<p class = "detail">Rice boiled {{carbohydrateLunch.toFixed()}} grams</p>\n			</div>\n		</div>\n	</div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/apple/Projects/Senior-Project/src/pages/food-plan2/food-plan2.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
-    ], FoodPlan2Page);
-    return FoodPlan2Page;
-}());
-
-//# sourceMappingURL=food-plan2.js.map
-
-/***/ }),
-
-/***/ 126:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FitnessPlan3Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fitness_plan2_fitness_plan2__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fitness_plan2_fitness_plan2__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__ = __webpack_require__(20);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -965,12 +833,12 @@ var FitnessPlan3Page = /** @class */ (function () {
         }
         else if (this.c == 3 && this.b == 6) {
             console.log("b");
-            var alert = this.alertCtrl.create({
+            var alert_1 = this.alertCtrl.create({
                 title: 'Finish Plan',
                 subTitle: 'Finish Plan',
                 buttons: ['OK']
             });
-            alert.present();
+            alert_1.present();
             this.fireUser.update(this.onlogUser.UserKey, { fitplan: "null" });
             this.fireUser.update(this.onlogUser.UserKey, { foodplan: "null" });
             this.fireTest.remove();
@@ -1010,15 +878,148 @@ var FitnessPlan3Page = /** @class */ (function () {
     };
     FitnessPlan3Page = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-fitness-plan3',template:/*ion-inline-start:"/Users/apple/Projects/Senior-Project/src/pages/fitness-plan3/fitness-plan3.html"*/'<!--\n  Generated template for the FitnessPlan3Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header >\n    <ion-navbar>\n      <ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>\n      <ion-title><h1>FitnessPlan</h1></ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding class="container">\n  <div *ngIf="buttonClicked1">\n    <iframe width="100%"\n            height="315"\n            [src]="trustedVideoUrl ? trustedVideoUrl : null"\n            frameborder="0"\n            allowfullscreen>\n    </iframe>\n    {{rest}}<br><br><br>\n    <ion-list *ngFor = "let title of data">\n      <p *ngIf="title.title == \'set1\'||title.title == \'set2\'||title.title == \'set3\'||title.title == \'set4\'||\n      title.title == \'set5\'||title.title == \'set6\';else not">{{title.title}}</p>\n      <ng-template #not>\n      <button (click)="click(title.title)" class="back">{{title.title}}</button>&nbsp;&nbsp;&nbsp;&nbsp;\n      {{title.amount}}\n      </ng-template>\n    </ion-list>\n    <div class="container1">\n      <br><button ion-button type="submit" (click)="submit()" class="submitButton1">Next</button>\n    </div>\n  </div>\n\n  <div *ngIf="buttonClicked2">\n      {{rest}}\n      <ion-list *ngFor = "let title of data">\n        <button (click)="click(title.title)" class="back">{{title.title}}</button>\n        {{title.amount}}\n      </ion-list>\n      <div class="container1">\n        <br><button ion-button type="submit" (click)="submit()" class="submitButton1">Next</button>\n      </div>\n      <div class="container2">\n          <br><button ion-button type="submit" (click)="previous()" class="submitButton1">previous</button>\n      </div>\n  </div>\n\n  <div *ngIf="buttonClicked3">\n      <iframe width="100%"\n              height="315"\n              [src]="trustedVideoUrl ? trustedVideoUrl : null"\n              frameborder="0"\n              allowfullscreen>\n      </iframe>\n      {{rest}}<br><br><br>\n      <ion-list *ngFor = "let title of data">\n          <p *ngIf="title.title == \'set1\'||title.title == \'set2\'||title.title == \'set3\'||title.title == \'set4\'||\n          title.title == \'set5\'||title.title == \'set6\';else not">{{title.title}}</p>\n          <ng-template #not>\n          <button (click)="click(title.title)" class="back">{{title.title}}</button>&nbsp;&nbsp;&nbsp;&nbsp;\n          {{title.amount}}\n          </ng-template>\n      </ion-list>\n      <div class="container1">\n        <br><button ion-button type="submit" (click)="submit()" class="submitButton1">Next</button>\n      </div>\n      <div class="container2">\n        <br><button ion-button type="submit" (click)="previous()" class="submitButton1">previous</button>\n      </div>\n\n  </div>\n  <!--<ion-list *ngFor = "let title of dataFitnessPlanTitleVideo">\n    <h1>{{title}}<br></h1>  \n  </ion-list>-->\n</ion-content>\n'/*ion-inline-end:"/Users/apple/Projects/Senior-Project/src/pages/fitness-plan3/fitness-plan3.html"*/,
+            selector: 'page-fitness-plan3',template:/*ion-inline-start:"/Users/apple/Projects/Senior-Project/src/pages/fitness-plan3/fitness-plan3.html"*/'<!--\n  Generated template for the FitnessPlan3Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header >\n    <ion-navbar>\n      <ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>\n      <ion-title><h1>FitnessPlan</h1></ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding class="container">\n  <div *ngIf="buttonClicked1">\n    <iframe width="100%"\n            height="315"\n            [src]="trustedVideoUrl ? trustedVideoUrl : null"\n            frameborder="0"\n            allowfullscreen>\n    </iframe>\n    {{rest}}<br><br><br>\n    <ion-list *ngFor = "let title of data">\n      <p *ngIf="title.title == \'set1\'||title.title == \'set2\'||title.title == \'set3\'||title.title == \'set4\'||\n      title.title == \'set5\'||title.title == \'set6\';else not">{{title.title}}</p>\n      <ng-template #not>\n      <button (click)="click(title.title)" class="back">{{title.title}}</button>&nbsp;&nbsp;&nbsp;&nbsp;\n      {{title.amount}}\n      </ng-template>\n    </ion-list>\n    <div class="container1">\n      <br><button ion-button type="submit" (click)="submit()" class="submitButton1">Next</button>\n    </div>\n  </div>\n\n  <div *ngIf="buttonClicked2">\n      {{rest}}<br><br><br>\n      <ion-list *ngFor = "let title of data">\n        <button (click)="click(title.title)" class="back">{{title.title}}</button>\n        {{title.amount}}\n      </ion-list>\n      <div class="container1">\n        <br><button ion-button type="submit" (click)="submit()" class="submitButton1">Next</button>\n      </div>\n      <div class="container2">\n          <br><button ion-button type="submit" (click)="previous()" class="submitButton1">previous</button>\n      </div>\n  </div>\n\n  <div *ngIf="buttonClicked3">\n      <iframe width="100%"\n              height="315"\n              [src]="trustedVideoUrl ? trustedVideoUrl : null"\n              frameborder="0"\n              allowfullscreen>\n      </iframe>\n      {{rest}}<br><br><br>\n      <ion-list *ngFor = "let title of data">\n          <p *ngIf="title.title == \'set1\'||title.title == \'set2\'||title.title == \'set3\'||title.title == \'set4\'||\n          title.title == \'set5\'||title.title == \'set6\';else not">{{title.title}}</p>\n          <ng-template #not>\n          <button (click)="click(title.title)" class="back">{{title.title}}</button>&nbsp;&nbsp;&nbsp;&nbsp;\n          {{title.amount}}\n          </ng-template>\n      </ion-list>\n      <div class="container1">\n        <br><button ion-button type="submit" (click)="submit()" class="submitButton1">Next</button>\n      </div>\n      <div class="container2">\n        <br><button ion-button type="submit" (click)="previous()" class="submitButton1">previous</button>\n      </div>\n\n  </div>\n  <!--<ion-list *ngFor = "let title of dataFitnessPlanTitleVideo">\n    <h1>{{title}}<br></h1>  \n  </ion-list>-->\n</ion-content>\n'/*ion-inline-end:"/Users/apple/Projects/Senior-Project/src/pages/fitness-plan3/fitness-plan3.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["c" /* DomSanitizer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["c" /* DomSanitizer */]) === "function" && _g || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["c" /* DomSanitizer */]])
     ], FitnessPlan3Page);
     return FitnessPlan3Page;
-    var _a, _b, _c, _d, _e, _f, _g;
 }());
 
 //# sourceMappingURL=fitness-plan3.js.map
+
+/***/ }),
+
+/***/ 126:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FoodPlan2Page; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__food_plan_food_plan__ = __webpack_require__(66);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the FoodPlan2Page page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var FoodPlan2Page = /** @class */ (function () {
+    function FoodPlan2Page(navCtrl, navParams, angularfire, events, alertCtrl) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.angularfire = angularfire;
+        this.events = events;
+        this.alertCtrl = alertCtrl;
+        this.dataFoodNutrition = [];
+        this.dataFoodPlan = [];
+        this.dataFoodPlanUser = [];
+        this.buttonClicked1 = true;
+        this.onlogUser = this.navParams.data;
+        this.events.publish('onLogUser : userAlreadyLog', this.onlogUser);
+        this.dataUserSend = this.navParams.data;
+        console.dir(this.onlogUser);
+        this.fireFoodNutrition = this.angularfire.list('/FoodNutrition/');
+        this.fireFoodNutrition.subscribe(function (data) {
+            _this.dataFoodNutrition = data;
+            console.log(data);
+        });
+        this.fireFoodPlan = this.angularfire.list('/FoodPlan/');
+        this.fireFoodPlan.subscribe(function (data) {
+            _this.dataFoodPlan = data;
+            console.log(data);
+        });
+        this.fireFoodPlanUser = this.angularfire.list('/FoodPlan/' + this.onlogUser.foodplan);
+        this.fireFoodPlanUser.subscribe(function (data) {
+            _this.dataFoodPlanUser = data;
+            console.log(data);
+        });
+        this.angularfire.list('/User/' + this.onlogUser.UserKey + '/userAnswer/').subscribe(function (data) {
+            _this.itemKey = data;
+            _this.itemKey.map(function (item) {
+                console.log(item.$key);
+            });
+        });
+        this.fireUser = this.angularfire.list('/User/');
+        this.userPlanKey = this.onlogUser.foodplan;
+        for (var j = 0; j < this.dataFoodPlan.length; j++) {
+            console.log("for");
+            if (this.userPlanKey == this.dataFoodPlan[j].$key) {
+                this.dataFoodPlanUser = this.dataFoodPlan[j];
+                console.log(this.dataFoodPlanUser);
+                console.log(this.userPlanKey);
+                for (var i = 0; i < this.dataFoodNutrition.length; i++) {
+                    console.log("for");
+                    if (i == 0) {
+                        console.log("test");
+                        console.log(this.dataFoodNutrition[i].volume);
+                        this.proteinAfter = (this.dataFoodPlan[j].meals.afterWorkout.protein * this.dataFoodNutrition[i].volume) / this.dataFoodNutrition[i].protein;
+                        console.log("proteinAfter" + this.proteinAfter);
+                        this.proteinBefore = (this.dataFoodPlan[j].meals.beforeWorkout.protein * this.dataFoodNutrition[i].volume) / this.dataFoodNutrition[i].protein;
+                        console.log("proteinBefore" + this.proteinBefore);
+                        this.proteinBreakfast = (this.dataFoodPlan[j].meals.breakfast.protein * this.dataFoodNutrition[i].volume) / this.dataFoodNutrition[i].protein;
+                        console.log("proteinBreakfast" + this.proteinBreakfast);
+                        this.proteinLunch = (this.dataFoodPlan[j].meals.lunch.protein * this.dataFoodNutrition[i].volume) / this.dataFoodNutrition[i].protein;
+                        console.log("proteinLunch" + this.proteinLunch);
+                    }
+                    if (i == 1) {
+                        this.fatAfter = (this.dataFoodPlan[j].meals.afterWorkout.fat * this.dataFoodNutrition[i].volume) / this.dataFoodNutrition[i].fat;
+                        console.log("fatAfter" + this.fatAfter);
+                        this.fatBefore = (this.dataFoodPlan[j].meals.beforeWorkout.fat * this.dataFoodNutrition[i].volume) / this.dataFoodNutrition[i].fat;
+                        console.log("fatBefore" + this.fatBefore);
+                        this.fatBreakfast = (this.dataFoodPlan[j].meals.breakfast.fat * this.dataFoodNutrition[i].volume) / this.dataFoodNutrition[i].fat;
+                        console.log("fatBreakfast" + this.fatBreakfast);
+                        this.fatLunch = (this.dataFoodPlan[j].meals.lunch.fat * this.dataFoodNutrition[i].volume) / this.dataFoodNutrition[i].fat;
+                        console.log("fatLunch" + this.fatLunch);
+                    }
+                    if (i == 2) {
+                        this.carbohydrateAfter = (this.dataFoodPlan[j].meals.afterWorkout.carbohydrate * this.dataFoodNutrition[i].volume) / this.dataFoodNutrition[i].carbohydrates;
+                        console.log("carbohydrateAfter" + this.carbohydrateAfter);
+                        this.carbohydrateBefore = (this.dataFoodPlan[j].meals.beforeWorkout.carbohydrate * this.dataFoodNutrition[i].volume) / this.dataFoodNutrition[i].carbohydrates;
+                        console.log("carbohydrateBefore" + this.carbohydrateBefore);
+                        this.carbohydrateBreakfast = (this.dataFoodPlan[j].meals.breakfast.carbohydrate * this.dataFoodNutrition[i].volume) / this.dataFoodNutrition[i].carbohydrates;
+                        console.log("carbohydrateBreakfast" + this.carbohydrateBreakfast);
+                        this.carbohydrateLunch = (this.dataFoodPlan[j].meals.lunch.carbohydrate * this.dataFoodNutrition[i].volume) / this.dataFoodNutrition[i].carbohydrates;
+                        console.log("carbohydrateLunch" + this.carbohydrateLunch);
+                    }
+                }
+            }
+        }
+    }
+    FoodPlan2Page.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad FoodPlan2Page');
+    };
+    FoodPlan2Page.prototype.back = function () {
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_3__food_plan_food_plan__["a" /* FoodPlanPage */], this.dataUserSend);
+    };
+    FoodPlan2Page = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-food-plan2',template:/*ion-inline-start:"/Users/apple/Projects/Senior-Project/src/pages/food-plan2/food-plan2.html"*/'<!--\n  Generated template for the FoodPlan2Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n		<ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>\n    <ion-title>food-plan2</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content >\n	<div class="container1" *ngIf="buttonClicked1">\n		\n		<h1>"FoodNutrition"</h1>\n		<div class="foodDetail">\n			<div class="detailBox">\n				<h2 class="header">After Workout</h2>\n				<p class = "detail">Chicken raw {{proteinAfter.toFixed()}} grams</p>\n				<p class = "detail">Plam oil {{fatAfter.toFixed()}} grams</p>\n				<p class = "detail">Rice boiled {{carbohydrateAfter.toFixed()}} grams</p>\n			</div>\n			<div class="detailBox">\n				<h2 class="header">Before Workout</h2>\n				<p class = "detail">Chicken raw {{proteinBefore.toFixed()}} grams</p>\n				<p class = "detail">Plam oil {{fatBefore.toFixed()}} grams</p>\n				<p class = "detail">Rice boiled {{carbohydrateBefore.toFixed()}} grams</p>\n			</div>\n			<div class="detailBox">\n				<h2 class="header">Breakfast</h2>\n				<p class = "detail">Chicken raw {{proteinBreakfast.toFixed()}} grams</p>\n				<p class = "detail">Plam oil {{fatBreakfast.toFixed()}} grams</p>\n				<p class = "detail">Rice boiled {{carbohydrateBreakfast.toFixed()}} grams</p>\n			</div>\n			<div class="detailBox">\n				<h2 class="header">Lunch</h2>\n				<p class = "detail">Chicken raw {{proteinLunch.toFixed()}} grams</p>\n				<p class = "detail">Plam oil {{fatLunch.toFixed()}} grams</p>\n				<p class = "detail">Rice boiled {{carbohydrateLunch.toFixed()}} grams</p>\n			</div>\n		</div>\n	</div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/apple/Projects/Senior-Project/src/pages/food-plan2/food-plan2.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+    ], FoodPlan2Page);
+    return FoodPlan2Page;
+}());
+
+//# sourceMappingURL=food-plan2.js.map
 
 /***/ }),
 
@@ -1044,11 +1045,11 @@ webpackEmptyAsyncContext.id = 132;
 
 var map = {
 	"../pages/fitness-plan/fitness-plan.module": [
-		330,
+		329,
 		10
 	],
 	"../pages/fitness-plan2/fitness-plan2.module": [
-		329,
+		330,
 		9
 	],
 	"../pages/fitness-plan3/fitness-plan3.module": [
@@ -1056,11 +1057,11 @@ var map = {
 		8
 	],
 	"../pages/food-plan/food-plan.module": [
-		332,
+		333,
 		7
 	],
 	"../pages/food-plan2/food-plan2.module": [
-		333,
+		332,
 		6
 	],
 	"../pages/login/login.module": [
@@ -1080,11 +1081,11 @@ var map = {
 		2
 	],
 	"../pages/test/test.module": [
-		339,
+		338,
 		1
 	],
 	"../pages/workout/workout.module": [
-		338,
+		339,
 		0
 	]
 };
@@ -1202,14 +1203,14 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_login_login__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_register_register__ = __webpack_require__(124);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_question_question__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_fitness_plan_fitness_plan__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_fitness_plan2_fitness_plan2__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_fitness_plan3_fitness_plan3__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_fitness_plan_fitness_plan__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_fitness_plan2_fitness_plan2__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_fitness_plan3_fitness_plan3__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_test_test__ = __webpack_require__(228);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_food_plan_food_plan__ = __webpack_require__(66);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_workout_workout__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_profile_profile__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_food_plan2_food_plan2__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_food_plan2_food_plan2__ = __webpack_require__(126);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1271,17 +1272,17 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/fitness-plan2/fitness-plan2.module#FitnessPlan2PageModule', name: 'FitnessPlan2Page', segment: 'fitness-plan2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fitness-plan/fitness-plan.module#FitnessPlanPageModule', name: 'FitnessPlanPage', segment: 'fitness-plan', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/fitness-plan2/fitness-plan2.module#FitnessPlan2PageModule', name: 'FitnessPlan2Page', segment: 'fitness-plan2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fitness-plan3/fitness-plan3.module#FitnessPlan3PageModule', name: 'FitnessPlan3Page', segment: 'fitness-plan3', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/food-plan/food-plan.module#FoodPlanPageModule', name: 'FoodPlanPage', segment: 'food-plan', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/food-plan2/food-plan2.module#FoodPlan2PageModule', name: 'FoodPlan2Page', segment: 'food-plan2', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/food-plan/food-plan.module#FoodPlanPageModule', name: 'FoodPlanPage', segment: 'food-plan', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/question/question.module#QuestionPageModule', name: 'QuestionPage', segment: 'question', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/workout/workout.module#WorkoutPageModule', name: 'WorkoutPage', segment: 'workout', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/test/test.module#TestPageModule', name: 'TestPage', segment: 'test', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/test/test.module#TestPageModule', name: 'TestPage', segment: 'test', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/workout/workout.module#WorkoutPageModule', name: 'WorkoutPage', segment: 'workout', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_6_angularfire2__["a" /* AngularFireModule */],
@@ -1331,7 +1332,7 @@ var AppModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__question_question__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__DataProvider_User__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fitness_plan_fitness_plan__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fitness_plan_fitness_plan__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angularfire2_database__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__workout_workout__ = __webpack_require__(122);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__profile_profile__ = __webpack_require__(123);
@@ -1418,10 +1419,9 @@ var HomePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-home',template:/*ion-inline-start:"/Users/apple/Projects/Senior-Project/src/pages/home/home.html"*/'<ion-header >\n  		<ion-navbar>\n  			<ion-icon item-end name="md-person" (click) = "profile()"></ion-icon>\n    		<ion-title><h1>TrainHere</h1></ion-title>\n  		</ion-navbar>\n</ion-header>\n<ion-content  class="body">\n	<div id="stripe">\n		<button ion-button class="navButton" (click) = home()>Workout Feed</button>\n		<button ion-button class="navButton" (click) = workouts()>Workouts</button>\n		<button ion-button class="navButton" (click) = startPlan()>Plan</button>	\n	</div>\n	<p class="label">Popular workout collections</p>\n	<ion-slides autoplay="5000" loop="true" speed="3000">\n   		<ion-slide *ngFor="let slide of Collections">\n   			<img src="{{slide.imageCollections}}"/>\n    	</ion-slide>\n  	</ion-slides>\n	<p class="label">New workouts</p>\n	<ion-slides autoplay="5000" loop="true" speed="3000">\n    	<ion-slide *ngFor="let slide of Workouts">\n      		<img src="{{slide.imageWorkouts}}" />\n    	</ion-slide>\n  	</ion-slides>\n\n</ion-content>\n'/*ion-inline-end:"/Users/apple/Projects/Senior-Project/src/pages/home/home.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_5_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */]])
     ], HomePage);
     return HomePage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=home.js.map
@@ -1622,102 +1622,12 @@ var PlanAnswer = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FitnessPlan2Page; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__fitness_plan_fitness_plan__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fitness_plan3_fitness_plan3__ = __webpack_require__(126);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-/**
- * Generated class for the FitnessPlan2Page page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var FitnessPlan2Page = /** @class */ (function () {
-    function FitnessPlan2Page(navCtrl, navParams, angularfire, events, alertCtrl) {
-        var _this = this;
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.angularfire = angularfire;
-        this.events = events;
-        this.alertCtrl = alertCtrl;
-        this.dataFitnessPlan = [];
-        this.dataFitnessPlanUser = [];
-        this.buttonClicked1 = true;
-        this.onlogUser = this.navParams.data;
-        this.events.publish('onLogUser : userAlreadyLog', this.onlogUser);
-        this.dataUserSend = this.navParams.data;
-        console.dir(this.onlogUser);
-        this.fireFitnessPlan = this.angularfire.list('/FitnessPlan/');
-        this.fireFitnessPlan.subscribe(function (data) {
-            _this.dataFitnessPlan = data;
-            console.log(data);
-        });
-        this.fireFitnessPlanUser = this.angularfire.list('/FitnessPlan/' + this.onlogUser.fitplan);
-        this.fireFitnessPlanUser.subscribe(function (data) {
-            _this.dataFitnessPlanUser = data;
-            console.log(data);
-        });
-        this.userPlanKey = this.onlogUser.fitplan;
-        console.log(this.userPlanKey);
-        for (var j = 0; j < this.dataFitnessPlan.length; j++) {
-            console.log("for");
-            if (this.userPlanKey == this.dataFitnessPlan[j].$key) {
-                this.dataFitnessPlanUser = this.dataFitnessPlan[j];
-            }
-        }
-        console.log(this.onlogUser);
-    }
-    FitnessPlan2Page.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad FitnessPlan2Page');
-    };
-    FitnessPlan2Page.prototype.submit = function () {
-        console.log(this.onlogUser);
-        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__fitness_plan3_fitness_plan3__["a" /* FitnessPlan3Page */], this.onlogUser);
-    };
-    FitnessPlan2Page.prototype.back = function () {
-        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_3__fitness_plan_fitness_plan__["a" /* FitnessPlanPage */], this.onlogUser);
-    };
-    FitnessPlan2Page = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-fitness-plan2',template:/*ion-inline-start:"/Users/apple/Projects/Senior-Project/src/pages/fitness-plan2/fitness-plan2.html"*/'<!--\n  Generated template for the FitnessPlan2Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n\n\n<ion-content >\n	<!--<div class="container1" *ngIf="buttonClicked1" [style.background]="\'url(\' + imagePath + \')\'">\n		<ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>\n		<h1>"{{dataFitnessPlanUser.category}}"</h1>\n		<div class="planDetail">\n			<div class="detailBox">\n				<p class = "detail">{{dataFitnessPlanUser.avgtime}} Min</p>\n				<p class="header">Avg. Minute</p>\n			</div>\n			<div class="detailBox">\n				<p class = "detail">{{dataFitnessPlanUser.difficult}}</p>\n				<p class="header">difficult</p>\n			</div>\n			<div class="detailBox">\n				<p class = "detail">Level {{dataFitnessPlanUser.intensity}}</p>\n				<p class="header">intensity</p>\n			</div>\n			<button ion-button type="submit" (click)="submit()" class="submitButton1">"Start Your Plan"</button>\n		</div>\n		\n	</div>-->\n	<div class="container1" *ngIf="buttonClicked1">\n		<ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>\n		<h1>"{{dataFitnessPlanUser.category}}"</h1>\n		<div class="planDetail">\n			<div class="detailBox">\n				<p class = "detail">{{dataFitnessPlanUser.avgtime}} Min</p>\n				<p class="header">Avg. Minute</p>\n			</div>\n			<div class="detailBox">\n				<p class = "detail">{{dataFitnessPlanUser.difficult}}</p>\n				<p class="header">difficult</p>\n			</div>\n			<div class="detailBox">\n				<p class = "detail">Level {{dataFitnessPlanUser.intensity}}</p>\n				<p class="header">intensity</p>\n			</div>\n			<button ion-button type="submit" (click)="submit()" class="submitButton1">Start Your Plan</button>\n		</div>\n		\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/apple/Projects/Senior-Project/src/pages/fitness-plan2/fitness-plan2.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
-    ], FitnessPlan2Page);
-    return FitnessPlan2Page;
-}());
-
-//# sourceMappingURL=fitness-plan2.js.map
-
-/***/ }),
-
-/***/ 65:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FitnessPlanPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fitness_plan2_fitness_plan2__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fitness_plan2_fitness_plan2__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__food_plan_food_plan__ = __webpack_require__(66);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1903,15 +1813,105 @@ var FitnessPlanPage = /** @class */ (function () {
     };
     FitnessPlanPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-fitness-plan',template:/*ion-inline-start:"/Users/apple/Projects/Senior-Project/src/pages/fitness-plan/fitness-plan.html"*/'<!--\n  Generated template for the FitnessPlanPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n\n\n<ion-content >\n	<!--<div class="container1" *ngIf="buttonClicked1" [style.background]="\'url(\' + imagePath + \')\'">\n		<ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>\n		<h1>"{{dataFitnessPlanUser.category}}"</h1>\n		<div class="planDetail">\n			<div class="detailBox">\n				<p class = "detail">{{dataFitnessPlanUser.avgtime}} Min</p>\n				<p class="header">Avg. Minute</p>\n			</div>\n			<div class="detailBox">\n				<p class = "detail">{{dataFitnessPlanUser.difficult}}</p>\n				<p class="header">difficult</p>\n			</div>\n			<div class="detailBox">\n				<p class = "detail">Level {{dataFitnessPlanUser.intensity}}</p>\n				<p class="header">intensity</p>\n			</div>\n			<button ion-button type="submit" (click)="submit2()" class="submitButton1">"Start Your Plan"</button>\n		</div>\n		\n	</div>-->\n	<div class="container2" *ngIf="buttonClicked2" [style.background]="\'url(\' + imagePath + \')\'">\n		<ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>\n		<h1>"Welcome to fitness plan"</h1>\n		<button ion-button type="submit" (click)="submit()" class="submitButton2">Fitness plan</button><br><br>\n		<button ion-button type="submit" (click)="submit2()" class="submitButton2">Food Plan</button><br><br>\n		<button ion-button type="submit" (click)="endplan()" class="submitButton2">End Plan</button>\n	</div>\n	\n</ion-content>\n\n\n	<!--<ion-content>\n		<br><br><br><br>\n		<ion-item><ion-label>{{keyFit.difficult}}</ion-label></ion-item>\n		<button ion-button type="submit" (click)="submit()">submit</button>\n	</ion-content>-->'/*ion-inline-end:"/Users/apple/Projects/Senior-Project/src/pages/fitness-plan/fitness-plan.html"*/,
+            selector: 'page-fitness-plan',template:/*ion-inline-start:"/Users/apple/Projects/Senior-Project/src/pages/fitness-plan/fitness-plan.html"*/'<!--\n  Generated template for the FitnessPlanPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n\n\n<ion-content >\n	<!--<div class="container1" *ngIf="buttonClicked1" [style.background]="\'url(\' + imagePath + \')\'">\n		<ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>\n		<h1>"{{dataFitnessPlanUser.category}}"</h1>\n		<div class="planDetail">\n			<div class="detailBox">\n				<p class = "detail">{{dataFitnessPlanUser.avgtime}} Min</p>\n				<p class="header">Avg. Minute</p>\n			</div>\n			<div class="detailBox">\n				<p class = "detail">{{dataFitnessPlanUser.difficult}}</p>\n				<p class="header">difficult</p>\n			</div>\n			<div class="detailBox">\n				<p class = "detail">Level {{dataFitnessPlanUser.intensity}}</p>\n				<p class="header">intensity</p>\n			</div>\n			<button ion-button type="submit" (click)="submit2()" class="submitButton1">"Start Your Plan"</button>\n		</div>\n		\n	</div>-->\n	<div class="container2" *ngIf="buttonClicked2" [style.background]="\'url(\' + imagePath + \')\'">\n		<ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>\n		<h1>"Welcome to fitness plan"</h1>\n		<button ion-button type="submit" (click)="submit()" class="submitButton1">Fitness plan</button><br><br>\n		<button ion-button type="submit" (click)="submit2()" class="submitButton2">Food Plan</button><br><br>\n		<button ion-button type="submit" (click)="endplan()" class="submitButton3">End Plan</button>\n	</div>\n	\n</ion-content>\n\n\n	<!--<ion-content>\n		<br><br><br><br>\n		<ion-item><ion-label>{{keyFit.difficult}}</ion-label></ion-item>\n		<button ion-button type="submit" (click)="submit()">submit</button>\n	</ion-content>-->'/*ion-inline-end:"/Users/apple/Projects/Senior-Project/src/pages/fitness-plan/fitness-plan.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _e || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], FitnessPlanPage);
     return FitnessPlanPage;
-    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=fitness-plan.js.map
+
+/***/ }),
+
+/***/ 65:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FitnessPlan2Page; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__fitness_plan_fitness_plan__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fitness_plan3_fitness_plan3__ = __webpack_require__(125);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+/**
+ * Generated class for the FitnessPlan2Page page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var FitnessPlan2Page = /** @class */ (function () {
+    function FitnessPlan2Page(navCtrl, navParams, angularfire, events, alertCtrl) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.angularfire = angularfire;
+        this.events = events;
+        this.alertCtrl = alertCtrl;
+        this.dataFitnessPlan = [];
+        this.dataFitnessPlanUser = [];
+        this.buttonClicked1 = true;
+        this.onlogUser = this.navParams.data;
+        this.events.publish('onLogUser : userAlreadyLog', this.onlogUser);
+        this.dataUserSend = this.navParams.data;
+        console.dir(this.onlogUser);
+        this.fireFitnessPlan = this.angularfire.list('/FitnessPlan/');
+        this.fireFitnessPlan.subscribe(function (data) {
+            _this.dataFitnessPlan = data;
+            console.log(data);
+        });
+        this.fireFitnessPlanUser = this.angularfire.list('/FitnessPlan/' + this.onlogUser.fitplan);
+        this.fireFitnessPlanUser.subscribe(function (data) {
+            _this.dataFitnessPlanUser = data;
+            console.log(data);
+        });
+        this.userPlanKey = this.onlogUser.fitplan;
+        console.log(this.userPlanKey);
+        for (var j = 0; j < this.dataFitnessPlan.length; j++) {
+            console.log("for");
+            if (this.userPlanKey == this.dataFitnessPlan[j].$key) {
+                this.dataFitnessPlanUser = this.dataFitnessPlan[j];
+            }
+        }
+        console.log(this.onlogUser);
+    }
+    FitnessPlan2Page.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad FitnessPlan2Page');
+    };
+    FitnessPlan2Page.prototype.submit = function () {
+        console.log(this.onlogUser);
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__fitness_plan3_fitness_plan3__["a" /* FitnessPlan3Page */], this.onlogUser);
+    };
+    FitnessPlan2Page.prototype.back = function () {
+        this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_3__fitness_plan_fitness_plan__["a" /* FitnessPlanPage */], this.onlogUser);
+    };
+    FitnessPlan2Page = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-fitness-plan2',template:/*ion-inline-start:"/Users/apple/Projects/Senior-Project/src/pages/fitness-plan2/fitness-plan2.html"*/'<!--\n  Generated template for the FitnessPlan2Page page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n\n\n<ion-content >\n	<!--<div class="container1" *ngIf="buttonClicked1" [style.background]="\'url(\' + imagePath + \')\'">\n		<ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>\n		<h1>"{{dataFitnessPlanUser.category}}"</h1>\n		<div class="planDetail">\n			<div class="detailBox">\n				<p class = "detail">{{dataFitnessPlanUser.avgtime}} Min</p>\n				<p class="header">Avg. Minute</p>\n			</div>\n			<div class="detailBox">\n				<p class = "detail">{{dataFitnessPlanUser.difficult}}</p>\n				<p class="header">difficult</p>\n			</div>\n			<div class="detailBox">\n				<p class = "detail">Level {{dataFitnessPlanUser.intensity}}</p>\n				<p class="header">intensity</p>\n			</div>\n			<button ion-button type="submit" (click)="submit()" class="submitButton1">"Start Your Plan"</button>\n		</div>\n		\n	</div>-->\n	<div class="container1" *ngIf="buttonClicked1">\n		<ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>\n		<h1>"{{dataFitnessPlanUser.category}}"</h1>\n		<div class="planDetail">\n			<div class="detailBox">\n				<p class = "detail">{{dataFitnessPlanUser.avgtime}} Min</p>\n				<p class="header">Avg. Minute</p>\n			</div>\n			<div class="detailBox">\n				<p class = "detail">{{dataFitnessPlanUser.difficult}}</p>\n				<p class="header">difficult</p>\n			</div>\n			<div class="detailBox">\n				<p class = "detail">Level {{dataFitnessPlanUser.intensity}}</p>\n				<p class="header">intensity</p>\n			</div>\n			<button ion-button type="submit" (click)="submit()" class="submitButton1">Start Your Plan</button>\n		</div>\n		\n	</div>\n</ion-content>\n'/*ion-inline-end:"/Users/apple/Projects/Senior-Project/src/pages/fitness-plan2/fitness-plan2.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+    ], FitnessPlan2Page);
+    return FitnessPlan2Page;
+}());
+
+//# sourceMappingURL=fitness-plan2.js.map
 
 /***/ }),
 
@@ -1924,7 +1924,7 @@ var FitnessPlanPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__food_plan2_food_plan2__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__food_plan2_food_plan2__ = __webpack_require__(126);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2018,10 +2018,10 @@ var FoodPlanPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-food-plan',template:/*ion-inline-start:"/Users/apple/Projects/Senior-Project/src/pages/food-plan/food-plan.html"*/'	<!--\n	  Generated template for the FoodPlanPage page.\n\n	  See http://ionicframework.com/docs/components/#navigation for more info on\n	  Ionic pages and navigation.\n	-->\n	<ion-header>\n\n	  <ion-navbar>\n			<ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>\n	    <ion-title>foodPlan</ion-title>\n	  </ion-navbar>\n\n	</ion-header>\n\n\n	<ion-content>\n		<div class="container1" *ngIf="buttonClicked1">\n			\n			<h1>"FoodPlan"</h1>\n			<div class="planDetail">\n				<div class="detailBox">\n					<p class="header">Calories per day <br> {{dataFoodPlanUser.calories}} Cals</p>\n				</div>\n				<div class="detailBox">\n					<p class="header">Carb per day <br> {{dataFoodPlanUser.carbohydrate}} Grams</p>\n				</div>\n				<div class="detailBox">\n					<p class="header">Fat per day <br> {{dataFoodPlanUser.fat}} Grams</p>\n				</div>\n				<div class="detailBox">\n					<p class="header">Protein per day <br> {{dataFoodPlanUser.protein}} Grams</p>\n				</div>\n				<div class="detailBox">\n					<p class="header">Meals</p>\n					<p class = "detail">After Workout <br> {{dataFoodPlanUser.meals.afterWorkout.carbohydrate}} Grams\n													  <br> {{dataFoodPlanUser.meals.afterWorkout.fat}} Grams\n													  <br> {{dataFoodPlanUser.meals.afterWorkout.protein}} Grams\n					</p>\n					<p class = "detail">Before Workout <br> {{dataFoodPlanUser.meals.beforeWorkout.carbohydrate}} Grams\n													  <br> {{dataFoodPlanUser.meals.beforeWorkout.fat}} Grams\n													  <br> {{dataFoodPlanUser.meals.beforeWorkout.protein}} Grams\n					</p>\n					<p class = "detail">Breakfast <br> {{dataFoodPlanUser.meals.breakfast.carbohydrate}} Grams\n													  <br> {{dataFoodPlanUser.meals.breakfast.fat}} Grams\n													  <br> {{dataFoodPlanUser.meals.breakfast.protein}} Grams\n					</p>\n					<p class = "detail">lunch <br> {{dataFoodPlanUser.meals.lunch.carbohydrate}} Grams\n													  <br> {{dataFoodPlanUser.meals.lunch.fat}} Grams\n													  <br> {{dataFoodPlanUser.meals.lunch.protein}} Grams\n					</p>\n				</div>\n				<button ion-button type="submit" (click)="submit()" class="submitButton1">"Show Food"</button>\n			</div>\n\n				\n		</div>\n	</ion-content>\n'/*ion-inline-end:"/Users/apple/Projects/Senior-Project/src/pages/food-plan/food-plan.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _e || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Events */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], FoodPlanPage);
     return FoodPlanPage;
-    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=food-plan.js.map

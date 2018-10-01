@@ -25720,8 +25720,8 @@ page-fitness-plan .container1 .planDetail .detailBox {
   float: left;
 }
 
-page-fitness-plan .container1 .submitButton1 {
-  margin-left: 30%;
+page-fitness-plan .container2 .submitButton1 {
+  margin-left: 33%;
   color: black;
   background-color: white;
   border-radius: 10px;
@@ -25744,7 +25744,14 @@ page-fitness-plan .container2 h1 {
 }
 
 page-fitness-plan .container2 .submitButton2 {
-  margin-left: 30%;
+  margin-left: 35%;
+  color: black;
+  background-color: white;
+  border-radius: 10px;
+}
+
+page-fitness-plan .container2 .submitButton3 {
+  margin-left: 36%;
   color: black;
   background-color: white;
   border-radius: 10px;
@@ -25849,7 +25856,7 @@ page-fitness-plan3 .container {
 page-fitness-plan3 .container .back {
   color: white;
   background-color: #353945;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 page-fitness-plan3 ion-icon {
@@ -26021,8 +26028,35 @@ page-profile h3 {
   text-align: center;
 }
 
-page-question h3 {
+page-question h1 {
   text-align: center;
+  color: white;
+}
+
+page-question .toolbar-background {
+  background-color: #353945;
+}
+
+page-question .c {
+  background-color: #353945;
+  color: white;
+}
+
+page-question .c .a {
+  background-color: #353945;
+  color: white;
+}
+
+page-question .c .b {
+  background-color: #353945;
+  color: white;
+  margin-top: 15px;
+}
+
+page-question ion-icon {
+  margin-left: 5%;
+  zoom: 2.0;
+  color: white;
 }
 
 page-register .body {

@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		18DF1342215FCE4600F9C0B2 /* PBXContainerItemProxy */ = {
+		184786A421612E2E0048BDA7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */;
 			proxyType = 2;
@@ -147,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				301BF535109A57CC0062928A /* libCordova.a */,
-				18DF1343215FCE4600F9C0B2 /* Cordova.framework */,
+				184786A521612E2E0048BDA7 /* Cordova.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -210,7 +210,7 @@
 				LastUpgradeCheck = 0510;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = XP38H65UH5;
+						DevelopmentTeam = 3DF9ZB922U;
 					};
 				};
 			};
@@ -237,11 +237,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		18DF1343215FCE4600F9C0B2 /* Cordova.framework */ = {
+		184786A521612E2E0048BDA7 /* Cordova.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Cordova.framework;
-			remoteRef = 18DF1342215FCE4600F9C0B2 /* PBXContainerItemProxy */;
+			remoteRef = 184786A421612E2E0048BDA7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		301BF535109A57CC0062928A /* libCordova.a */ = {
@@ -316,7 +316,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = XP38H65UH5;
+				DEVELOPMENT_TEAM = 3DF9ZB922U;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -326,7 +326,7 @@
 				INFOPLIST_FILE = "Project/Project-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Projectt;
+				PRODUCT_BUNDLE_IDENTIFIER = tester1234;
 				PRODUCT_NAME = Project;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -342,7 +342,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
-				DEVELOPMENT_TEAM = XP38H65UH5;
+				DEVELOPMENT_TEAM = 3DF9ZB922U;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Project/Project-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
@@ -350,7 +350,7 @@
 				INFOPLIST_FILE = "Project/Project-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Projectt;
+				PRODUCT_BUNDLE_IDENTIFIER = tester1234;
 				PRODUCT_NAME = Project;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -7,20 +7,21 @@
 <ion-header >
 		<ion-navbar>
 		  <ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>
+		  <ion-title><h1>Question</h1></ion-title>
 		</ion-navbar>
 	</ion-header>
 
 <ion-content class="c" padding *ngFor= "let a of dataQuestion">
 	
 	<form class="list" [formGroup] = "questionForm">
-		<h3>Question</h3>
+
 	<ion-list radio-group [(ngModel)]="equipment" formControlName="Equipment">
-		<ion-list-header class="a">
+		<ion-list-header class="b">
 			1. {{a.Question1.question}}
 		</ion-list-header>
 		<ion-item class="a">
 			<ion-label>{{a.Question1.choices[0]}}</ion-label>
-			<ion-radio value="None"></ion-radio>t
+			<ion-radio value="None"></ion-radio>
 		</ion-item>
 		<ion-item class="a">
 			<ion-label>{{a.Question1.choices[1]}}</ion-label>
@@ -32,52 +33,52 @@
 		</ion-item>
 	</ion-list>
 	<ion-list radio-group [(ngModel)]="workoutPerDay" formControlName="WPD">
-		<ion-list-header>
+		<ion-list-header class="a">
 			2. {{a.Question2.question}}
 		</ion-list-header>
-		<ion-item>
+		<ion-item class="a">
 			<ion-label>{{a.Question2.choices[0]}}</ion-label>
 			<ion-radio value="1-2"></ion-radio>
 		</ion-item>
-		<ion-item>
+		<ion-item class="a">
 			<ion-label>{{a.Question2.choices[1]}}</ion-label>
 			<ion-radio value="2-3"></ion-radio>
 		</ion-item>
-		<ion-item>
+		<ion-item class="a">
 			<ion-label>{{a.Question2.choices[2]}}</ion-label>
 			<ion-radio value="3-4"></ion-radio>
 		</ion-item>
-		<ion-item>
+		<ion-item class="a">
 			<ion-label>{{a.Question2.choices[3]}}</ion-label>
 			<ion-radio value="4-5"></ion-radio>
 		</ion-item>
 	</ion-list>
 	<ion-list radio-group [(ngModel)]="planDifficult" formControlName="PD">
-		<ion-list-header>
+		<ion-list-header class="a">
 			3. {{a.Question3.question}}
 		</ion-list-header>
-		<ion-item>
+		<ion-item class="a">
 			<ion-label>{{a.Question3.choices[0]}}</ion-label>
 			<ion-radio value="Beginner"></ion-radio>
 		</ion-item>
-		<ion-item>
+		<ion-item class="a">
 			<ion-label>{{a.Question3.choices[1]}}</ion-label>
 			<ion-radio value="Intermiadate"></ion-radio>
 		</ion-item>
 	</ion-list>
 	<ion-list radio-group [(ngModel)]="planIntensity" formControlName="PI">
-		<ion-list-header>
+		<ion-list-header class="a">
 			4. {{a.Question4.question}}
 		</ion-list-header>
-		<ion-item>
+		<ion-item class="a">
 			<ion-label>{{a.Question4.choices[0]}}</ion-label>
 			<ion-radio value=1></ion-radio>
 		</ion-item>
-		<ion-item>
+		<ion-item class="a">
 			<ion-label>{{a.Question4.choices[1]}}</ion-label>
 			<ion-radio value=2></ion-radio>
 		</ion-item>
-		<ion-item>
+		<ion-item class="a">
 			<ion-label>{{a.Question4.choices[2]}}</ion-label>
 			<ion-radio value=3></ion-radio>
 		</ion-item>

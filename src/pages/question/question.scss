@@ -1,5 +1,32 @@
 page-question {
-    h3{
+    h1{
         text-align: center;
+        color: white;
+    }
+
+    .toolbar-background {
+        background-color: #353945;
+    }
+
+    .c {
+        background-color: #353945;
+        color: white;
+    }
+
+    .c .a{
+        background-color: #353945;
+        color: white;
+    }
+
+    .c .b{
+        background-color: #353945;
+        color: white;
+        margin-top: 15px;
+    }
+
+    ion-icon{
+		margin-left:5%;
+        zoom:2.0;
+        color:white;
     }
 }

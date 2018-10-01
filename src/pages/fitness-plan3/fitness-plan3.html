@@ -34,7 +34,7 @@
   </div>
 
   <div *ngIf="buttonClicked2">
-      {{rest}}
+      {{rest}}<br><br><br>
       <ion-list *ngFor = "let title of data">
         <button (click)="click(title.title)" class="back">{{title.title}}</button>
         {{title.amount}}

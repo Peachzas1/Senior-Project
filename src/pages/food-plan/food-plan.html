@@ -8,17 +8,15 @@
 
 	  <ion-navbar>
 			<ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>
-	    <ion-title>foodPlan</ion-title>
+	    <ion-title><h1>FoodPlan</h1></ion-title>
 	  </ion-navbar>
 
 	</ion-header>
 
 
-	<ion-content>
-		<div class="container1" *ngIf="buttonClicked1">
-			
-			<h1>"FoodPlan"</h1>
-			<div class="planDetail">
+	<ion-content class="planDetail">
+		<div  *ngIf="buttonClicked1">
+			<h1>FoodPlan</h1>
 				<div class="detailBox">
 					<p class="header">Calories per day <br> {{dataFoodPlanUser.calories}} Cals</p>
 				</div>
@@ -51,7 +49,7 @@
 					</p>
 				</div>
 				<button ion-button type="submit" (click)="submit()" class="submitButton1">"Show Food"</button>
-			</div>
+			
 
 				
 		</div>

@@ -27,10 +27,10 @@ export class FitnessPlanPage {
   //fitnessPlan: FitnessPlan[];
   fireFitnessPlan: FirebaseListObservable<any[]>;
   fireFitnessPlanUser: FirebaseListObservable<any[]>;
-  dataFitnessPlan: any[] =[];
-  dataFitnessPlanUser: any[] =[];
-  itemKey : any[]
-  dataUserSend :User;
+  dataFitnessPlan: any[] = [];
+  dataFitnessPlanUser: any[] = [];
+  itemKey: any[]
+  dataUserSend: User;
   onlogUser: User;
   //onlogPlan: FitnessPlan = new FitnessPlan();
   fireUser: FirebaseListObservable<any[]>;
@@ -39,7 +39,7 @@ export class FitnessPlanPage {
   age: number;
   bmi: number;
   today: number = Date.now();
-  keyFit: any[] =[];
+  keyFit: any[] = [];
   userPlanKey: string;
   imagePath: string = "img/plan4.jpg";
   buttonClicked1: boolean = false;
@@ -48,48 +48,48 @@ export class FitnessPlanPage {
 
   fireFoodPlan: FirebaseListObservable<any[]>;
   fireFoodPlanUser: FirebaseListObservable<any[]>;
-  dataFoodPlan: any[] =[];
-  dataFoodPlanUser: any[] =[];
-  keyFood: any[] =[];
+  dataFoodPlan: any[] = [];
+  dataFoodPlanUser: any[] = [];
+  keyFood: any[] = [];
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-           public angularfire: AngularFireDatabase, public events: Events, private alertCtrl: AlertController) {
+    public angularfire: AngularFireDatabase, public events: Events, private alertCtrl: AlertController) {
     this.onlogUser = this.navParams.data;
-    this.events.publish('onLogUser : userAlreadyLog',this.onlogUser);
+    this.events.publish('onLogUser : userAlreadyLog', this.onlogUser);
     this.dataUserSend = this.navParams.data;
     console.dir(this.onlogUser);
     this.fireFitnessPlan = this.angularfire.list('/FitnessPlan/');
     this.fireFitnessPlan.subscribe(data => {
-    this.dataFitnessPlan = data;
-    console.log(data);
+      this.dataFitnessPlan = data;
+      console.log(data);
     });
-    this.fireFitnessPlanUser = this.angularfire.list('/FitnessPlan/'+this.onlogUser.fitplan);
-      this.fireFitnessPlanUser.subscribe(data => {
+    this.fireFitnessPlanUser = this.angularfire.list('/FitnessPlan/' + this.onlogUser.fitplan);
+    this.fireFitnessPlanUser.subscribe(data => {
       this.dataFitnessPlanUser = data;
       console.log(data);
-      });
+    });
     console.log(this.dataFitnessPlan);
-    this.angularfire.list('/User/'+this.onlogUser.UserKey+'/userAnswer/').subscribe(data => {
-    this.itemKey = data;    
-    this.itemKey.map(item => {
-       console.log(item.$key);
+    this.angularfire.list('/User/' + this.onlogUser.UserKey + '/userAnswer/').subscribe(data => {
+      this.itemKey = data;
+      this.itemKey.map(item => {
+        console.log(item.$key);
       })
     });
     this.fireUser = this.angularfire.list('/User/');
     this.fireTest = this.angularfire.list('/User/' + this.onlogUser.UserKey + '/userAnswer/');
 
     this.fireFoodPlan = this.angularfire.list('/FoodPlan/');
-      this.fireFoodPlan.subscribe(data => {
+    this.fireFoodPlan.subscribe(data => {
       this.dataFoodPlan = data;
       console.log(data);
-      });
-      this.fireFoodPlanUser = this.angularfire.list('/FoodPlan/'+this.onlogUser.foodplan);
-        this.fireFoodPlanUser.subscribe(data => {
-        this.dataFoodPlanUser = data;
-        console.log(data);
-        });
-        console.log(this.onlogUser);
+    });
+    this.fireFoodPlanUser = this.angularfire.list('/FoodPlan/' + this.onlogUser.foodplan);
+    this.fireFoodPlanUser.subscribe(data => {
+      this.dataFoodPlanUser = data;
+      console.log(data);
+    });
+    console.log(this.onlogUser);
   }
 
   /*calculate(bmi: number){
@@ -137,32 +137,32 @@ export class FitnessPlanPage {
     console.log('ionViewDidLoad FitnessPlanPage');
   }
 
-  submit(){
-      //this.buttonClicked1 = !this.buttonClicked1;
-      //this.buttonClicked2 = !this.buttonClicked2;
-      //console.log("else");
-      console.log(this.onlogUser.fitplan);
-      this.userPlanKey = this.onlogUser.fitplan;
-      console.log(this.userPlanKey);
-      for(let j = 0; j < this.dataFitnessPlan.length; j++){
-        console.log("for");
-        if(this.userPlanKey == this.dataFitnessPlan[j].$key){
-          this.dataFitnessPlanUser = this.dataFitnessPlan[j];
-          if(j==0){
-            this.imagePath = "../../assets/imgs/Plan1.jpg";
-          }else if(j==1){
-            this.imagePath = "../../assets/imgs/Plan2.jpg";
-          }else if(j==2){
-            this.imagePath = "../../assets/imgs/Plan3.jpg";
-          }else if(j==3){
-            this.imagePath = "../../assets/imgs/Plan4.jpg";
-          }
-          console.log(this.dataFitnessPlanUser);
-          console.log(this.userPlanKey);
-          console.log(this.onlogUser);
+  submit() {
+    //this.buttonClicked1 = !this.buttonClicked1;
+    //this.buttonClicked2 = !this.buttonClicked2;
+    //console.log("else");
+    console.log(this.onlogUser.fitplan);
+    this.userPlanKey = this.onlogUser.fitplan;
+    console.log(this.userPlanKey);
+    for (let j = 0; j < this.dataFitnessPlan.length; j++) {
+      console.log("for");
+      if (this.userPlanKey == this.dataFitnessPlan[j].$key) {
+        this.dataFitnessPlanUser = this.dataFitnessPlan[j];
+        if (j == 0) {
+          this.imagePath = "../../assets/imgs/Plan1.jpg";
+        } else if (j == 1) {
+          this.imagePath = "../../assets/imgs/Plan2.jpg";
+        } else if (j == 2) {
+          this.imagePath = "../../assets/imgs/Plan3.jpg";
+        } else if (j == 3) {
+          this.imagePath = "../../assets/imgs/Plan4.jpg";
         }
+        console.log(this.dataFitnessPlanUser);
+        console.log(this.userPlanKey);
+        console.log(this.onlogUser);
       }
-      this.navCtrl.setRoot(FitnessPlan2Page,this.onlogUser);
+    }
+    this.navCtrl.setRoot(FitnessPlan2Page, this.onlogUser);
     //console.log(this.itemKey[0].PD);
     //if(this.dataFitnessPlan[1].intensity==2){
     /*if(this.onlogUser.fitplan=="null"){
@@ -171,23 +171,45 @@ export class FitnessPlanPage {
       console.log("fail")
     }*/
   }
-  submit2(){
+  submit2() {
     this.userPlanKey = this.onlogUser.foodplan;
-     for(let j = 0; j < this.dataFoodPlan.length; j++){
-         console.log("for");
-         if(this.userPlanKey == this.dataFoodPlan[j].$key){
-          this.dataFoodPlanUser = this.dataFoodPlan[j];
-          console.log(this.dataFoodPlanUser);
-          console.log(this.userPlanKey);
-       }
-    this.navCtrl.setRoot(FoodPlanPage,this.dataUserSend);
+    for (let j = 0; j < this.dataFoodPlan.length; j++) {
+      console.log("for");
+      if (this.userPlanKey == this.dataFoodPlan[j].$key) {
+        this.dataFoodPlanUser = this.dataFoodPlan[j];
+        console.log(this.dataFoodPlanUser);
+        console.log(this.userPlanKey);
+      }
+      this.navCtrl.setRoot(FoodPlanPage, this.dataUserSend);
+    }
   }
-}
-  back(){
-    this.navCtrl.setRoot(HomePage,this.onlogUser);
+  back() {
+    this.navCtrl.setRoot(HomePage, this.onlogUser);
   }
-  endplan(){
+  endplan() {
     let alert = this.alertCtrl.create({
+      title: 'Confirm',
+      message: 'Do you want to Endplan?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+          }
+        },
+        {
+          text: 'yes',
+          handler: () => {
+            this.fireUser.update(this.onlogUser.UserKey, { fitplan: "null" });
+            this.fireUser.update(this.onlogUser.UserKey, { foodplan: "null" });
+            this.fireTest.remove();
+            this.navCtrl.setRoot(HomePage, this.onlogUser);
+          }
+        }
+      ]
+    });
+    alert.present();
+    /*let alert = this.alertCtrl.create({
       title: 'End Plan',
       subTitle: 'End Plan',
       buttons: ['OK']
@@ -196,6 +218,6 @@ export class FitnessPlanPage {
     this.fireUser.update(this.onlogUser.UserKey, { fitplan: "null" });
     this.fireUser.update(this.onlogUser.UserKey, { foodplan: "null" });
     this.fireTest.remove();
-    this.navCtrl.setRoot(HomePage, this.onlogUser);
+    this.navCtrl.setRoot(HomePage, this.onlogUser);*/
   }
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Loading, LoadingController, IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 import { HomePage } from '../home/home';
+import { User } from '../DataProvider/User';
 
 /**
  * Generated class for the TestPage page.
@@ -16,34 +17,10 @@ import { HomePage } from '../home/home';
   templateUrl: 'test.html',
 })
 export class TestPage {
-	video: any = {
-        url: "https://www.youtube.com/embed/MLleDRkSuvk",
-        title: 'Awesome video'
-    };
+	d: Date;
+    onlogUser: User;
 
-    trustedVideoUrl: SafeResourceUrl;
-    loading: Loading;
-
-    constructor(public navCtrl: NavController,
-                public loadingCtrl: LoadingController,
-                private domSanitizer: DomSanitizer) {}
-
-    ionViewWillEnter(): void {
-        this.trustedVideoUrl = this.domSanitizer.bypassSecurityTrustResourceUrl(this.video.url);
-
-        this.loading = this.loadingCtrl.create({
-            content: 'Please wait...'
-        });
-
-        this.loading.present();
-    }
-
-    handleIFrameLoadEvent(): void {
-        this.loading.dismiss();
-    }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TestPage');
-  }
-
+    constructor(public navCtrl: NavController,public loadingCtrl: LoadingController,private domSanitizer: DomSanitizer) {
+        console.log(this.d);
+    }    
 }

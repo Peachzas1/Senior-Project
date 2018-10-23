@@ -1,0 +1,30 @@
+page-collection {
+    ion-icon{
+		margin-left:5%;
+        zoom:2.0;
+        color:white;
+    }
+
+    h1{
+        font-size: 20px;
+        color: white;
+    }
+
+    .toolbar-background {
+        background-color: #353945;
+    }
+
+    .container{
+        background-color: #353945; 
+		width:100%;
+		height:100%;
+		color:white;
+    }
+
+    .container .back{
+        color:white;
+        //background-image: url("../img/plan1.jpg");
+        background-color: #353945;
+        font-size: 18px;
+    }
+}

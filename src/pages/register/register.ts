@@ -28,10 +28,12 @@ export class RegisterPage {
     console.log('ionViewDidLoad RegisterPage');
   }
 
-  async register(email: string, password: string, fName: string, 
-    lName: string,weight:number, height:number,waistMeasurement:number, dateofbirth:Date, gender:string, fitplan:string, foodplan:string) {
+  async register(email: string, password: string, fName: string,
+    lName: string,weight:number, height:number,waistMeasurement:number, dateofbirth:Date, gender:string, fitplan:string, foodplan:string,
+    collection:string) {
     fitplan = "null";
     foodplan = "null";
+    collection ="null";
     let check :boolean = true;
     let result;
     if(email==null||password==null||fName==null||lName==null||weight==null||height==null||waistMeasurement==null||dateofbirth==null
@@ -101,6 +103,7 @@ export class RegisterPage {
       this.newUser.gender = gender;
       this.newUser.fitplan = fitplan;
       this.newUser.foodplan = foodplan;
+      this.newUser.collection = collection;
       this.newUser.uid = this.afAuth.auth.currentUser.uid;
       this.items.push(this.newUser);
       var alert = this.alertCtrl.create({

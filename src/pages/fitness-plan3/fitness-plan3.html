@@ -10,7 +10,10 @@
       <ion-title><h1>FitnessPlan</h1></ion-title>
     </ion-navbar>
 </ion-header>
-
+<ion-item [hidden]="true">
+    <ion-label>Date</ion-label>
+    <ion-datetime displayFormat="DD/MM/YYYY  h:mm a" [(ngModel)]="mydate"></ion-datetime>
+</ion-item>
 <ion-content padding class="container">
   <div *ngIf="buttonClicked1">
     <iframe width="100%"

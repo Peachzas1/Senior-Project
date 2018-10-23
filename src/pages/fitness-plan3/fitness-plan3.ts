@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Loading, LoadingController, IonicPage, NavController, NavParams, Events } from 'ionic-angular';
+import { Loading, LoadingController, IonicPage, NavController, NavParams, Events, DateTime } from 'ionic-angular';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { FitnessPlan } from '../DataProvider/FitnessPlan';
 import { User } from '../DataProvider/User';
@@ -37,6 +37,7 @@ export class FitnessPlan3Page {
   dataFitnessPlanAmount: any = [];
   dataFitnessPlanTitleVideo: any[] = [];
   dataFitnessPlanLinkVideo: any[] = [];
+  dataStart: any[] = [];
   dataUser: any[] = [];
   dataUserSend: User;
   data: any[] = [];
@@ -48,39 +49,57 @@ export class FitnessPlan3Page {
   trustedVideoUrl: SafeResourceUrl;
   loading: Loading;
   video: string;
-  b: number = 0;
-  c: number = 0;
+  b: number;
+  c: number;
+  d=0;
   rest: string;
+  today: number = Date.now();
+  date: number;
+  day:number;
+  getItemsUser:any[]=[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public angularfire: AngularFireDatabase, public events: Events, private alertCtrl: AlertController,
     public loadingCtrl: LoadingController, private domSanitizer: DomSanitizer) {
+    console.log("zzzzz");
+    this.date = Math.floor((this.today / (1000 * 3600 * 24)));
+    console.log(this.date);
     this.onlogUser = this.navParams.data;
     this.events.publish('onLogUser : userAlreadyLog', this.onlogUser);
     this.fireUser = this.angularfire.list('/User/');
-    this.fireTest = this.angularfire.list('/User/' + this.onlogUser.UserKey + '/userAnswer/');
-    /*this.fireUser.subscribe(data => {
-      this.dataUser = data;
-      console.log(data);
-    });*/
     this.dataUserSend = this.navParams.data;
     console.dir(this.onlogUser);
     this.fireFitnessPlan = this.angularfire.list('/FitnessPlan/');
     this.fireFitnessPlan.subscribe(data => {
       this.dataFitnessPlan = data;
       console.log(data);
+      console.log("xxxxxx");
     });
     this.fireFitnessPlanUser = this.angularfire.list('/FitnessPlan/' + this.onlogUser.fitplan);
     this.fireFitnessPlanUser.subscribe(data => {
       this.dataFitnessPlanUser = data;
       console.log(data);
+      console.log("yyyyy");
 
       this.fireFitnessPlanVideo = this.angularfire.list('/Video/');
       this.fireFitnessPlanVideo.subscribe(data => {
         this.dataFitnessPlanVideo = data;
         console.log(data);
+        console.log("bbbbb");
 
-        //this.video = this.dataFitnessPlanUserVideo.Link;
+        this.fireTest = this.angularfire.list('/User/' + this.onlogUser.UserKey + '/userAnswer/');
+        this.fireTest.subscribe(data => {
+          console.log("ccccc");
+          this.dataStart = data;
+          if(this.d == 0){console.log("1234");
+            this.days();
+          }
+          console.log(this.day);
+          this.b = this.day % 7;
+          var d = this.day / 7;
+          this.c = Number.parseInt(d.toFixed(0));
+          console.log(this.c);
+          //this.video = this.dataFitnessPlanUserVideo.Link;
 
         console.log(this.dataFitnessPlanVideo);
         console.log(this.video);
@@ -98,6 +117,12 @@ export class FitnessPlan3Page {
         this.ionViewWillEnter();
       });
     });
+  });
+  }
+
+  days(){
+    this.day = this.date - this.dataStart[0].StartDate;
+    console.log("aa");
   }
 
   ionViewWillEnter(): void {
@@ -156,12 +181,12 @@ export class FitnessPlan3Page {
           console.log("5")
           if (this.dataFitnessPlanUser.weeks[0].days[this.b].sets[k].workouts[m].title == "Rest day") {
             console.log("5.1");
-            this.rest ="week " + (this.c+1) + "   Day " + (this.b + 1) + ":Rest day";
+            this.rest = "week " + (this.c + 1) + "   Day " + (this.b + 1) + ":Rest day";
             this.buttonClicked1 = false;
             this.buttonClicked2 = true;
             this.buttonClicked3 = false;
           } else {
-            this.rest ="week " + (this.c+1) + "   Day " + (this.b + 1);
+            this.rest = "week " + (this.c + 1) + "   Day " + (this.b + 1);
             if (this.c == 0 && this.b == 0) {
               this.buttonClicked1 = true;
               this.buttonClicked2 = false;
@@ -183,7 +208,7 @@ export class FitnessPlan3Page {
               //}else{  
               //this.dataFitnessPlanAmount.push(this.dataFitnessPlanUser.weeks[0].days[this.b].sets[k].workouts[m].amount);
               //}
-              console.log(this.dataFitnessPlanAmount);
+              //console.log(this.dataFitnessPlanAmount);
             }
           }
         }
@@ -224,7 +249,9 @@ export class FitnessPlan3Page {
   submit() {
     console.log(this.b);
     console.log(this.c);
-    if (this.c != 3 && this.b == 6) {console.log("a")
+    console.log(this.d);
+    if (this.c != 3 && this.b == 6) {
+      console.log("a")
       this.b = 0;
       this.c++;
       this.dataFitnessPlanUserVideo = [];
@@ -232,18 +259,41 @@ export class FitnessPlan3Page {
       this.data = [];
       this.title();
       this.ionViewWillEnter();
-    } else if (this.c == 3 && this.b == 6) {console.log("b")
+    } else if (this.c == 3 && this.b == 6) {
+      console.log("b");
       let alert = this.alertCtrl.create({
         title: 'Finish Plan',
         subTitle: 'Finish Plan',
         buttons: ['OK']
       });
       alert.present();
-      this.fireUser.update(this.onlogUser.UserKey, { fitplan: "null" });
-      this.fireUser.update(this.onlogUser.UserKey, { foodplan: "null" });
+      console.log("t");
+      this.d = 1;
       this.fireTest.remove();
-      this.navCtrl.setRoot(HomePage, this.onlogUser);
-    } else {console.log("c")
+      console.log("u");
+      this.fireUser.update(this.onlogUser.UserKey, { fitplan: "null" });
+      console.log("v");
+      this.fireUser.update(this.onlogUser.UserKey, { foodplan: "null" });
+      console.log("w");
+      this.fireUser.subscribe(data => {
+        this.getItemsUser = data;
+      });
+      for (let i = 0; i < this.getItemsUser.length; i++) {
+        console.log("startloop");
+        console.log("usercheck");
+        if (this.getItemsUser[i].uid == this.onlogUser.uid) {
+          this.onlogUser = this.getItemsUser[i];
+          console.dir(this.onlogUser);
+          console.dir(this.getItemsUser[i]);
+          this.onlogUser.UserKey = this.getItemsUser[i].$key;
+          this.navCtrl.setRoot(HomePage, this.onlogUser);
+          console.log("found");
+          
+        }
+      }
+      console.log("alert");
+    } else {
+      console.log("c")
       this.b++;
       this.dataFitnessPlanUserVideo = [];
       this.dataFitnessPlanAmount = [];
@@ -262,6 +312,7 @@ export class FitnessPlan3Page {
       this.data = [];
       this.title();
       this.ionViewWillEnter();
+      console.log(this.c);
     } else {
       this.b--;
       this.dataFitnessPlanUserVideo = [];

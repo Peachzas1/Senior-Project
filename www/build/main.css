@@ -25678,6 +25678,78 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+page-collection ion-icon {
+  margin-left: 5%;
+  zoom: 2.0;
+  color: white;
+}
+
+page-collection h1 {
+  font-size: 20px;
+  color: white;
+}
+
+page-collection .toolbar-background {
+  background-color: #353945;
+}
+
+page-collection .container {
+  background-color: #353945;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
+page-collection .container .back {
+  color: white;
+  background-color: #353945;
+  font-size: 18px;
+}
+
+page-collection2 .container1 {
+  float: right;
+}
+
+page-collection2 .container2 {
+  float: left;
+}
+
+page-collection2 .toolbar-background {
+  background-color: #353945;
+}
+
+page-collection2 h1 {
+  font-size: 20px;
+  color: white;
+}
+
+page-collection2 .container {
+  background-color: #353945;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
+page-collection2 .container .back {
+  color: white;
+  background-color: #353945;
+  font-size: 13px;
+}
+
+page-collection2 ion-icon {
+  margin-left: 5%;
+  zoom: 2.0;
+  color: white;
+}
+
+page-collection2 .container1 .submitButton1 {
+  color: white;
+}
+
+page-collection2 .container .a {
+  margin-left: 60%;
+}
+
 page-fitness-plan ion-icon {
   margin-left: 5%;
   zoom: 2.0;
@@ -25789,6 +25861,7 @@ page-fitness-plan2 .container1 .planDetail {
   font-size: 14px;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   position: fixed;
+  padding-left: 30px;
 }
 
 page-fitness-plan2 .container1 .planDetail .detailBox {
@@ -25871,6 +25944,54 @@ page-fitness-plan3 .container1 .submitButton1 {
 
 page-fitness-plan3 .container .a {
   margin-left: 60%;
+}
+
+page-food-plan ion-icon {
+  margin-left: 5%;
+  zoom: 2.0;
+  color: white;
+}
+
+page-food-plan .toolbar-background {
+  background-color: #353945;
+}
+
+page-food-plan h1 {
+  color: white;
+  background-color: #353945;
+}
+
+page-food-plan .planDetail {
+  padding-left: 30px;
+  background-color: #353945;
+  color: white;
+}
+
+page-food-plan2 ion-icon {
+  margin-left: 5%;
+  zoom: 2.0;
+  color: white;
+}
+
+page-food-plan2 .toolbar-background {
+  background-color: #353945;
+}
+
+page-food-plan2 h1 {
+  color: white;
+}
+
+page-food-plan2 .container {
+  background-color: #353945;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
+page-food-plan2 .container .detailBox .a {
+  background-color: #353945;
+  font-size: 14px;
+  color: white;
 }
 
 page-home .toolbar-background {

@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		184786A421612E2E0048BDA7 /* PBXContainerItemProxy */ = {
+		18BD36992161C3E200E3AE90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */;
 			proxyType = 2;
@@ -147,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				301BF535109A57CC0062928A /* libCordova.a */,
-				184786A521612E2E0048BDA7 /* Cordova.framework */,
+				18BD369A2161C3E200E3AE90 /* Cordova.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -237,11 +237,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		184786A521612E2E0048BDA7 /* Cordova.framework */ = {
+		18BD369A2161C3E200E3AE90 /* Cordova.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Cordova.framework;
-			remoteRef = 184786A421612E2E0048BDA7 /* PBXContainerItemProxy */;
+			remoteRef = 18BD36992161C3E200E3AE90 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		301BF535109A57CC0062928A /* libCordova.a */ = {
@@ -326,7 +326,7 @@
 				INFOPLIST_FILE = "Project/Project-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tester1234;
+				PRODUCT_BUNDLE_IDENTIFIER = Projecttest12;
 				PRODUCT_NAME = Project;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -350,7 +350,7 @@
 				INFOPLIST_FILE = "Project/Project-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tester1234;
+				PRODUCT_BUNDLE_IDENTIFIER = Projecttest12;
 				PRODUCT_NAME = Project;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

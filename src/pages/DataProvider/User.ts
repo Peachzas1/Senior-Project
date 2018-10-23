@@ -14,8 +14,14 @@ export class User{
 	userAnswer:PlanAnswer;
 	keyFit:string;
 	foodplan:string;
+	collection:string;
 }
 
 class PlanAnswer{
-	Answer:any[];
+	Equipment:String;
+	PD:String;
+	PI:number;
+	WPD:String;
+	StartDate:number;
+	//Answer:any[];
 }

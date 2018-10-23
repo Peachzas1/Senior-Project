@@ -10,6 +10,8 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 import { TestPage } from '../test/test';
 import { WorkoutPage } from '../workout/workout';
 import { ProfilePage } from '../profile/profile';
+import { CollectionPage } from '../collection/collection';
+import { Collection2Page } from '../collection2/collection2';
 
 @Component({
   selector: 'page-home',
@@ -18,9 +20,10 @@ import { ProfilePage } from '../profile/profile';
 export class HomePage {
   dataUser : any[] = [];
   dataUserSend: User;
-  onlogUser: User = new User();
+  onlogUser: User;
   fireFitnessPlan: FirebaseListObservable<any[]>;
-  fireUser : FirebaseListObservable<any[]>;
+  fireUser: FirebaseListObservable<any[]>;
+  fireWork: FirebaseListObservable<any[]>;
   fireFoodPlan: FirebaseListObservable<any[]>;
   dataQuestion: any[] =[];
   Collections = [{ imageCollections: "img/TrainLike1.jpg" }
@@ -48,6 +51,8 @@ export class HomePage {
 
   workouts(){
     this.navCtrl.setRoot(WorkoutPage,this.onlogUser);
+    /*this.fireWork = this.angularfire.list('Video');
+      this.fireWork.push({name:'a'});*/
   }
 
   startPlan(){
@@ -77,5 +82,13 @@ export class HomePage {
 
   profile(){
     this.navCtrl.setRoot(ProfilePage,this.onlogUser);
+  }
+
+  collection(){
+    if(this.onlogUser.collection!="null"){
+      this.navCtrl.setRoot(Collection2Page,this.onlogUser);
+    }else{
+      this.navCtrl.setRoot(CollectionPage,this.onlogUser);
+    }
   }
 }

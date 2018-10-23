@@ -23,6 +23,9 @@ import { FoodPlanPage } from '../pages/food-plan/food-plan';
 import { WorkoutPage } from '../pages/workout/workout';
 import { ProfilePage } from '../pages/profile/profile';
 import { FoodPlan2Page } from '../pages/food-plan2/food-plan2';
+import { CollectionPage } from '../pages/collection/collection';
+import { Collection2Page } from '../pages/collection2/collection2';
+import { Collection3Page } from '../pages/collection3/collection3';
 
 export const config = {
   apiKey: "AIzaSyACQbDFnbhv5uJCBcyd6Sy1ylmBzvd44AM",
@@ -47,7 +50,10 @@ export const config = {
     FoodPlanPage,
     WorkoutPage,
     ProfilePage,
-    FoodPlan2Page
+    FoodPlan2Page,
+    CollectionPage,
+    Collection2Page,
+    Collection3Page
   ],
   imports: [
     BrowserModule,
@@ -72,7 +78,10 @@ export const config = {
     FoodPlanPage,
     WorkoutPage,
     ProfilePage,
-    FoodPlan2Page
+    FoodPlan2Page,
+    CollectionPage,
+    Collection2Page,
+    Collection3Page
   ],
   providers: [
     StatusBar,

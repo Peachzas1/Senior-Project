@@ -270,11 +270,8 @@ export class FitnessPlan3Page {
       console.log("t");
       this.d = 1;
       this.fireTest.remove();
-      console.log("u");
       this.fireUser.update(this.onlogUser.UserKey, { fitplan: "null" });
-      console.log("v");
       this.fireUser.update(this.onlogUser.UserKey, { foodplan: "null" });
-      console.log("w");
       this.fireUser.subscribe(data => {
         this.getItemsUser = data;
       });

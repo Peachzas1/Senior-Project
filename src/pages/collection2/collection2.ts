@@ -24,8 +24,10 @@ export class Collection2Page {
   onlogUser: User;
   fireCollection: FirebaseListObservable<any[]>;
   fireFitnessPlanVideo: FirebaseListObservable<any[]>;
+  fireUser: FirebaseListObservable<any[]>;
   dataFitnessPlanVideo: any[] = [];
   dataCollection: any[] = [];
+  dataUser: any[] = [];
   dataCollectionUserVideo: any[] = [];
   data: any[] = [];
   avgtime: string;
@@ -36,7 +38,7 @@ export class Collection2Page {
   buttonClicked2: boolean = false;
   buttonClicked3: boolean = false;
   b=0;
-  c=0;
+  //c=0;
   trustedVideoUrl: SafeResourceUrl;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public angularfire: AngularFireDatabase,
@@ -53,6 +55,11 @@ export class Collection2Page {
         this.dataFitnessPlanVideo = data;
         this.check();
         this.ionViewWillEnter();
+    });
+    this.fireUser = this.angularfire.list('/User/');
+    this.fireUser.subscribe(data => {
+      this.dataUser = data;
+      console.log(data);
     });
     console.log(this.data);
   }
@@ -73,13 +80,13 @@ export class Collection2Page {
             for (let d = 0; d < this.dataFitnessPlanVideo.length; d++) {console.log("4");
               if (this.dataCollection[a].weeks[0].days[this.b].sets[k].workouts[m].title == "Rest day") {console.log("5");
                 console.log("5.1");
-                this.rest = "week " + (this.c + 1) + "   Day " + (this.b + 1) + ":Rest day";
+                this.rest = "Day " + (this.b + 1) + ":Rest day";
                 this.buttonClicked1 = false;
                 this.buttonClicked2 = true;
                 this.buttonClicked3 = false;
               }else {console.log("6");
-                this.rest = "week " + (this.c + 1) + "   Day " + (this.b + 1);
-                if (this.c == 0 && this.b == 0) {
+                this.rest = "Day " + (this.b + 1);
+                if (this.b == 0) {
                   this.buttonClicked1 = true;
                   this.buttonClicked2 = false;
                   this.buttonClicked3 = false;
@@ -141,16 +148,7 @@ export class Collection2Page {
 
   submit() {
     console.log(this.b);
-    console.log(this.c);
-    if (this.c != 3 && this.b == 6) {
-      console.log("a")
-      this.b = 0;
-      this.c++;
-      this.dataCollectionUserVideo = [];
-      this.data = [];
-      this.check();
-      this.ionViewWillEnter();
-    } else if (this.c == 3 && this.b == 6) {
+    if (this.b == 6) {
       console.log("b");
       let alert = this.alertCtrl.create({
         title: 'Finish Plan',
@@ -159,37 +157,30 @@ export class Collection2Page {
       });
       alert.present();
       console.log("t");
-      /*this.fireTest.remove();
-      console.log("u");
-      this.fireUser.update(this.onlogUser.UserKey, { fitplan: "null" });
-      console.log("v");
-      this.fireUser.update(this.onlogUser.UserKey, { foodplan: "null" });
-      console.log("w");
-      this.fireUser.subscribe(data => {
-        this.getItemsUser = data;
-      });
-      for (let i = 0; i < this.getItemsUser.length; i++) {
-        console.log("startloop");
-        console.log("usercheck");
-        if (this.getItemsUser[i].uid == this.onlogUser.uid) {
-          this.onlogUser = this.getItemsUser[i];
-          console.dir(this.onlogUser);
-          console.dir(this.getItemsUser[i]);
-          this.onlogUser.UserKey = this.getItemsUser[i].$key;
-          this.navCtrl.setRoot(HomePage, this.onlogUser);
-          console.log("found");
-          
+      this.fireUser.update(this.onlogUser.UserKey, { collection: "null" });
+      for(let a = 0;a<this.dataUser.length;a++){
+        if(this.onlogUser.UserKey == this.dataUser[a].$key){
+          this.onlogUser = this.dataUser[a];
+          this.onlogUser.UserKey = this.dataUser[a].$key;
         }
-      }*/
+      }
+      this.navCtrl.setRoot(HomePage, this.onlogUser);
       console.log("alert");
     } else {
-      console.log("c")
       this.b++;
       this.dataCollectionUserVideo = [];
       this.data = [];
       this.check();
       this.ionViewWillEnter();
     }
+  }
+
+  previous() {
+      this.b--;
+      this.dataCollectionUserVideo = [];
+      this.data = [];
+      this.check();
+      this.ionViewWillEnter();
   }
 
   back() {

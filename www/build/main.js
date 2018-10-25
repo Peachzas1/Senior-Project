@@ -573,11 +573,8 @@ var FitnessPlan3Page = /** @class */ (function () {
             console.log("t");
             this.d = 1;
             this.fireTest.remove();
-            console.log("u");
             this.fireUser.update(this.onlogUser.UserKey, { fitplan: "null" });
-            console.log("v");
             this.fireUser.update(this.onlogUser.UserKey, { foodplan: "null" });
-            console.log("w");
             this.fireUser.subscribe(function (data) {
                 _this.getItemsUser = data;
             });
@@ -1238,11 +1235,11 @@ var map = {
 		13
 	],
 	"../pages/collection2/collection2.module": [
-		334,
+		333,
 		12
 	],
 	"../pages/collection3/collection3.module": [
-		333,
+		334,
 		11
 	],
 	"../pages/fitness-plan/fitness-plan.module": [
@@ -1250,39 +1247,39 @@ var map = {
 		10
 	],
 	"../pages/fitness-plan2/fitness-plan2.module": [
-		337,
+		336,
 		9
 	],
 	"../pages/fitness-plan3/fitness-plan3.module": [
-		336,
+		337,
 		8
 	],
 	"../pages/food-plan/food-plan.module": [
-		340,
+		338,
 		7
 	],
 	"../pages/food-plan2/food-plan2.module": [
-		338,
+		339,
 		6
 	],
 	"../pages/login/login.module": [
-		339,
+		340,
 		5
 	],
 	"../pages/profile/profile.module": [
-		343,
+		341,
 		4
 	],
 	"../pages/question/question.module": [
-		341,
+		342,
 		3
 	],
 	"../pages/register/register.module": [
-		344,
+		343,
 		2
 	],
 	"../pages/test/test.module": [
-		342,
+		344,
 		1
 	],
 	"../pages/workout/workout.module": [
@@ -1626,18 +1623,18 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/collection/collection.module#CollectionPageModule', name: 'CollectionPage', segment: 'collection', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/collection3/collection3.module#Collection3PageModule', name: 'Collection3Page', segment: 'collection3', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/collection2/collection2.module#Collection2PageModule', name: 'Collection2Page', segment: 'collection2', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/collection3/collection3.module#Collection3PageModule', name: 'Collection3Page', segment: 'collection3', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fitness-plan/fitness-plan.module#FitnessPlanPageModule', name: 'FitnessPlanPage', segment: 'fitness-plan', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/fitness-plan3/fitness-plan3.module#FitnessPlan3PageModule', name: 'FitnessPlan3Page', segment: 'fitness-plan3', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fitness-plan2/fitness-plan2.module#FitnessPlan2PageModule', name: 'FitnessPlan2Page', segment: 'fitness-plan2', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/fitness-plan3/fitness-plan3.module#FitnessPlan3PageModule', name: 'FitnessPlan3Page', segment: 'fitness-plan3', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/food-plan/food-plan.module#FoodPlanPageModule', name: 'FoodPlanPage', segment: 'food-plan', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/food-plan2/food-plan2.module#FoodPlan2PageModule', name: 'FoodPlan2Page', segment: 'food-plan2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/food-plan/food-plan.module#FoodPlanPageModule', name: 'FoodPlanPage', segment: 'food-plan', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/question/question.module#QuestionPageModule', name: 'QuestionPage', segment: 'question', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/test/test.module#TestPageModule', name: 'TestPage', segment: 'test', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/question/question.module#QuestionPageModule', name: 'QuestionPage', segment: 'question', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/test/test.module#TestPageModule', name: 'TestPage', segment: 'test', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/workout/workout.module#WorkoutPageModule', name: 'WorkoutPage', segment: 'workout', priority: 'low', defaultHistory: [] }
                     ]
                 }),
@@ -2326,6 +2323,7 @@ var Collection2Page = /** @class */ (function () {
         this.domSanitizer = domSanitizer;
         this.dataFitnessPlanVideo = [];
         this.dataCollection = [];
+        this.dataUser = [];
         this.dataCollectionUserVideo = [];
         this.data = [];
         this.equipment = [];
@@ -2333,7 +2331,6 @@ var Collection2Page = /** @class */ (function () {
         this.buttonClicked2 = false;
         this.buttonClicked3 = false;
         this.b = 0;
-        this.c = 0;
         this.onlogUser = this.navParams.data;
         this.events.publish('onLogUser : userAlreadyLog', this.onlogUser);
         this.fireCollection = this.angularfire.list('/WorkoutCollections/');
@@ -2346,6 +2343,11 @@ var Collection2Page = /** @class */ (function () {
             _this.dataFitnessPlanVideo = data;
             _this.check();
             _this.ionViewWillEnter();
+        });
+        this.fireUser = this.angularfire.list('/User/');
+        this.fireUser.subscribe(function (data) {
+            _this.dataUser = data;
+            console.log(data);
         });
         console.log(this.data);
     }
@@ -2373,15 +2375,15 @@ var Collection2Page = /** @class */ (function () {
                             if (this.dataCollection[a].weeks[0].days[this.b].sets[k].workouts[m].title == "Rest day") {
                                 console.log("5");
                                 console.log("5.1");
-                                this.rest = "week " + (this.c + 1) + "   Day " + (this.b + 1) + ":Rest day";
+                                this.rest = "Day " + (this.b + 1) + ":Rest day";
                                 this.buttonClicked1 = false;
                                 this.buttonClicked2 = true;
                                 this.buttonClicked3 = false;
                             }
                             else {
                                 console.log("6");
-                                this.rest = "week " + (this.c + 1) + "   Day " + (this.b + 1);
-                                if (this.c == 0 && this.b == 0) {
+                                this.rest = "Day " + (this.b + 1);
+                                if (this.b == 0) {
                                     this.buttonClicked1 = true;
                                     this.buttonClicked2 = false;
                                     this.buttonClicked3 = false;
@@ -2440,17 +2442,7 @@ var Collection2Page = /** @class */ (function () {
     };
     Collection2Page.prototype.submit = function () {
         console.log(this.b);
-        console.log(this.c);
-        if (this.c != 3 && this.b == 6) {
-            console.log("a");
-            this.b = 0;
-            this.c++;
-            this.dataCollectionUserVideo = [];
-            this.data = [];
-            this.check();
-            this.ionViewWillEnter();
-        }
-        else if (this.c == 3 && this.b == 6) {
+        if (this.b == 6) {
             console.log("b");
             var alert_1 = this.alertCtrl.create({
                 title: 'Finish Plan',
@@ -2459,38 +2451,30 @@ var Collection2Page = /** @class */ (function () {
             });
             alert_1.present();
             console.log("t");
-            /*this.fireTest.remove();
-            console.log("u");
-            this.fireUser.update(this.onlogUser.UserKey, { fitplan: "null" });
-            console.log("v");
-            this.fireUser.update(this.onlogUser.UserKey, { foodplan: "null" });
-            console.log("w");
-            this.fireUser.subscribe(data => {
-              this.getItemsUser = data;
-            });
-            for (let i = 0; i < this.getItemsUser.length; i++) {
-              console.log("startloop");
-              console.log("usercheck");
-              if (this.getItemsUser[i].uid == this.onlogUser.uid) {
-                this.onlogUser = this.getItemsUser[i];
-                console.dir(this.onlogUser);
-                console.dir(this.getItemsUser[i]);
-                this.onlogUser.UserKey = this.getItemsUser[i].$key;
-                this.navCtrl.setRoot(HomePage, this.onlogUser);
-                console.log("found");
-                
-              }
-            }*/
+            this.fireUser.update(this.onlogUser.UserKey, { collection: "null" });
+            for (var a = 0; a < this.dataUser.length; a++) {
+                if (this.onlogUser.UserKey == this.dataUser[a].$key) {
+                    this.onlogUser = this.dataUser[a];
+                    this.onlogUser.UserKey = this.dataUser[a].$key;
+                }
+            }
+            this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_3__home_home__["a" /* HomePage */], this.onlogUser);
             console.log("alert");
         }
         else {
-            console.log("c");
             this.b++;
             this.dataCollectionUserVideo = [];
             this.data = [];
             this.check();
             this.ionViewWillEnter();
         }
+    };
+    Collection2Page.prototype.previous = function () {
+        this.b--;
+        this.dataCollectionUserVideo = [];
+        this.data = [];
+        this.check();
+        this.ionViewWillEnter();
     };
     Collection2Page.prototype.back = function () {
         this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_3__home_home__["a" /* HomePage */], this.onlogUser);

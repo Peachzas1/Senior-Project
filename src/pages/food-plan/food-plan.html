@@ -8,7 +8,7 @@
 
 	  <ion-navbar>
 			<ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>
-	    <ion-title><h1>FoodPlan</h1></ion-title>
+	    <ion-title>FoodPlan</ion-title>
 	  </ion-navbar>
 
 	</ion-header>
@@ -16,39 +16,26 @@
 
 	<ion-content class="planDetail">
 		<div  *ngIf="buttonClicked1">
-			<h1>FoodPlan</h1>
-				<div class="detailBox">
-					<p class="header">Calories per day <br> {{dataFoodPlanUser.calories}} Cals</p>
+			<div class="resultAllDayFrame">	
+				<h3>Nutrition result all day</h3>
+				<div class="resultAllDay">
+					<img src="img/Nutrition48.png" class="icon">
+					<p class="header">Calories per day {{dataFoodPlanUser.calories}} Cals</p>
 				</div>
-				<div class="detailBox">
-					<p class="header">Carb per day <br> {{dataFoodPlanUser.carbohydrate}} Grams</p>
+				<div class="resultAllDay">
+					<img src="img/Carb48.png" class="icon">
+					<p class="header">Carb per day {{dataFoodPlanUser.carbohydrate}} Grams</p>
 				</div>
-				<div class="detailBox">
-					<p class="header">Fat per day <br> {{dataFoodPlanUser.fat}} Grams</p>
+				<div class="resultAllDay">
+					<img src="img/Fat48.png" class="icon">
+					<p class="header">Fat per day {{dataFoodPlanUser.fat}} Grams</p>
 				</div>
-				<div class="detailBox">
-					<p class="header">Protein per day <br> {{dataFoodPlanUser.protein}} Grams</p>
+				<div class="resultAllDay">
+					<img src="img/Protein48.png" class="icon">
+					<p class="header">Protein per day {{dataFoodPlanUser.protein}} Grams</p>
 				</div>
-				<div class="detailBox">
-					<p class="header">Meals</p>
-					<p class = "detail">After Workout <br>carbohydrate {{dataFoodPlanUser.meals.afterWorkout.carbohydrate}} Grams
-													  <br>fat {{dataFoodPlanUser.meals.afterWorkout.fat}} Grams
-													  <br>protein {{dataFoodPlanUser.meals.afterWorkout.protein}} Grams
-					</p>
-					<p class = "detail">Before Workout <br>carbohydrate {{dataFoodPlanUser.meals.beforeWorkout.carbohydrate}} Grams
-													  <br>fat {{dataFoodPlanUser.meals.beforeWorkout.fat}} Grams
-													  <br>protein {{dataFoodPlanUser.meals.beforeWorkout.protein}} Grams
-					</p>
-					<p class = "detail">Breakfast <br>carbohydrate {{dataFoodPlanUser.meals.breakfast.carbohydrate}} Grams
-													  <br>fat {{dataFoodPlanUser.meals.breakfast.fat}} Grams
-													  <br>protein {{dataFoodPlanUser.meals.breakfast.protein}} Grams
-					</p>
-					<p class = "detail">lunch <br>carbohydrate {{dataFoodPlanUser.meals.lunch.carbohydrate}} Grams
-													  <br>fat {{dataFoodPlanUser.meals.lunch.fat}} Grams
-													  <br>protein {{dataFoodPlanUser.meals.lunch.protein}} Grams
-					</p>
-				</div>
-				<button ion-button type="submit" (click)="submit()" class="submitButton1">"Show Food"</button>
+			</div>
+				<button ion-button type="submit" (click)="submit()" class="submitButton1">"Show Meals Detail"</button>
 			
 
 				

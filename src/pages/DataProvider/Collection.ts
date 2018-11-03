@@ -3,6 +3,7 @@ export class Collection{
     equipment:equipments;
     name:string;
     week:weeks[];
+    pic:string;
 }
 
 class equipments{

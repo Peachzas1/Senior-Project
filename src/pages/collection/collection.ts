@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams, Events, AlertController, DateTime}
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { User } from '../DataProvider/User';
 import { HomePage } from '../home/home';
-import { Collection2Page } from '../collection2/collection2';
+import { Collection15Page } from '../collection15/collection15';
 
 /**
  * Generated class for the CollectionPage page.
@@ -41,7 +41,7 @@ export class CollectionPage {
         this.dataUser = data;
         console.log(data);
       });
-    console.log(this.onlogUser);
+    console.log(this.dataName);
     //this.fireUser.update(this.onlogUser.UserKey,{a:"aaa"});
     //this.fireUser.remove(this.onlogUser.UserKey+'/a');
   }
@@ -53,46 +53,27 @@ export class CollectionPage {
       this.dataName.push({
         name: this.dataCollection[a].name,
         avgtime: this.dataCollection[a].avgtime,
-        equipment: this.dataCollection[a].equipment
+        equipment: this.dataCollection[a].equipment,
+        pic: this.dataCollection[a].pic
       })
     }
     console.log(this.dataName);
   }
 
   click(name:any){
-    console.log(name);
-    let alert = this.alertCtrl.create({
-    title: 'Confirm',
-    message: 'Do you want to use this workout?',
-    buttons: [
-      {
-        text: 'Cancel',
-        role: 'cancel',
-        handler: () => {
-        }
-      },
-      {
-        text: 'yes',
-        handler: () => {
-          console.log(this.onlogUser);
-          this.today = Math.floor((this.today / (1000 * 3600 * 24)));
-          this.fireUser.update(this.onlogUser.UserKey,{startcollection:this.today});
-          this.fireUser.update(this.onlogUser.UserKey,{collection:name});
-          for(let a = 0;a<this.dataUser.length;a++){
-            if(this.onlogUser.UserKey == this.dataUser[a].$key){
-              this.onlogUser = this.dataUser[a];
-              this.onlogUser.UserKey = this.dataUser[a].$key;
-            }
-          }
-          console.log(this.onlogUser);
-          //this.dataSend.push(this.onlogUser);
-          //this.dataSend.push(name);
-          this.navCtrl.setRoot(Collection2Page,this.onlogUser);
-        }
+    this.today = Math.floor((this.today / (1000 * 3600 * 24)));
+    this.fireUser.update(this.onlogUser.UserKey,{startcollection:this.today});
+    this.fireUser.update(this.onlogUser.UserKey,{collection:name});
+    for(let a = 0;a<this.dataUser.length;a++){
+      if(this.onlogUser.UserKey == this.dataUser[a].$key){
+        this.onlogUser = this.dataUser[a];
+        this.onlogUser.UserKey = this.dataUser[a].$key;
       }
-    ]
-  });
-  alert.present();
+    }
+    console.log(this.onlogUser);
+    //this.dataSend.push(this.onlogUser);
+    //this.dataSend.push(name);
+    this.navCtrl.setRoot(Collection15Page,this.onlogUser);
   }
 
   ionViewDidLoad() {

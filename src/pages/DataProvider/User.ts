@@ -23,5 +23,6 @@ class PlanAnswer{
 	PI:number;
 	WPD:String;
 	StartDate:number;
+	StartMonth:number;
 	//Answer:any[];
 }

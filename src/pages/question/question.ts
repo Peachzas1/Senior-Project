@@ -35,6 +35,8 @@ export class QuestionPage {
   dataFitnessPlan: any[] = [];
   age: number;
   bmi: number;
+  day = new Date().getDate();
+  month = new Date().getMonth()+1;
   today: number = Date.now();
   date: number = 0;
   keyFit: any[] = [];
@@ -83,7 +85,9 @@ export class QuestionPage {
       'WPD': ['', Validators.required],
       'PD': ['', Validators.required],
       'PI': ['', Validators.required],
-      'StartDate': this.date
+      'Goal': ['', Validators.required],
+      'StartDate': this.day,
+      'StartMonth': this.month
     });
     this.fireUser = this.angularfire.list('/User/');
     // this.fireQuestion.push({Question1:{question:"Equipment Available?",choices:['none','dumbbell','pyrobox']},
@@ -117,6 +121,8 @@ export class QuestionPage {
         console.log(this.itemKey[0]);
         if (this.onlogUser.gender == this.dataFitnessPlan[i].gender[0] || this.onlogUser.gender == this.dataFitnessPlan[i].gender[1]) {
           console.log("gender")
+          if(this.itemKey[0].Goal == this.dataFitnessPlan[i].category){
+            console.log("a")
           if (this.itemKey[0].PD == this.dataFitnessPlan[i].difficult) {
             console.log("difficult")
             if (this.itemKey[0].PI == this.dataFitnessPlan[i].intensity) {
@@ -135,6 +141,7 @@ export class QuestionPage {
                     }
                   }
                 }
+              }
               }
             }
           }

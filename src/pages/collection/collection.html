@@ -6,20 +6,19 @@
 -->
 <ion-header>
 
-  <ion-navbar>
     <ion-navbar>
       <ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>
       <ion-title><h1>Workout Collection</h1></ion-title>
     </ion-navbar>
-  </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding class="container">
     <ion-list *ngFor="let name of dataName">
-      <button (click)="click(name.name)" class="back">{{name.name}}</button><br>
+      <img src="{{name.pic}}" class="pic" (click) = "click(name.name)">
+      <!--<button (click)="click(name.name)" class="back">{{name.name}}</button><br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;avgtime: {{name.avgtime}}<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;equipment: {{name.equipment}}<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;equipment: {{name.equipment}}<br>-->
     </ion-list>
 </ion-content>

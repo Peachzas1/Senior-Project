@@ -1,0 +1,55 @@
+page-food-plan {
+    ion-icon{
+		margin-left:5%;
+        zoom:2.0;
+        color:white;
+    }
+    
+    .toolbar-background {
+        background-color: #353945;
+    }
+    
+    .planDetail{
+        padding-left: 30px;
+        background-color: #353945; 
+        color:white;
+        
+        
+    }
+    .planDetail .detailBox{
+        border-style:solid;
+        border-size:10px;
+        padding-left:20px;
+    }
+
+    .planDetail .resultAllDayFrame{
+        border-style:solid;
+        border-size:10px;
+        margin:20px;
+    }
+    ion-list{
+        padding-left:20px;
+    }
+    .planDetail .resultAllDayFrame{
+        padding-left:20px;
+        border-radius:10px;
+    }
+    .planDetail .resultAllDayFrame .icon{
+        padding-top:20px;
+    }
+    .planDetail .resultAllDayFrame .h3{
+        text-align:center;
+        color:white;
+    }
+
+    .planDetail .resultAllDayFrame .header{
+        margin-left:10px;
+    }
+    
+
+    .planDeatil .Meals .header{
+
+    }
+
+}
+

@@ -5,47 +5,46 @@
   Ionic pages and navigation.
 -->
 
-
-
-<ion-content >
-	<!--<div class="container1" *ngIf="buttonClicked1" [style.background]="'url(' + imagePath + ')'">
-		<ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>
-		<h1>"{{dataFitnessPlanUser.category}}"</h1>
-		<div class="planDetail">
-			<div class="detailBox">
-				<p class = "detail">{{dataFitnessPlanUser.avgtime}} Min</p>
-				<p class="header">Avg. Minute</p>
+<ion-content>
+		<!--<div class="container1" *ngIf="buttonClicked1" [style.background]="'url(' + imagePath + ')'">
+			<ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>
+			<h1>"{{dataFitnessPlanUser.category}}"</h1>
+			<div class="planDetail">
+				<div class="detailBox">
+					<p class = "detail">{{dataFitnessPlanUser.avgtime}} Min</p>
+					<p class="header">Avg. Minute</p>
+				</div>
+				<div class="detailBox">
+					<p class = "detail">{{dataFitnessPlanUser.difficult}}</p>
+					<p class="header">difficult</p>
+				</div>
+				<div class="detailBox">
+					<p class = "detail">Level {{dataFitnessPlanUser.intensity}}</p>
+					<p class="header">intensity</p>
+				</div>
+				<button ion-button type="submit" (click)="submit()" class="submitButton1">"Start Your Plan"</button>
 			</div>
-			<div class="detailBox">
-				<p class = "detail">{{dataFitnessPlanUser.difficult}}</p>
-				<p class="header">difficult</p>
+			
+		</div>-->
+		<div class="container1" *ngIf="buttonClicked1">
+			<ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>
+			<p class="title">"{{dataFitnessPlanUser.category}}"</p>
+			<div class="planDetail">
+				<div class="detailBox">
+					<p class="header">Average Time</p>
+					<p class = "detail">{{dataFitnessPlanUser.avgtime}} minutes</p>
+				</div>
+				<div class="detailBox">
+					<p class="header">Difficult</p>
+					<p class = "detail">{{dataFitnessPlanUser.difficult}}</p>
+				</div>
+				<div class="detailBox">
+					<p class="header">Intensity</p>
+					<p class = "detail">Level {{dataFitnessPlanUser.intensity}}</p>
+				</div>
+				<button ion-button type="submit" (click)="submit()" class="submitButton1">Start Your Plan</button>
 			</div>
-			<div class="detailBox">
-				<p class = "detail">Level {{dataFitnessPlanUser.intensity}}</p>
-				<p class="header">intensity</p>
-			</div>
-			<button ion-button type="submit" (click)="submit()" class="submitButton1">"Start Your Plan"</button>
+			
 		</div>
-		
-	</div>-->
-	<div class="container1" *ngIf="buttonClicked1">
-		<ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>
-		<h1>"{{dataFitnessPlanUser.category}}"</h1>
-		<div class="planDetail">
-			<div class="detailBox">
-				<p class = "detail">{{dataFitnessPlanUser.avgtime}} Min</p>
-				<p class="header">Avg. Minute</p>
-			</div>
-			<div class="detailBox">
-				<p class = "detail">{{dataFitnessPlanUser.difficult}}</p>
-				<p class="header">difficult</p>
-			</div>
-			<div class="detailBox">
-				<p class = "detail">Level {{dataFitnessPlanUser.intensity}}</p>
-				<p class="header">intensity</p>
-			</div>
-			<button ion-button type="submit" (click)="submit()" class="submitButton1">Start Your Plan</button>
-		</div>
-		
-	</div>
-</ion-content>
+	</ion-content>
+	

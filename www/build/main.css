@@ -25678,14 +25678,106 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+page-calendar [col-1] {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 8.33333%;
+  -ms-flex: 0 0 8.33333%;
+  flex: 0 0 14.285714285714286%;
+  width: 14.285714285714286%;
+  max-width: 14.285714285714286%;
+}
+
+page-calendar .col {
+  text-align: center;
+  padding: 5px;
+}
+
+page-calendar .last-month, page-calendar .next-month {
+  color: #999999;
+  font-size: 90%;
+}
+
+page-calendar .currentDate, page-calendar .otherDate {
+  padding: 5px;
+}
+
+page-calendar .currentDate {
+  font-weight: bold;
+  background-color: red;
+  color: white;
+  border-radius: 30px;
+}
+
+page-calendar .calendar-header {
+  background-color: #1a732d;
+  color: #FFFFFF;
+}
+
+page-calendar .event-bullet {
+  margin: 2px auto;
+  height: 5px;
+  width: 5px;
+  background-color: green;
+  border-radius: 30px;
+}
+
+page-calendar .event-bullet2 {
+  margin: 2px auto;
+  height: 5px;
+  width: 5px;
+  background-color: gray;
+  border-radius: 30px;
+}
+
+page-calendar .selected-date {
+  width: 20px;
+  height: 2px;
+  background-color: blue;
+}
+
+page-calendar .unselected-date {
+  border: none;
+}
+
+page-calendar .calendar-body .grid {
+  padding: 0;
+}
+
+page-calendar .calendar-body .col:last-child {
+  border-right: none;
+}
+
+page-calendar .calendar-body .calendar-weekday, page-calendar .calendar-body .calendar-date {
+  text-align: center;
+  margin: 0;
+}
+
+page-calendar .calendar-body .calendar-weekday {
+  font-weight: bold;
+  border-bottom: solid 1px #1a732d;
+  background-color: #26ab56;
+}
+
+page-calendar .calendar-body .calendar-date {
+  border-top: solid 1px #1a732d;
+  border-bottom: solid 1px #1a732d;
+}
+
 page-collection ion-icon {
   margin-left: 5%;
   zoom: 2.0;
   color: white;
 }
 
+page-collection .pic {
+  margin-top: 20px;
+  border-style: solid;
+  border-width: 5px;
+  border-color: white;
+}
+
 page-collection h1 {
-  font-size: 20px;
+  font-size: 15px;
   color: white;
 }
 
@@ -25706,6 +25798,107 @@ page-collection .container .back {
   font-size: 18px;
 }
 
+page-collection15 .toolbar-background {
+  background-color: #353945;
+}
+
+page-collection15 ion-icon {
+  margin-left: 5%;
+  zoom: 2.0;
+  color: white;
+}
+
+page-collection15 h1 {
+  font-size: 15px;
+  color: white;
+}
+
+page-collection15 .container {
+  background-image: url("/img/Workouts1.jpg");
+  opacity: 0.9;
+  width: 100%;
+  height: 100%;
+}
+
+page-collection15 .container .Container2 {
+  width: 100%;
+  height: 100%;
+}
+
+page-collection15 .container .Container2 .CollectionName {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 40px;
+  text-align: center;
+  color: white;
+}
+
+page-collection15 .container .Container2 .CollectionName .CollectionName2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+page-collection15 .container .Container2 .CollectionTime {
+  margin: 30px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.6;
+  text-align: center;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+page-collection15 .container .Container2 .CollectionTime .CollectionTime2 {
+  margin: 5%;
+  color: #000000;
+  font-size: 16px;
+}
+
+page-collection15 .container .Container2 .CollectionEq {
+  margin: 30px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.6;
+  text-align: center;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+page-collection15 .container .Container2 .CollectionEq .CollectionEq2 {
+  margin: 5%;
+  color: #000000;
+  font-size: 16px;
+}
+
+page-collection15 .container .Container2 .CollectionDes {
+  margin: 30px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.6;
+  text-align: center;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+page-collection15 .container .Container2 .CollectionDes .CollectionDes2 {
+  margin: 5%;
+  color: #000000;
+  font-size: 16px;
+}
+
+page-collection15 .container .startButton {
+  border-radius: 100%;
+  width: 80px;
+  height: 80px;
+  margin-left: 40%;
+  margin-bottom: 40px;
+  background-color: #ababac;
+  color: #000000;
+}
+
 page-collection2 .container1 {
   float: right;
 }
@@ -25719,8 +25912,12 @@ page-collection2 .toolbar-background {
 }
 
 page-collection2 h1 {
-  font-size: 20px;
+  font-size: 15px;
   color: white;
+}
+
+page-collection2 .cal {
+  float: right;
 }
 
 page-collection2 .container {
@@ -25744,10 +25941,121 @@ page-collection2 ion-icon {
 
 page-collection2 .container1 .submitButton1 {
   color: white;
+  margin: 20px;
+}
+
+page-collection2 .container2 .submitButton1 {
+  color: white;
+  margin: 20px;
 }
 
 page-collection2 .container .a {
   margin-left: 60%;
+}
+
+page-collection2 .workoutList .workoutFrame {
+  height: 100%;
+  margin-top: 10px;
+  margin-left: 10%;
+  width: 80%;
+  height: 60px;
+  border-style: solid;
+  border-radius: 20px;
+  border-color: white;
+  border-width: 3px;
+  background-color: #353945;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+}
+
+page-collection2 .workoutList .workoutFrame:visited {
+  height: 100%;
+  margin-top: 10px;
+  margin-left: 10%;
+  width: 80%;
+  height: 60px;
+  border-style: solid;
+  border-radius: 20px;
+  border-color: white;
+  border-width: 3px;
+  background-color: #353945;
+  color: pink;
+  font-size: 16px;
+  text-align: center;
+}
+
+page-collection2 .workoutList .workoutFrames {
+  height: 100%;
+  margin-top: 10px;
+  margin-left: 10%;
+  width: 80%;
+  height: 60px;
+  border-style: solid;
+  border-radius: 20px;
+  border-color: white;
+  border-width: 3px;
+  background-color: #353945;
+  color: gray;
+  font-size: 16px;
+  text-align: center;
+}
+
+page-collection2 h5 {
+  margin-left: 40px;
+  color: white;
+}
+
+page-collection2 .workoutList .workoutTitle {
+  height: 100%;
+  padding-top: 20px;
+  margin-top: 30px;
+  width: 100%;
+  height: 60px;
+  background-color: #edd06a;
+  color: black;
+  font-size: 16px;
+  text-align: center;
+}
+
+page-collection2 .workoutList .workoutAmount {
+  padding-top: 10px;
+  font-size: 16px;
+  margin-left: 40px;
+  color: #edd06a;
+}
+
+page-collection2 .restday .workoutList .workoutFrame {
+  height: 100%;
+  margin-top: 10px;
+  margin-left: 10%;
+  width: 80%;
+  height: 60px;
+  border-style: solid;
+  border-radius: 20px;
+  border-color: white;
+  border-width: 3px;
+  background-color: #353945;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+}
+
+page-collection2 .restday h5 {
+  margin-left: 40px;
+  color: white;
+}
+
+page-collection2 .restday {
+  margin-top: 40px;
+}
+
+page-collection2 .container .fix {
+  position: -webkit-sticky;
+  position: sticky;
+  margin-top: 0%;
+  top: 0;
+  background-color: #353945;
 }
 
 page-fitness-plan ion-icon {
@@ -25832,75 +26140,53 @@ page-fitness-plan .container2 .submitButton3 {
 page-fitness-plan2 ion-icon {
   margin-left: 5%;
   zoom: 2.0;
+  color: white;
+}
+
+page-fitness-plan2 .toolbar-background {
+  background-image: url("../img/Plan1.jpg");
+}
+
+page-fitness-plan2 .container {
+  background-image: url("../img/Plan1.jpg");
 }
 
 page-fitness-plan2 .container1 {
   background-image: url("../img/Plan1.jpg");
   width: 100%;
-  height: 100%;
-  padding-top: 10px;
-  color: white;
+  height: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-page-fitness-plan2 .container1 h1 {
-  color: white;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 40px;
-  padding-top: 40%;
-  padding-bottom: 40%;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-
-page-fitness-plan2 .container1 .planDetail {
-  margin: auto;
-  color: white;
-  text-align: center;
-  text-transform: uppercase;
+page-fitness-plan2 .container1 .title {
+  font-size: 30px;
   font-weight: bold;
-  font-size: 14px;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  position: fixed;
-  padding-left: 30px;
-}
-
-page-fitness-plan2 .container1 .planDetail .detailBox {
-  float: left;
-  padding: 10px;
-}
-
-page-fitness-plan2 .container1 .planDetail .detailBox {
-  float: left;
-}
-
-page-fitness-plan2 .container1 .submitButton1 {
-  color: black;
-  background-color: white;
-  border-radius: 10px;
-}
-
-page-fitness-plan2 .container2 {
-  color: white;
-  width: 100%;
-  height: 100%;
-  padding-top: 10px;
-}
-
-page-fitness-plan2 .container2 h1 {
-  color: white;
-  text-transform: uppercase;
+  margin-top: 40px;
   text-align: center;
-  font-size: 40px;
-  padding-top: 40%;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: white;
 }
 
-page-fitness-plan2 .container2 .submitButton2 {
+page-fitness-plan2 .container1 .planDetail .detailBox {
+  margin: 30px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.6;
+  text-align: center;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+page-fitness-plan2 .container1 .planDetail .submitButton1 {
+  border-radius: 100%;
+  width: auto;
+  height: 80px;
   margin-left: 30%;
-  margin-top: 50%;
-  color: black;
-  background-color: white;
-  border-radius: 10px;
+  margin-bottom: 40px;
+  background-color: #ababac;
+  color: #000000;
 }
 
 page-fitness-plan3 .container1 {
@@ -25917,6 +26203,10 @@ page-fitness-plan3 .toolbar-background {
 
 page-fitness-plan3 h1 {
   color: white;
+}
+
+page-fitness-plan3 .cal {
+  float: right;
 }
 
 page-fitness-plan3 .container {
@@ -25940,10 +26230,89 @@ page-fitness-plan3 ion-icon {
 
 page-fitness-plan3 .container1 .submitButton1 {
   color: white;
+  margin: 20px;
+}
+
+page-fitness-plan3 .container2 .submitButton1 {
+  color: white;
+  margin: 20px;
 }
 
 page-fitness-plan3 .container .a {
   margin-left: 60%;
+}
+
+page-fitness-plan3 .workoutList .workoutFrame {
+  height: 100%;
+  margin-top: 10px;
+  margin-left: 10%;
+  width: 80%;
+  height: 60px;
+  border-style: solid;
+  border-radius: 20px;
+  border-color: white;
+  border-width: 3px;
+  background-color: #353945;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+}
+
+page-fitness-plan3 h5 {
+  margin-left: 40px;
+  color: white;
+}
+
+page-fitness-plan3 .workoutList .workoutTitle {
+  height: 100%;
+  padding-top: 20px;
+  margin-top: 30px;
+  width: 100%;
+  height: 60px;
+  background-color: #edd06a;
+  color: black;
+  font-size: 16px;
+  text-align: center;
+}
+
+page-fitness-plan3 .workoutList .workoutAmount {
+  padding-top: 10px;
+  font-size: 16px;
+  margin-left: 40px;
+  color: #edd06a;
+}
+
+page-fitness-plan3 .restday .workoutList .workoutFrame {
+  height: 100%;
+  margin-top: 10px;
+  margin-left: 10%;
+  width: 80%;
+  height: 60px;
+  border-style: solid;
+  border-radius: 20px;
+  border-color: white;
+  border-width: 3px;
+  background-color: #353945;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+}
+
+page-fitness-plan3 .restday h5 {
+  margin-left: 40px;
+  color: white;
+}
+
+page-fitness-plan3 .restday {
+  margin-top: 40px;
+}
+
+page-fitness-plan3 .container .fix {
+  position: -webkit-sticky;
+  position: sticky;
+  margin-top: 0%;
+  top: 0;
+  background-color: #353945;
 }
 
 page-food-plan ion-icon {
@@ -25956,15 +26325,48 @@ page-food-plan .toolbar-background {
   background-color: #353945;
 }
 
-page-food-plan h1 {
-  color: white;
-  background-color: #353945;
-}
-
 page-food-plan .planDetail {
   padding-left: 30px;
   background-color: #353945;
   color: white;
+}
+
+page-food-plan .planDetail .detailBox {
+  border-style: solid;
+  border-size: 10px;
+  padding-left: 20px;
+}
+
+page-food-plan .planDetail .resultAllDayFrame {
+  border-style: solid;
+  border-size: 10px;
+  margin: 20px;
+}
+
+page-food-plan ion-list {
+  padding-left: 20px;
+}
+
+page-food-plan .planDetail .resultAllDayFrame {
+  padding-left: 20px;
+  border-radius: 10px;
+}
+
+page-food-plan .planDetail .resultAllDayFrame .icon {
+  padding-top: 20px;
+}
+
+page-food-plan .planDetail .resultAllDayFrame .h3 {
+  text-align: center;
+  color: white;
+}
+
+page-food-plan .planDetail .resultAllDayFrame .header {
+  margin-left: 10px;
+}
+
+page-food-plan .submitButton1 {
+  margin-left: 25%;
 }
 
 page-food-plan2 ion-icon {
@@ -25988,10 +26390,55 @@ page-food-plan2 .container {
   color: white;
 }
 
-page-food-plan2 .container .detailBox .a {
+page-food-plan2 .container .Breakfast .MealsHeader {
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+page-food-plan2 .container .Breakfast .MealsHeader .icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+page-food-plan2 .container .Breakfast .MealsDetail .icon {
+  padding-top: 5px;
+  vertical-align: middle;
+}
+
+page-food-plan2 .container .Breakfast .MealsHeader .CategoryHeader {
+  background-color: #353945;
+  color: white;
+  font-size: 18px;
+  display: inline-block;
+  padding-bottom: 20px;
+  padding-right: 10px;
+}
+
+page-food-plan2 .container .Breakfast .MealsDetail .CategoryHeader {
+  background-color: #353945;
+  color: white;
+  font-size: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 10px;
+}
+
+page-food-plan2 .container .Breakfast .MealsDetail {
   background-color: #353945;
   font-size: 14px;
   color: white;
+  border-style: solid;
+  bordor-size: 10px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-buttom: 10px;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+page-food-plan2 .container .Breakfast .MealsDetail .FoodName {
+  color: #edd06a;
 }
 
 page-home .toolbar-background {
@@ -26268,4 +26715,391 @@ page-workout ion-icon {
 page-workout .container1 .a {
   background-color: #353945;
   color: white;
+}
+
+page-workout .container1 .aa {
+  background-color: #353945;
+  color: white;
+  width: 100%;
+  height: 300px;
+  overflow: scroll;
+}
+
+page-workout .container1 .fix {
+  position: -webkit-sticky;
+  position: sticky;
+  margin-top: 0%;
+  top: 0;
+  background-color: #353945;
+}
+
+page-workout-category-abs .toolbar-background {
+  background-color: #353945;
+}
+
+page-workout-category-abs ion-icon {
+  margin-left: 5%;
+  zoom: 2.0;
+  color: white;
+}
+
+page-workout-category-abs .Container .workoutFrame {
+  background-color: #353945;
+  width: 100%;
+  height: 100%;
+}
+
+page-workout-category-abs .Container .workoutTitle {
+  color: white;
+  font-size: 16px;
+}
+
+page-workout-category-abs .Container .a {
+  height: 100%;
+  margin-top: 20px;
+  margin-left: 10%;
+  width: 80%;
+  height: auto;
+  border-radius: 20px;
+  border-color: white;
+  border-width: 5px;
+  border-style: solid;
+  background-color: #353945;
+}
+
+page-workout-category-abs h5 {
+  margin-left: 40px;
+  color: white;
+}
+
+page-workout-category-abs .Container .fix {
+  position: -webkit-sticky;
+  position: sticky;
+  margin-top: 0%;
+  top: 0;
+  background-color: #353945;
+}
+
+page-workout-category-abs .Container {
+  background-color: #353945;
+  width: 100%;
+  height: 100%;
+}
+
+page-workout-category-arms .toolbar-background {
+  background-color: #353945;
+}
+
+page-workout-category-arms ion-icon {
+  margin-left: 5%;
+  zoom: 2.0;
+  color: white;
+}
+
+page-workout-category-arms .Container .workoutFrame {
+  background-color: #353945;
+  width: 100%;
+  height: 100%;
+}
+
+page-workout-category-arms .Container .workoutTitle {
+  color: white;
+  font-size: 16px;
+}
+
+page-workout-category-arms .Container .a {
+  height: 100%;
+  margin-top: 20px;
+  margin-left: 10%;
+  width: 80%;
+  height: 60px;
+  border-radius: 20px;
+  border-color: white;
+  border-width: 5px;
+  border-style: solid;
+  background-color: #353945;
+}
+
+page-workout-category-arms h5 {
+  margin-left: 40px;
+  color: white;
+}
+
+page-workout-category-arms .Container .fix {
+  position: -webkit-sticky;
+  position: sticky;
+  margin-top: 0%;
+  top: 0;
+  background-color: #353945;
+}
+
+page-workout-category-arms .Container {
+  background-color: #353945;
+  width: 100%;
+  height: 100%;
+}
+
+page-workout-category-back .toolbar-background {
+  background-color: #353945;
+}
+
+page-workout-category-back ion-icon {
+  margin-left: 5%;
+  zoom: 2.0;
+  color: white;
+}
+
+page-workout-category-back .Container .workoutFrame {
+  background-color: #353945;
+  width: 100%;
+  height: 100%;
+}
+
+page-workout-category-back .Container .workoutTitle {
+  color: white;
+  font-size: 16px;
+}
+
+page-workout-category-back .Container .a {
+  height: 100%;
+  margin-top: 20px;
+  margin-left: 10%;
+  width: 80%;
+  height: auto;
+  border-radius: 20px;
+  border-color: white;
+  border-width: 5px;
+  border-style: solid;
+  background-color: #353945;
+}
+
+page-workout-category-back h5 {
+  margin-left: 40px;
+  color: white;
+}
+
+page-workout-category-back .Container .fix {
+  position: -webkit-sticky;
+  position: sticky;
+  margin-top: 0%;
+  top: 0;
+  background-color: #353945;
+}
+
+page-workout-category-back .Container {
+  background-color: #353945;
+  width: 100%;
+  height: 100%;
+}
+
+page-workout-category-cardio .toolbar-background {
+  background-color: #353945;
+}
+
+page-workout-category-cardio ion-icon {
+  margin-left: 5%;
+  zoom: 2.0;
+  color: white;
+}
+
+page-workout-category-cardio .Container .workoutFrame {
+  background-color: #353945;
+  width: 100%;
+  height: 100%;
+}
+
+page-workout-category-cardio .Container .workoutTitle {
+  color: white;
+  font-size: 16px;
+}
+
+page-workout-category-cardio .Container .a {
+  height: 100%;
+  margin-top: 20px;
+  margin-left: 10%;
+  width: 80%;
+  height: auto;
+  border-radius: 20px;
+  border-color: white;
+  border-width: 5px;
+  border-style: solid;
+  background-color: #353945;
+}
+
+page-workout-category-cardio h5 {
+  margin-left: 40px;
+  color: white;
+}
+
+page-workout-category-cardio .Container .fix {
+  position: -webkit-sticky;
+  position: sticky;
+  margin-top: 0%;
+  top: 0;
+  background-color: #353945;
+}
+
+page-workout-category-cardio .Container {
+  background-color: #353945;
+  width: 100%;
+  height: 100%;
+}
+
+page-workout-category-chest .toolbar-background {
+  background-color: #353945;
+}
+
+page-workout-category-chest ion-icon {
+  margin-left: 5%;
+  zoom: 2.0;
+  color: white;
+}
+
+page-workout-category-chest .Container .workoutFrame {
+  background-color: #353945;
+  width: 100%;
+  height: 100%;
+}
+
+page-workout-category-chest .Container .workoutTitle {
+  color: white;
+  font-size: 16px;
+}
+
+page-workout-category-chest .Container .a {
+  height: 100%;
+  margin-top: 20px;
+  margin-left: 10%;
+  width: 80%;
+  height: auto;
+  border-radius: 20px;
+  border-color: white;
+  border-width: 5px;
+  border-style: solid;
+  background-color: #353945;
+}
+
+page-workout-category-chest h5 {
+  margin-left: 40px;
+  color: white;
+}
+
+page-workout-category-chest .Container .fix {
+  position: -webkit-sticky;
+  position: sticky;
+  margin-top: 0%;
+  top: 0;
+  background-color: #353945;
+}
+
+page-workout-category-chest .Container {
+  background-color: #353945;
+  width: 100%;
+  height: 100%;
+}
+
+page-workout-category-legs .toolbar-background {
+  background-color: #353945;
+}
+
+page-workout-category-legs ion-icon {
+  margin-left: 5%;
+  zoom: 2.0;
+  color: white;
+}
+
+page-workout-category-legs .Container .workoutFrame {
+  background-color: #353945;
+  width: 100%;
+  height: 100%;
+}
+
+page-workout-category-legs .Container .workoutTitle {
+  color: white;
+  font-size: 16px;
+}
+
+page-workout-category-legs .Container .a {
+  height: 100%;
+  margin-top: 20px;
+  margin-left: 10%;
+  width: 80%;
+  height: auto;
+  border-radius: 20px;
+  border-color: white;
+  border-width: 5px;
+  border-style: solid;
+  background-color: #353945;
+}
+
+page-workout-category-legs h5 {
+  margin-left: 40px;
+  color: white;
+}
+
+page-workout-category-legs .Container .fix {
+  position: -webkit-sticky;
+  position: sticky;
+  margin-top: 0%;
+  top: 0;
+  background-color: #353945;
+}
+
+page-workout-category-legs .Container {
+  background-color: #353945;
+  width: 100%;
+  height: 100%;
+}
+
+page-workout-category-shoulders .toolbar-background {
+  background-color: #353945;
+}
+
+page-workout-category-shoulders ion-icon {
+  margin-left: 5%;
+  zoom: 2.0;
+  color: white;
+}
+
+page-workout-category-shoulders .Container .workoutFrame {
+  background-color: #353945;
+  width: 100%;
+  height: 100%;
+}
+
+page-workout-category-shoulders .Container .workoutTitle {
+  color: white;
+  font-size: 16px;
+}
+
+page-workout-category-shoulders .Container .a {
+  height: 100%;
+  margin-top: 20px;
+  margin-left: 10%;
+  width: 80%;
+  height: auto;
+  border-radius: 20px;
+  border-color: white;
+  border-width: 5px;
+  border-style: solid;
+  background-color: #353945;
+}
+
+page-workout-category-shoulders h5 {
+  margin-left: 40px;
+  color: white;
+}
+
+page-workout-category-shoulders .Container .fix {
+  position: -webkit-sticky;
+  position: sticky;
+  margin-top: 0%;
+  top: 0;
+  background-color: #353945;
+}
+
+page-workout-category-shoulders .Container {
+  background-color: #353945;
+  width: 100%;
+  height: 100%;
 }

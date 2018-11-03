@@ -20,9 +20,58 @@ page-food-plan2 {
         color:white;
     }
 
-    .container .detailBox .a{
+    .container .Breakfast .MealsHeader{
+        padding-top:20px;
+        padding-left:20px;
+    }
+
+    .container .Breakfast .MealsHeader .icon{
+        display:inline-block;
+        vertical-align:middle;
+    }
+    .container .Breakfast .MealsDetail .icon{
+        padding-top:5px;
+        vertical-align:middle
+    }
+
+    .container .Breakfast .MealsHeader .CategoryHeader{
+        background-color: #353945; 
+        color:white;
+        font-size:18px;
+        display:inline-block;
+        padding-bottom:20px;
+        padding-right:10px;
+    }
+
+    .container .Breakfast .MealsDetail .CategoryHeader{
+        background-color: #353945; 
+        color:white;
+        font-size:18px;
+        display:inline-block;
+        vertical-align:middle;
+        padding-right:10px;
+    }
+
+    .container .Breakfast .MealsDetail{
         background-color: #353945;
         font-size: 14px;
         color:white;
+        border-style:solid;
+        bordor-size:10px;
+        padding-left:20px;
+        padding-top:10px;
+        padding-buttom:10px;
+        border-radius:10px;
+        margin-left:20px;
+        margin-right:20px;
     }
+
+    .container .Breakfast .MealsDetail .WeightDetail{
+    
+    }
+
+    .container .Breakfast .MealsDetail .FoodName{
+        color:#edd06a;
+    }
+
 }

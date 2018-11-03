@@ -6,266 +6,62 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-	<ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>
-    <ion-title><h1>FoodNutrition</h1></ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content class="container" padding>
-	<div *ngIf="buttonClicked1">
-		
-		
-		<div>
-			<h2>Breakfast</h2>
-			<ion-grid>
-				<ion-row>
-					<ion-col>
-						<h3>Food Name</h3>
-					</ion-col>
-					<ion-col>
-							<h3>Weight(g)</h3>
-					</ion-col>
-				</ion-row>
-				<h1>Protein</h1>
-				<ion-row *ngFor="let a of dataFoodNutrition; let i = index" style="">
-					<ion-col>
-					<div class="detailBox">
-							<ion-item class="a" *ngIf="a.category == 'Protein'">{{a.name}}</ion-item>
-						</div>
-					</ion-col>
-					
-					<ion-col>
-					<div class="detailBox">
-							<ion-item class="a" *ngIf="a.category == 'Protein'">{{proteinAfter[i].toFixed()}}</ion-item>
-					</div>
-					
-					</ion-col>
-			
-				</ion-row>
-				<h1>Carbohydrate</h1>
-				<ion-row *ngFor="let a of dataFoodNutrition; let i = index" style="">
-					<ion-col>
-					<div class="detailBox">
-							<ion-item class="a" *ngIf="a.category == 'Carbohydrate'">{{a.name}}</ion-item>
-						</div>
-					</ion-col>
-					
-					<ion-col>
-					<div class="detailBox">
-							<ion-item class="a" *ngIf="a.category == 'Carbohydrate'">{{carbohydrateAfter[i].toFixed()}}</ion-item>
-					</div>
-					
-					</ion-col>
-			
-				</ion-row>
-				<h1>Fat</h1>
-				<ion-row *ngFor="let a of dataFoodNutrition; let i = index" style="">
-					<ion-col>
-					<div class="detailBox">
-							<ion-item class="a" *ngIf="a.category == 'Fat'">{{a.name}}</ion-item>
-						</div>
-					</ion-col>
-					
-					<ion-col>
-					<div class="detailBox">
-							<ion-item class="a" *ngIf="a.category == 'Fat'">{{fatAfter[i].toFixed()}}</ion-item>
-					</div>
-					
-					</ion-col>
-			
-				</ion-row>
-			</ion-grid>
-		</div>
-
-		<div>
-			<h2>Lunch</h2>
-			<ion-grid>
-				<ion-row>
-					<ion-col>
-						<h3>Food Name</h3>
-					</ion-col>
-					<ion-col>
-							<h3>Weight(g)</h3>
-					</ion-col>
-				</ion-row>
-				<h1>Protein</h1>
-				<ion-row *ngFor="let a of dataFoodNutrition; let i = index" style="">
-					<ion-col>
-					<div class="detailBox">
-							<ion-item  class="a" *ngIf="a.category == 'Protein'">{{a.name}}</ion-item>
-						</div>
-					</ion-col>
-					
-					<ion-col>
-					<div class="detailBox">
-							<ion-item class="a" *ngIf="a.category == 'Protein'">{{proteinBefore[i].toFixed()}}</ion-item>
-					</div>
-					
-					</ion-col>
-			
-				</ion-row>
-				<h1>Carbohydrate</h1>
-				<ion-row *ngFor="let a of dataFoodNutrition; let i = index" style="">
-					<ion-col>
-					<div class="detailBox">
-							<ion-item class="a" *ngIf="a.category == 'Carbohydrate'">{{a.name}}</ion-item>
-						</div>
-					</ion-col>
-					
-					<ion-col>
-					<div class="detailBox">
-							<ion-item class="a" *ngIf="a.category == 'Carbohydrate'">{{carbohydrateBefore[i].toFixed()}}</ion-item>
-					</div>
-					
-					</ion-col>
-			
-				</ion-row>
-				<h1>Fat</h1>
-				<ion-row *ngFor="let a of dataFoodNutrition; let i = index" style="">
-					<ion-col>
-					<div class="detailBox">
-							<ion-item class="a" *ngIf="a.category == 'Fat'">{{a.name}}</ion-item>
-						</div>
-					</ion-col>
-					
-					<ion-col>
-					<div class="detailBox">
-							<ion-item class="a" *ngIf="a.category == 'Fat'">{{fatBefore[i].toFixed()}}</ion-item>
-					</div>
-					
-					</ion-col>
-			
-				</ion-row>
-			</ion-grid>
-		</div>
-
-		<div>
-			<h2>Before workout</h2>
-			<ion-grid>
-				<ion-row>
-					<ion-col>
-						<h3>Food Name</h3>
-					</ion-col>
-					<ion-col>
-							<h3>Weight(g)</h3>
-					</ion-col>
-				</ion-row>
-				<h1>Protein</h1>
-				<ion-row  *ngFor="let a of dataFoodNutrition; let i = index" style="">
-					<ion-col>
-					<div class="detailBox">
-							<ion-item class="a" *ngIf="a.category == 'Protein'">{{a.name}}</ion-item>
-						</div>
-					</ion-col>
-					
-					<ion-col>
-					<div class="detailBox">
-							<ion-item class="a" *ngIf="a.category == 'Protein'">{{proteinBreakfast[i].toFixed()}}</ion-item>
-					</div>
-					
-					</ion-col>
-			
-				</ion-row>
-				<h1>Carbohydrate</h1>
-				<ion-row *ngFor="let a of dataFoodNutrition; let i = index" style="">
-					<ion-col>
-					<div class="detailBox">
-							<ion-item class="a" *ngIf="a.category == 'Carbohydrate'">{{a.name}}</ion-item>
-						</div>
-					</ion-col>
-					
-					<ion-col>
-					<div class="detailBox">
-							<ion-item class="a" *ngIf="a.category == 'Carbohydrate'">{{carbohydrateBreakfast[i].toFixed()}}</ion-item>
-					</div>
-					
-					</ion-col>
-			
-				</ion-row>
-				<h1>Fat</h1>
-				<ion-row *ngFor="let a of dataFoodNutrition; let i = index" style="">
-					<ion-col>
-					<div class="detailBox">
-							<ion-item class="a" *ngIf="a.category == 'Fat'">{{a.name}}</ion-item>
-						</div>
-					</ion-col>
-					
-					<ion-col>
-					<div class="detailBox">
-							<ion-item class="a" *ngIf="a.category == 'Fat'">{{fatBreakfast[i].toFixed()}}</ion-item>
-					</div>
-					
-					</ion-col>
-			
-				</ion-row>
-			</ion-grid>
-		</div>
-
-		<div>
-			<h2>After workout</h2>
-			<ion-grid>
-				<ion-row>
-					<ion-col>
-						<h3>Food Name</h3>
-					</ion-col>
-					<ion-col>
-							<h3>Weight(g)</h3>
-					</ion-col>
-				</ion-row>
-				<h1>Protein</h1>
-				<ion-row *ngFor="let a of dataFoodNutrition; let i = index" style="">
-					<ion-col>
-					<div class="detailBox">
-							<ion-item class="a" *ngIf="a.category == 'Protein'">{{a.name}}</ion-item>
-						</div>
-					</ion-col>
-					
-					<ion-col>
-					<div class="detailBox">
-							<ion-item class="a" *ngIf="a.category == 'Protein'">{{proteinLunch[i].toFixed()}}</ion-item>
-					</div>
-					
-					</ion-col>
-			
-				</ion-row>
-				<h1>Carbohydrate</h1>
-				<ion-row *ngFor="let a of dataFoodNutrition; let i = index" style="">
-					<ion-col>
-					<div class="detailBox">
-							<ion-item class="a" *ngIf="a.category == 'Carbohydrate'">{{a.name}}</ion-item>
-						</div>
-					</ion-col>
-					
-					<ion-col>
-					<div class="detailBox">
-							<ion-item class="a" *ngIf="a.category == 'Carbohydrate'">{{carbohydrateLunch[i].toFixed()}}</ion-item>
-					</div>
-					
-					</ion-col>
-			
-				</ion-row>
-				<h1>Fat</h1>
-				<ion-row *ngFor="let a of dataFoodNutrition; let i = index" style="">
-					<ion-col>
-					<div class="detailBox">
-							<ion-item class="a" *ngIf="a.category == 'Fat'">{{a.name}}</ion-item>
-						</div>
-					</ion-col>
-					
-					<ion-col>
-					<div class="detailBox">
-							<ion-item class="a" *ngIf="a.category == 'Fat'">{{fatLunch[i].toFixed()}}</ion-item>
-					</div>
-					
-					</ion-col>
-			
-				</ion-row>
-			</ion-grid>
-		</div>
-
-	</div>
-
-</ion-content>
+	<ion-navbar>
+	  <ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>
+	  <ion-title><h1>FoodNutrition</h1></ion-title>
+	</ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content class="container">
+	  <div *ngIf="buttonClicked1">
+		  <div class="Breakfast">
+			  <div class="MealsHeader">
+				  <p class="CategoryHeader">Protein per meal </p>
+				  <img src="img/Protein48.png" class="icon">
+			  </div>
+			  <div class="MealsDetail">
+				  <p class="CategoryHeader">Choose 1 from lists</p>
+				  <img src="img/Choose48.png" class="icon">
+				  <ion-list  *ngFor="let a of dataFoodNutrition; let i = index">
+				  
+					  <p  *ngIf="a.category == 'Protein'" class="FoodName">{{a.name}}</p>
+					  <p  *ngIf="a.category == 'Protein'&& a.name !='Whole egg, raw, fresh'" class="WeightDetail">Weight: {{proteinBreakfast[i].toFixed()}} Grams</p>
+					  <p  *ngIf="a.name == 'Whole egg, raw, fresh'" class="WeightDetail">Weight: {{proteinBreakfast[i].toFixed()}} Portions</p>
+			  </ion-list>
+			  </div>
+		  </div>
+		  <div class="Breakfast">
+			  <div class="MealsHeader">
+				  <p class="CategoryHeader">Carbohydrate per meal </p>
+				  <img src="img/Carb48.png" class="icon">
+			  </div>
+			  <div class="MealsDetail">
+				  <p class="CategoryHeader">Choose 1 from lists</p>
+				  <img src="img/Choose48.png" class="icon">
+				  <ion-list  *ngFor="let a of dataFoodNutrition; let i = index">
+				  
+					  <p  *ngIf="a.category == 'Carbohydrate'" class="FoodName">{{a.name}}</p>
+					  <p  *ngIf="a.category == 'Carbohydrate'"class="WeightDetail">Weight: {{carbohydrateBreakfast[i].toFixed()}} Grams</p>
+			  </ion-list>
+			  </div>
+		  </div>
+		  <div class="Breakfast">
+			  <div class="MealsHeader">
+				  <p class="CategoryHeader">Fat per meal </p>
+				  <img src="img/Fat48.png" class="icon">
+			  </div>
+			  <div class="MealsDetail">
+				  <p class="CategoryHeader">Choose 1 from lists</p>
+				  <img src="img/Choose48.png" class="icon">
+				  <ion-list  *ngFor="let a of dataFoodNutrition; let i = index">
+				  
+					  <p  *ngIf="a.category == 'Fat'" class="FoodName">{{a.name}}</p>
+					  <p  *ngIf="a.category == 'Fat'"class="WeightDetail">Weight: {{fatBreakfast[i].toFixed()}} Table spoon</p>
+			  </ion-list>
+			  </div>
+		  </div>
+	  </div>
+  </ion-content>
+  

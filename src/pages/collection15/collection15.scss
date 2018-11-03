@@ -1,0 +1,109 @@
+page-collection15 {
+    .toolbar-background {
+        background-color: #353945;
+    }
+
+    ion-icon{
+		margin-left:5%;
+        zoom:2.0;
+        color:white;
+    }
+
+    h1{
+        font-size: 15px;
+        color: white;
+    }
+
+    .container{
+        background-image:url("/img/Workouts1.jpg");
+        opacity:0.9;
+		width:100%;
+		height:100%;
+		
+    }
+
+    .container .Container2{
+        width:100%;
+        height:100%;
+    }
+
+    .container .Container2 .CollectionName{
+        font-size:24px;
+        font-weight:bold;
+        margin-top:40px;
+        text-align:center;
+        color:white;
+    }
+    .container .Container2 .CollectionName .CollectionName2{
+        font-size:24px;
+        font-weight:bold;
+
+    }
+
+    .container .Container2 .CollectionTime{
+        margin: 30px;
+        background-color: #ffffff;
+        border: 1px solid black;
+        opacity: 0.6;
+        text-align:center;
+        padding:20px;
+        font-weight: bold;
+        font-size:20px;
+        
+    }
+
+    .container .Container2 .CollectionTime .CollectionTime2{
+        margin: 5%;
+        color: #000000;
+        font-size:16px;
+        
+    }
+
+    .container .Container2 .CollectionEq{
+        margin: 30px;
+        background-color: #ffffff;
+        border: 1px solid black;
+        opacity: 0.6;
+        text-align:center;
+        padding:20px;
+        font-weight: bold;
+        font-size:20px;
+        
+    }
+
+    .container .Container2 .CollectionEq .CollectionEq2{
+        margin: 5%;
+        color: #000000;
+        font-size:16px;
+        
+    }
+
+    .container .Container2 .CollectionDes{
+        margin: 30px;
+        background-color: #ffffff;
+        border: 1px solid black;
+        opacity: 0.6;
+        text-align:center;
+        padding:20px;
+        font-weight: bold;
+        font-size:20px;
+    }
+
+    .container .Container2 .CollectionDes .CollectionDes2{
+        margin: 5%;
+        color: #000000;
+        font-size:16px;
+    }
+
+    .container .startButton{
+        border-radius:100%;
+        width:80px;
+        height:80px;
+        margin-left:40%;
+        margin-bottom:40px;
+        background-color: #ababac;
+        color:#000000;
+    }
+
+
+}

@@ -83,6 +83,19 @@
 			<ion-radio value=3></ion-radio>
 		</ion-item>
 	</ion-list>
+	<ion-list radio-group [(ngModel)]="Goal" formControlName="Goal">
+			<ion-list-header class="a">
+				4. {{a.Question5.question}}
+			</ion-list-header>
+			<ion-item class="a">
+				<ion-label>{{a.Question5.choices[0]}}</ion-label>
+				<ion-radio value="Lose weight"></ion-radio>
+			</ion-item>
+			<ion-item class="a">
+				<ion-label>{{a.Question5.choices[1]}}</ion-label>
+				<ion-radio value="Gain muscles"></ion-radio>
+			</ion-item>
+		</ion-list>
 	<br>
 	<button ion-button type="submit" (click)="submit()">submit</button>
 	</form>

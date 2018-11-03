@@ -1,7 +1,7 @@
 <ion-header >
   		<ion-navbar>
   			<ion-icon item-end name="md-person" (click) = "profile()"></ion-icon>
-    		<ion-title><h1>TrainHere</h1></ion-title>
+			<ion-title><h1>TrainHere</h1></ion-title>
   		</ion-navbar>
 </ion-header>
 <ion-content  class="body">
@@ -13,7 +13,7 @@
 	<p class="label">Popular workout collections</p>
 	<ion-slides autoplay="5000" loop="true" speed="3000">
    		<ion-slide *ngFor="let slide of Collections">
-   			<img src="{{slide.imageCollections}}"/>
+   			<img src="{{slide.imageCollections}}" />
     	</ion-slide>
   	</ion-slides>
 	<p class="label">New workouts</p>

@@ -1,14 +1,14 @@
 webpackJsonp([6],{
 
-/***/ 339:
+/***/ 356:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FoodPlan2PageModule", function() { return FoodPlan2PageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WorkoutCategoryArmsPageModule", function() { return WorkoutCategoryArmsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__food_plan2__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__workout_category_arms__ = __webpack_require__(129);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var FoodPlan2PageModule = /** @class */ (function () {
-    function FoodPlan2PageModule() {
+var WorkoutCategoryArmsPageModule = /** @class */ (function () {
+    function WorkoutCategoryArmsPageModule() {
     }
-    FoodPlan2PageModule = __decorate([
+    WorkoutCategoryArmsPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__food_plan2__["a" /* FoodPlan2Page */],
+                __WEBPACK_IMPORTED_MODULE_2__workout_category_arms__["a" /* WorkoutCategoryArmsPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__food_plan2__["a" /* FoodPlan2Page */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__workout_category_arms__["a" /* WorkoutCategoryArmsPage */]),
             ],
         })
-    ], FoodPlan2PageModule);
-    return FoodPlan2PageModule;
+    ], WorkoutCategoryArmsPageModule);
+    return WorkoutCategoryArmsPageModule;
 }());
 
-//# sourceMappingURL=food-plan2.module.js.map
+//# sourceMappingURL=workout-category-arms.module.js.map
 
 /***/ })
 

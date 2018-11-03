@@ -4,11 +4,12 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { FormsModule } from '@angular/forms';
+import { Calendar } from '@ionic-native/calendar';
 
-import { AngularFireModule } from 'angularfire2' ;
-import { AngularFireDatabaseModule } from 'angularfire2/database' ;
-import { AngularFireAuthModule }from 'angularfire2/auth';
-import { AngularFireAuth }from 'angularfire2/auth'; 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -25,7 +26,15 @@ import { ProfilePage } from '../pages/profile/profile';
 import { FoodPlan2Page } from '../pages/food-plan2/food-plan2';
 import { CollectionPage } from '../pages/collection/collection';
 import { Collection2Page } from '../pages/collection2/collection2';
-import { Collection3Page } from '../pages/collection3/collection3';
+import { Collection15Page } from '../pages/collection15/collection15';
+import { CalendarPage } from '../pages/calendar/calendar';
+import { WorkoutCategoryAbsPage } from '../pages/workout-category-abs/workout-category-abs';
+import { WorkoutCategoryShouldersPage } from '../pages/workout-category-shoulders/workout-category-shoulders';
+import { WorkoutCategoryArmsPage } from '../pages/workout-category-arms/workout-category-arms';
+import { WorkoutCategoryBackPage } from '../pages/workout-category-back/workout-category-back';
+import { WorkoutCategoryChestPage } from '../pages/workout-category-chest/workout-category-chest';
+import { WorkoutCategoryLegsPage } from '../pages/workout-category-legs/workout-category-legs';
+import { WorkoutCategoryCardioPage } from '../pages/workout-category-cardio/workout-category-cardio';
 
 export const config = {
   apiKey: "AIzaSyACQbDFnbhv5uJCBcyd6Sy1ylmBzvd44AM",
@@ -53,7 +62,15 @@ export const config = {
     FoodPlan2Page,
     CollectionPage,
     Collection2Page,
-    Collection3Page
+    Collection15Page,
+    CalendarPage,
+    WorkoutCategoryAbsPage,
+    WorkoutCategoryShouldersPage,
+    WorkoutCategoryArmsPage,
+    WorkoutCategoryBackPage,
+    WorkoutCategoryChestPage,
+    WorkoutCategoryLegsPage,
+    WorkoutCategoryCardioPage
   ],
   imports: [
     BrowserModule,
@@ -81,14 +98,23 @@ export const config = {
     FoodPlan2Page,
     CollectionPage,
     Collection2Page,
-    Collection3Page
+    Collection15Page,
+    CalendarPage,
+    WorkoutCategoryAbsPage,
+    WorkoutCategoryShouldersPage,
+    WorkoutCategoryArmsPage,
+    WorkoutCategoryBackPage,
+    WorkoutCategoryChestPage,
+    WorkoutCategoryLegsPage,
+    WorkoutCategoryCardioPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     AngularFireAuthModule,
-    AngularFireAuth
+    AngularFireAuth,
+    Calendar
   ]
 })
-export class AppModule {}
+export class AppModule { }

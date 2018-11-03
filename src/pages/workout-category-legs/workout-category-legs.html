@@ -1,0 +1,38 @@
+<!--
+  Generated template for the WorkoutCategoryLegsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+			<ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>
+    <ion-title><h1>Legs</h1></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class = "Container">
+	<div *ngIf="buttonClicked1">
+		<h5>Legs</h5>
+		<div class="workoutFrame">
+    		<ion-list *ngFor="let Legs of dataFitnessPlanLegs">
+      			<button class="a" (click)="click(Legs)"><p class="workoutTitle">{{Legs}}</p></button>
+    		</ion-list>
+    	</div>
+	</div>
+	<div *ngIf="buttonClicked2">
+      	<iframe  class="fix" width="100%" height="250" [src]="trustedVideoUrl ? trustedVideoUrl : null" frameborder="0" allowfullscreen>
+      	</iframe>
+    	<div class="aa">
+    		<h5>Legs</h5>
+    		<div class="workoutFrame">
+    			<ion-list *ngFor="let Legs of dataFitnessPlanLegs">
+      				<button  class="a" (click)="click(Legs)"><p class="workoutTitle">{{Legs}}</p></button>
+    			</ion-list>
+    		</div>
+		</div>
+	</div>
+</ion-content>

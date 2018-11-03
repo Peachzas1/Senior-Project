@@ -12,6 +12,7 @@ import { WorkoutPage } from '../workout/workout';
 import { ProfilePage } from '../profile/profile';
 import { CollectionPage } from '../collection/collection';
 import { Collection2Page } from '../collection2/collection2';
+import { CalendarPage } from '../calendar/calendar';
 
 @Component({
   selector: 'page-home',
@@ -26,9 +27,9 @@ export class HomePage {
   fireWork: FirebaseListObservable<any[]>;
   fireFoodPlan: FirebaseListObservable<any[]>;
   dataQuestion: any[] =[];
-  Collections = [{ imageCollections: "img/TrainLike1.jpg" }
-                ,{ imageCollections: "img/TrainLike2.jpg" }
-                ,{ imageCollections: "img/TrainLike3.jpg" }
+  Collections = [{ imageCollections: "img/TrainLike1.jpg",name:"1" }
+                ,{ imageCollections: "img/TrainLike2.jpg",name:"2" }
+                ,{ imageCollections: "img/TrainLike3.jpg",name:"3" }
                 ];
   Workouts = [{ imageWorkouts: "img/Workouts1.jpg" }
                 ,{ imageWorkouts: "img//Workouts2.jpg" }
@@ -71,7 +72,7 @@ export class HomePage {
           this.onlogUser.UserKey = this.dataUser[i].$key;
         }
         }
-      console.log(this.onlogUser)
+      console.log(this.onlogUser);
       this.navCtrl.setRoot(FitnessPlanPage,this.onlogUser);
     }else{
       console.log("else");
@@ -90,5 +91,9 @@ export class HomePage {
     }else{
       this.navCtrl.setRoot(CollectionPage,this.onlogUser);
     }
+  }
+
+  photo(){
+    console.log("a");
   }
 }

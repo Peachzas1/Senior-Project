@@ -38,7 +38,6 @@ export class FitnessPlanPage {
   //fireUser2: FirebaseListObservable<any[]>;
   age: number;
   bmi: number;
-  today: number = Date.now();
   keyFit: any[] = [];
   userPlanKey: string;
   imagePath: string = "img/plan4.jpg";

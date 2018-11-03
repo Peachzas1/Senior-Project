@@ -4,8 +4,53 @@
     "uninstalled": []
   },
   "config_munge": {
-    "files": {}
+    "files": {
+      "config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<feature name=\"Calendar\"><param name=\"ios-package\" value=\"Calendar\" /></feature>",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "*-Info.plist": {
+        "parents": {
+          "CFBundleLocalizations": [
+            {
+              "xml": "<array><string>en</string><string>de</string><string>nl</string><string>fr</string><string>it</string><string>pt-BR</string></array>",
+              "count": 1
+            }
+          ],
+          "NSCalendarsUsageDescription": [
+            {
+              "xml": "<string> </string>",
+              "count": 1
+            }
+          ]
+        }
+      }
+    }
   },
-  "installed_plugins": {},
-  "dependent_plugins": {}
+  "installed_plugins": {
+    "cordova-plugin-calendar": {
+      "CALENDAR_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "id": "cordova-plugin-calendar.Calendar",
+      "file": "plugins/cordova-plugin-calendar/www/Calendar.js",
+      "pluginId": "cordova-plugin-calendar",
+      "clobbers": [
+        "Calendar"
+      ]
+    }
+  ],
+  "plugin_metadata": {
+    "cordova-plugin-calendar": "5.1.2"
+  }
 }

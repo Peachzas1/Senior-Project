@@ -7,6 +7,12 @@ page-fitness-plan3 {
         float: left;
     }
 
+    .container3{
+        float: left;
+        margin-left: 30%;
+        margin-bottom: 30px;
+    }
+
     .toolbar-background {
         background-color: #353945;
     }
@@ -67,6 +73,22 @@ page-fitness-plan3 {
         border-width:3px;
         background-color:#353945 ;
         color:white;
+        font-size:16px;
+        text-align:center;
+    }
+
+    .workoutList .workoutFrames{
+        height:100%;
+        margin-top:10px;
+        margin-left:10%;
+        width:80%;
+        height:60px;
+        border-style:solid;
+        border-radius:20px;
+        border-color:white;
+        border-width:3px;
+        background-color:#353945 ;
+        color:gray;
         font-size:16px;
         text-align:center;
     }

@@ -1,6 +1,7 @@
 page-collection15 {
     .toolbar-background {
-        background-color: #353945;
+        background-image:url("../img/Workouts1.jpg");
+        // background-color: #353945;
     }
 
     ion-icon{
@@ -10,12 +11,12 @@ page-collection15 {
     }
 
     h1{
-        font-size: 15px;
+        font-size: 20px;
         color: white;
     }
 
     .container{
-        background-image:url("/img/Workouts1.jpg");
+        background-image:url("../img/Workouts1.jpg");
         opacity:0.9;
 		width:100%;
 		height:100%;

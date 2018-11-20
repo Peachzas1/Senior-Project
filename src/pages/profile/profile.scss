@@ -17,16 +17,37 @@ page-profile {
         color: white;
     }
 
-    .container .submit{
-        text-align: center;
-        margin-left: 40%;
-    }
-
     h1{
         color: white;
     }
 
     h3{
         text-align: center;
+    }
+
+    .container .frame{
+        border-width:5px;
+        border-radius:10px;
+        border-style:solid;
+    }
+
+    p{
+        padding-left:20px;
+        font-size:16px;
+    }
+
+    .container .editButton{
+        margin-top:30px;
+        margin-left:33%;
+    }
+
+    .container .logoutButton{
+        margin-top:30px;
+        margin-left:37%;
+    }
+
+    .container .progressButton{
+        margin-top:30px;
+        margin-left:35%;
     }
 }

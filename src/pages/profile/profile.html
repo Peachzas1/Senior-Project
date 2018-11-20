@@ -17,15 +17,19 @@
 
 
 <ion-content class="container" padding>
-  <ion-list *ngFor="let a of data">
-    <h5>First Name : {{a.fName}}</h5>
-    <h5>Last Name : {{a.lName}}</h5>
-    <h5>Email : {{a.email}}</h5>
-    <h5>Gender : {{a.gender}}</h5>
-    <h5>height : {{a.height}}</h5>
-    <h5>weight : {{a.weight}}</h5>
-    <h5>waistMeasurement : {{a.waistMeasurement}}</h5>
-    <h5>dateofbirth : {{a.dateofbirth}}</h5>
-  </ion-list>
-  <button ion-button type="submit" (click)="logout()" class="submit">Logout</button>
+  <div class="frame">
+    <ion-list *ngFor="let a of data">
+      <p>First Name : {{a.fName}}</p>
+      <p>Last Name : {{a.lName}}</p>
+      <p>Email : {{a.email}}</p>
+      <p>Gender : {{a.gender}}</p>
+      <p>Height : {{a.height}} cm</p>
+      <p>Weight : {{a.weight}} kg</p>
+      <p>Waist Measurement : {{a.waistMeasurement}} inch</p>
+      <p>Date of birth : {{a.dateofbirth}}</p>
+    </ion-list>
+  </div>
+  <button ion-button type="submit" (click)="edit()" class="editButton">Edit profile</button><br>
+  <button ion-button type="submit" (click)="progress()" class="progressButton">Progress</button><br>
+  <button ion-button type="submit" (click)="logout()" class="logoutButton">Logout</button>
 </ion-content>

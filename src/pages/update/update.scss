@@ -1,0 +1,32 @@
+page-update {
+    ion-icon{
+		margin-left:5%;
+        zoom:2.0;
+        color: white;
+    }
+
+    .toolbar-background {
+        background-color: #353945;
+    }
+
+    .container {
+    	background-color: #353945;
+		width:100%;
+		height:100%;
+		padding-top:10px;
+		color:white;
+    }
+
+    p{
+    	font-size:24px;
+    	text-align:center;
+    }
+
+    .container .otherInput{
+    	margin-bottom:20px;
+    }
+
+    .submitButton{
+    	margin-left:38%;
+    }
+}

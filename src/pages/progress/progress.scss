@@ -1,0 +1,56 @@
+page-progress {
+    .toolbar-background {
+        background-color: #353945;
+    }
+    .container{
+        background-color: #353945; 
+        color:white;
+    }
+
+    ion-icon{
+		margin-left:5%;
+        zoom:2.0;
+        color: white;
+    }
+    
+    h1{
+        color: white;
+    }
+
+    .grid{
+        text-align:center;
+        font-size:16px;
+    }
+
+    ion-col{
+        border: white;
+    }
+
+    .cen{
+        text-align: center;
+    }
+
+    .submit{
+       margin-left:23%;
+       margin-top:30px;
+       margin-bottom:20px;
+    }
+
+    .grid .header{
+        background-color:#27ae60;
+        color:white;
+        font-size:18px;
+       
+    }
+
+    ion-row:nth-of-type(even){
+        background-color:white;
+        color:black;
+        padding:5px;
+    }
+    ion-row:nth-of-type(odd){
+        background-color:#e9e9e9;
+        color:black;
+        padding:5px;
+    }
+}

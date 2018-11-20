@@ -8,7 +8,7 @@
 
 	  <ion-navbar>
 			<ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>
-	    <ion-title>FoodPlan</ion-title>
+	    <ion-title><h1>FoodPlan</h1></ion-title>
 	  </ion-navbar>
 
 	</ion-header>
@@ -18,25 +18,39 @@
 		<div  *ngIf="buttonClicked1">
 			<div class="resultAllDayFrame">	
 				<h3>Nutrition result all day</h3>
-				<div class="resultAllDay">
-					<img src="img/Nutrition48.png" class="icon">
-					<p class="header">Calories per day {{dataFoodPlanUser.calories}} Cals</p>
+				<ion-list>
+				<div ion-item class="resultAllDay">
+					<img src="img/Nutrition48.png" class="icon"> 
+					<p class="weight">Calories per day : {{dataFoodPlanUser.AllDayCal}} Cals</p> 
+
+					
 				</div>
-				<div class="resultAllDay">
-					<img src="img/Carb48.png" class="icon">
-					<p class="header">Carb per day {{dataFoodPlanUser.carbohydrate}} Grams</p>
-				</div>
-				<div class="resultAllDay">
-					<img src="img/Fat48.png" class="icon">
-					<p class="header">Fat per day {{dataFoodPlanUser.fat}} Grams</p>
-				</div>
-				<div class="resultAllDay">
-					<img src="img/Protein48.png" class="icon">
-					<p class="header">Protein per day {{dataFoodPlanUser.protein}} Grams</p>
-				</div>
+			</ion-list>
+
+				<ion-list>
+				
+					<div ion-item (click) = "goToCarbs()" class="resultAllDay">
+						<img src="img/Carb48.png" class="icon">
+						<p class="weight">Carb per day : {{dataFoodPlanUser.AllDayCarbs}} Grams</p> <ion-icon item-right name="ios-arrow-dropright" class="icon1"></ion-icon>
+						
+					</div>
+				</ion-list>
+				<ion-list>
+					<div ion-item  (click) = "goToFats()" class="resultAllDay">
+						<img src="img/Fat48.png" class="icon">
+						<p class="weight">Fat per day : {{dataFoodPlanUser.AllDayFats}} Grams</p> <ion-icon item-right name="ios-arrow-dropright" class="icon1"></ion-icon>
+						
+					</div>
+				
+				</ion-list>
+				<ion-list>
+					<div ion-item (click) = "goToProtein()" class="resultAllDay">
+						<img src="img/Protein48.png" class="icon">
+						<p class="weight">Protein per day : {{dataFoodPlanUser.AllDayProtein}} Grams</p> <ion-icon item-right name="ios-arrow-dropright" class="icon1"></ion-icon>
+					</div>
+				</ion-list>
+				
 			</div>
-				<button ion-button type="submit" (click)="submit()" class="submitButton1">"Show Meals Detail"</button>
-			
 
 				
 		</div>

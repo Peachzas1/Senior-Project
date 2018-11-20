@@ -31,10 +31,12 @@ export class FitnessPlanPage {
   dataFitnessPlanUser: any[] = [];
   itemKey: any[]
   dataUserSend: User;
+  dataUser: any[] = [];
   onlogUser: User;
   //onlogPlan: FitnessPlan = new FitnessPlan();
   fireUser: FirebaseListObservable<any[]>;
   fireTest: FirebaseListObservable<any[]>;
+  fireWork: FirebaseListObservable<any[]>;
   //fireUser2: FirebaseListObservable<any[]>;
   age: number;
   bmi: number;
@@ -47,6 +49,8 @@ export class FitnessPlanPage {
 
   fireFoodPlan: FirebaseListObservable<any[]>;
   fireFoodPlanUser: FirebaseListObservable<any[]>;
+  fireProgress: FirebaseListObservable<any[]>;
+  dataProgress: any[] = [];
   dataFoodPlan: any[] = [];
   dataFoodPlanUser: any[] = [];
   keyFood: any[] = [];
@@ -76,8 +80,12 @@ export class FitnessPlanPage {
       })
     });
     this.fireUser = this.angularfire.list('/User/');
+    this.fireUser.subscribe(data => {
+      this.dataUser = data;
+      console.log(data);
+    });
     this.fireTest = this.angularfire.list('/User/' + this.onlogUser.UserKey + '/userAnswer/');
-
+    this.fireWork = this.angularfire.list('/User/'+this.onlogUser.UserKey+'/status/');
     this.fireFoodPlan = this.angularfire.list('/FoodPlan/');
     this.fireFoodPlan.subscribe(data => {
       this.dataFoodPlan = data;
@@ -86,6 +94,11 @@ export class FitnessPlanPage {
     this.fireFoodPlanUser = this.angularfire.list('/FoodPlan/' + this.onlogUser.foodplan);
     this.fireFoodPlanUser.subscribe(data => {
       this.dataFoodPlanUser = data;
+      console.log(data);
+    });
+    this.fireProgress = this.angularfire.list('/User/'+this.onlogUser.UserKey+'/progress/');
+    this.fireProgress.subscribe(data => {
+      this.dataProgress = data;
       console.log(data);
     });
     console.log(this.onlogUser);
@@ -201,7 +214,24 @@ export class FitnessPlanPage {
           handler: () => {
             this.fireUser.update(this.onlogUser.UserKey, { fitplan: "null" });
             this.fireUser.update(this.onlogUser.UserKey, { foodplan: "null" });
+            for(let a = 0;a<this.dataFoodPlan.length;a++){
+              if(this.onlogUser.foodplan == this.dataFoodPlan[a].$key){
+                this.fireFoodPlan.remove(this.dataFoodPlan[a]);
+              }
+            }
+            for(let a = 0;a<this.dataProgress.length;a++){
+              if(this.onlogUser.finishplan+1 == this.dataProgress[a].plan){
+                this.fireProgress.remove(this.dataProgress[a]);
+              }
+            }
+            this.fireWork.remove();
             this.fireTest.remove();
+            for (let a = 0; a < this.dataUser.length; a++) {
+              if (this.onlogUser.UserKey == this.dataUser[a].$key) {
+                this.onlogUser = this.dataUser[a];
+                this.onlogUser.UserKey = this.dataUser[a].$key;
+              }
+            }
             this.navCtrl.setRoot(HomePage, this.onlogUser);
           }
         }

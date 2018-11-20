@@ -20,7 +20,7 @@ page-calendar {
       }
       .currentDate {
         font-weight: bold;
-        background-color: red;
+        background-color: gray;
         color: white;
         border-radius: 30px;
       }
@@ -39,7 +39,14 @@ page-calendar {
         margin: 2px auto;
         height: 5px;
         width: 5px;
-        background-color:gray;
+        background-color:red;
+        border-radius: 30px;
+      }
+      .event-bullet3 {
+        margin: 2px auto;
+        height: 5px;
+        width: 5px;
+        background-color:black;
         border-radius: 30px;
       }
       .selected-date {

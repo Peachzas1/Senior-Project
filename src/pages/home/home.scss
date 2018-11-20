@@ -19,6 +19,14 @@ page-home {
     	height: 50px;
     	color: black;
 	}
+	.body .frame{
+        border-width:5px;
+        border-radius:10px;
+		border-style:solid;
+		color:white;
+		margin-left:20px;
+		margin-right:20px;
+    }
 	.button.navButton{
 		margin-top:20px;
 		width:30%;
@@ -30,6 +38,19 @@ page-home {
     	transition: all 0.3s;
     	color:white;
 	}
+
+	.button.planButton{
+		margin-left:30%;
+		width:45%;
+		font-size:12px;
+		border: solid;
+		border-width:1px;
+    	background: none;
+    	letter-spacing: 1px;
+    	transition: all 0.3s;
+    	color:white;
+    	margin-bottom:10px;
+	}
 	.button.navButton:hover{
 		color: white;
     	background: black;
@@ -38,12 +59,47 @@ page-home {
 		margin-left:20px;
 		color:white;
 		font-size:16px;
+		text-align: center;
 	}
 	ion-slides{
 		height:200px;
 	}
 
+	.h{
+		text-align: center;
+		font-size: 30px;
+		color:black;
+		width:100%;
+		background-color:white;
+	}
+
 	img{
   		width: 100%;
 	}
+
+	.body .frame .per{
+		width:50%;
+		height:100%;
+		margin-top:15px;
+		float:left;
+		font-size:16px;
+		padding-top:5px;
+		color:white;
+		text-align:center;
+	}
+
+	.body .frame .per .percent{
+		font-size:36px;
+	}
+
+	.body .frame .per2{
+		
+		line-height: 1.6;
+		margin-left:45%;
+		text-align:center;
+		margin-right:10px;
+	}
+
+
 }
+

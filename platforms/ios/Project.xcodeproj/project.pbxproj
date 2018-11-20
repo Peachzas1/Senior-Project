@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
@@ -13,13 +14,10 @@
 		302D95F114D2391D003F00A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D95EF14D2391D003F00A1 /* MainViewController.m */; };
 		302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302D95F014D2391D003F00A1 /* MainViewController.xib */; };
 		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
-		C556E4A7FEA542F6A0A674ED /* Calendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E73E4155F234B8EA52A5537 /* Calendar.m */; };
-		48386FC5E32E4FEE8A8162C5 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A83B50DD00E34174AEC9542A /* EventKit.framework */; };
-		97DF4F8A15D64AB3B7281EF7 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A9D363ACE341A39C4C9CF5 /* EventKitUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		18BD36992161C3E200E3AE90 /* PBXContainerItemProxy */ = {
+		183A13BA21A1AF22009434B0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */;
 			proxyType = 2;
@@ -63,10 +61,6 @@
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = Project/config.xml; sourceTree = "<group>"; };
-		0E73E4155F234B8EA52A5537 /* Calendar.m */ = {isa = PBXFileReference; name = "Calendar.m"; path = "cordova-plugin-calendar/Calendar.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		FB3B8D8F0F56467DB98A27EE /* Calendar.h */ = {isa = PBXFileReference; name = "Calendar.h"; path = "cordova-plugin-calendar/Calendar.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		A83B50DD00E34174AEC9542A /* EventKit.framework */ = {isa = PBXFileReference; name = "EventKit.framework"; path = "System/Library/Frameworks/EventKit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
-		E9A9D363ACE341A39C4C9CF5 /* EventKitUI.framework */ = {isa = PBXFileReference; name = "EventKitUI.framework"; path = "System/Library/Frameworks/EventKitUI.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +69,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
-				48386FC5E32E4FEE8A8162C5 /* EventKit.framework in Frameworks */,
-				97DF4F8A15D64AB3B7281EF7 /* EventKitUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,8 +139,6 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A83B50DD00E34174AEC9542A /* EventKit.framework */,
-				E9A9D363ACE341A39C4C9CF5 /* EventKitUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -157,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				301BF535109A57CC0062928A /* libCordova.a */,
-				18BD369A2161C3E200E3AE90 /* Cordova.framework */,
+				183A13BB21A1AF22009434B0 /* Cordova.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -175,8 +165,6 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				0E73E4155F234B8EA52A5537 /* Calendar.m */,
-				FB3B8D8F0F56467DB98A27EE /* Calendar.h */,
 			);
 			name = Plugins;
 			path = Project/Plugins;
@@ -219,7 +207,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 510;
+				LastUpgradeCheck = 0510;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
 						DevelopmentTeam = 3DF9ZB922U;
@@ -249,11 +237,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		18BD369A2161C3E200E3AE90 /* Cordova.framework */ = {
+		183A13BB21A1AF22009434B0 /* Cordova.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Cordova.framework;
-			remoteRef = 18BD36992161C3E200E3AE90 /* PBXContainerItemProxy */;
+			remoteRef = 183A13BA21A1AF22009434B0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		301BF535109A57CC0062928A /* libCordova.a */ = {
@@ -304,7 +292,6 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
-				C556E4A7FEA542F6A0A674ED /* Calendar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,7 +326,7 @@
 				INFOPLIST_FILE = "Project/Project-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Projecttest12;
+				PRODUCT_BUNDLE_IDENTIFIER = TrainHereth;
 				PRODUCT_NAME = Project;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -363,7 +350,7 @@
 				INFOPLIST_FILE = "Project/Project-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Projecttest12;
+				PRODUCT_BUNDLE_IDENTIFIER = TrainHereth;
 				PRODUCT_NAME = Project;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

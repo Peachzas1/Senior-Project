@@ -42,10 +42,15 @@
           <span class="currentDate" *ngIf="currentDate === day; else otherDate">{{day}}</span>
           <ng-template #otherDate class="otherDate">{{day}}</ng-template>
           <div class="event-bullet" *ngIf="checkEvent(day)"></div>
-          <div class="event-bullet2" *ngIf="lastEvent(day)"></div>          
+          <div class="event-bullet2" *ngIf="lastEvent(day)"></div>   
+          <div class="event-bullet3" *ngIf="unfinishday(day)"></div>       
         </ion-col>
         <ion-col col-1 *ngFor="let nextDay of daysInNextMonth" class="next-month">{{nextDay}}</ion-col>
       </ion-row>
-    </ion-grid>
+    </ion-grid><br><br>
+    <div><span class="currentDate">x</span> currentDate</div><br>
+    <div><span class="event-bullet">&nbsp;&nbsp;&nbsp;</span> Plan days</div><br>
+    <div><span class="event-bullet2">&nbsp;&nbsp;&nbsp;</span> Finished</div><br>
+    <div><span class="event-bullet3">&nbsp;&nbsp;&nbsp;</span> Unfinished</div><br>
   </div>
 </ion-content>

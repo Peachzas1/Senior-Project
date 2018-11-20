@@ -1,14 +1,14 @@
 webpackJsonp([20],{
 
-/***/ 342:
+/***/ 354:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CollectionPageModule", function() { return CollectionPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FitnessPlanPageModule", function() { return FitnessPlanPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__collection__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__fitness_plan__ = __webpack_require__(70);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var CollectionPageModule = /** @class */ (function () {
-    function CollectionPageModule() {
+var FitnessPlanPageModule = /** @class */ (function () {
+    function FitnessPlanPageModule() {
     }
-    CollectionPageModule = __decorate([
+    FitnessPlanPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__collection__["a" /* CollectionPage */],
+                __WEBPACK_IMPORTED_MODULE_2__fitness_plan__["a" /* FitnessPlanPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__collection__["a" /* CollectionPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__fitness_plan__["a" /* FitnessPlanPage */]),
             ],
         })
-    ], CollectionPageModule);
-    return CollectionPageModule;
+    ], FitnessPlanPageModule);
+    return FitnessPlanPageModule;
 }());
 
-//# sourceMappingURL=collection.module.js.map
+//# sourceMappingURL=fitness-plan.module.js.map
 
 /***/ })
 

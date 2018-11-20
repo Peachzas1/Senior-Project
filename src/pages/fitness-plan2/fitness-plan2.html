@@ -28,7 +28,7 @@
 		</div>-->
 		<div class="container1" *ngIf="buttonClicked1">
 			<ion-icon large item-start name="ios-arrow-back" (click) = "back()"></ion-icon>
-			<p class="title">"{{dataFitnessPlanUser.category}}"</p>
+			<p class="title">"{{dataAnswer.Goal}}"</p>
 			<div class="planDetail">
 				<div class="detailBox">
 					<p class="header">Average Time</p>
@@ -36,13 +36,14 @@
 				</div>
 				<div class="detailBox">
 					<p class="header">Difficult</p>
-					<p class = "detail">{{dataFitnessPlanUser.difficult}}</p>
+					<p class = "detail">{{dataAnswer.PD}}</p>
 				</div>
 				<div class="detailBox">
 					<p class="header">Intensity</p>
-					<p class = "detail">Level {{dataFitnessPlanUser.intensity}}</p>
+					<p class = "detail">Level {{dataAnswer.PI}}</p>
 				</div>
 				<button ion-button type="submit" (click)="submit()" class="submitButton1">Start Your Plan</button>
+				<button ion-button type="submit" (click)="change()" class="submitButton2">Change start plan</button>
 			</div>
 			
 		</div>

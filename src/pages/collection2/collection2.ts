@@ -36,14 +36,23 @@ export class Collection2Page {
   buttonClicked1: boolean = true;
   buttonClicked2: boolean = false;
   buttonClicked3: boolean = false;
-  b = 0;
+  buttonClicked4: boolean = false;
+  b : number;
+  z = 0;
   //c=0;
   trustedVideoUrl: SafeResourceUrl;
+  datasend: any = [];
+  day:number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public angularfire: AngularFireDatabase,
     public events: Events, private alertCtrl: AlertController, private domSanitizer: DomSanitizer) {
-    this.onlogUser = this.navParams.data;
-    this.events.publish('onLogUser : userAlreadyLog', this.onlogUser);
+    this.datasend = this.navParams.data;
+    this.events.publish('onLogUser : userAlreadyLog', this.datasend);
+    this.fireUser = this.angularfire.list('/User/');
+    this.fireUser.subscribe(data => {
+      this.dataUser = data;
+      console.log(data);
+    });
     this.fireCollection = this.angularfire.list('/WorkoutCollections/');
     this.fireCollection.subscribe(data => {
       this.dataCollection = data;
@@ -52,13 +61,21 @@ export class Collection2Page {
     this.fireFitnessPlanVideo = this.angularfire.list('/Video/');
     this.fireFitnessPlanVideo.subscribe(data => {
       this.dataFitnessPlanVideo = data;
+      console.log(this.dataUser);
+      console.log(this.datasend);
+      for (let h = 0; h < this.dataUser.length; h++) {
+        console.log("for");
+        if (this.datasend[0].key == this.dataUser[h].$key) {
+          console.log("if");
+          this.onlogUser = this.dataUser[h];
+          this.onlogUser.UserKey = this.dataUser[h].$key;
+          console.log(this.onlogUser);
+        }
+      }
+      this.day = this.datasend[0].daysend;
+      this.b = this.day % 7;
       this.check();
       this.ionViewWillEnter();
-    });
-    this.fireUser = this.angularfire.list('/User/');
-    this.fireUser.subscribe(data => {
-      this.dataUser = data;
-      console.log(data);
     });
     console.log(this.data);
   }
@@ -66,7 +83,7 @@ export class Collection2Page {
   check() {
     for (let a = 0; a < this.dataCollection.length; a++) {
       console.log("for");
-      if (this.onlogUser.collection == this.dataCollection[a].name) {
+      if (this.onlogUser.collectionuser == this.dataCollection[a].name) {
         console.log("if");
         for (let k = 0; k < this.dataCollection[a].weeks[0].days[this.b].sets.length; k++) {
           console.log("1");
@@ -91,6 +108,7 @@ export class Collection2Page {
                 this.buttonClicked1 = false;
                 this.buttonClicked2 = true;
                 this.buttonClicked3 = false;
+                this.buttonClicked4 = false;
               } else {
                 console.log("6");
                 this.rest = "Day " + (this.b + 1);
@@ -98,17 +116,27 @@ export class Collection2Page {
                   this.buttonClicked1 = true;
                   this.buttonClicked2 = false;
                   this.buttonClicked3 = false;
+                  this.buttonClicked4 = false;
+                }else if(this.b == 6){
+                  this.buttonClicked1 = false;
+                  this.buttonClicked2 = false;
+                  this.buttonClicked3 = false;
+                  this.buttonClicked4 = true;
                 } else {
                   this.buttonClicked1 = false;
                   this.buttonClicked2 = false;
                   this.buttonClicked3 = true;
+                  this.buttonClicked4 = false;
                 }
                 if (this.dataCollection[a].weeks[0].days[this.b].sets[k].workouts[m].title == this.dataFitnessPlanVideo[d].Title) {
                   console.log("7");
                   this.data.push({
                     title: this.dataCollection[a].weeks[0].days[this.b].sets[k].workouts[m].title,
-                    amount: this.dataCollection[a].weeks[0].days[this.b].sets[k].workouts[m].amount
+                    amount: this.dataCollection[a].weeks[0].days[this.b].sets[k].workouts[m].amount,
+                    index: this.z,
+                    status: false
                   })
+                  this.z++;
                   this.dataCollectionUserVideo.push(this.dataCollection[a].weeks[0].days[this.b].sets[k].workouts[m].title);
                 }
               }
@@ -145,11 +173,17 @@ export class Collection2Page {
     console.log(title);
     for (let a = 0; a < this.dataFitnessPlanVideo.length; a++) {
       console.log("1");
-      if (title == this.dataFitnessPlanVideo[a].Title) {
+      if (title.title == this.dataFitnessPlanVideo[a].Title) {
         console.log("2");
         this.video = this.dataFitnessPlanVideo[a].Link;
       }
     }
+    title.status = true;
+    // if(this.buttonClicked1 == true){
+    //   this.buttonClicked1 == true;
+    // }else if(this.buttonClicked3 == true){
+    //   this.buttonClicked3 == true;
+    // }
     this.ionViewWillEnter();
     console.log(this.video);
     console.log(this.dataFitnessPlanVideo);
@@ -184,7 +218,7 @@ export class Collection2Page {
         {
           text: 'yes',
           handler: () => {
-            this.fireUser.update(this.onlogUser.UserKey, { collection: "null" });
+            this.fireUser.update(this.onlogUser.UserKey, { collectionuser: "null" });
             for (let a = 0; a < this.dataUser.length; a++) {
               if (this.onlogUser.UserKey == this.dataUser[a].$key) {
                 this.onlogUser = this.dataUser[a];
@@ -205,13 +239,19 @@ export class Collection2Page {
     if (this.b == 6) {
       console.log("b");
       let alert = this.alertCtrl.create({
-        title: 'Finish CollectionPlan',
-        subTitle: 'Finish CollectionPlan',
-        buttons: ['OK']
-      });
-      alert.present();
-      console.log("t");
-      this.fireUser.update(this.onlogUser.UserKey, { collection: "null" });
+        title: 'Confirm',
+        message: 'Do you want to finish collection plan?',
+        buttons: [
+          {
+            text: 'Cancel',
+            role: 'cancel',
+            handler: () => {
+            }
+          },
+          {
+            text: 'yes',
+            handler: () => {
+              this.fireUser.update(this.onlogUser.UserKey, { collectionuser: "null" });
       for (let a = 0; a < this.dataUser.length; a++) {
         if (this.onlogUser.UserKey == this.dataUser[a].$key) {
           this.onlogUser = this.dataUser[a];
@@ -219,7 +259,11 @@ export class Collection2Page {
         }
       }
       this.navCtrl.setRoot(HomePage, this.onlogUser);
-      console.log("alert");
+            }
+          }
+        ]
+      });
+      alert.present();
     } else {
       this.b++;
       this.dataCollectionUserVideo = [];

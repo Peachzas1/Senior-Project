@@ -8,6 +8,8 @@ import { AlertController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { FitnessPlanPage } from '../fitness-plan/fitness-plan';
 import { FitnessPlan3Page } from '../fitness-plan3/fitness-plan3';
+import { UpdatePage } from '../update/update';
+import { TestPage } from '../test/test';
 
 /**
  * Generated class for the FitnessPlan2Page page.
@@ -41,6 +43,9 @@ export class FitnessPlan2Page {
   dataStart: any[] = [];
   day: number;
   datasend: any = [];
+  dataAnswer: any[] = [];
+  c: number;
+  b: number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public angularfire: AngularFireDatabase, public events: Events, private alertCtrl: AlertController) {
@@ -67,6 +72,7 @@ export class FitnessPlan2Page {
     this.fireTest.subscribe(data => {
       console.log("ccccc");
       this.dataStart = data;
+      this.dataAnswer = this.dataStart[0];
     });
     this.userPlanKey = this.onlogUser.fitplan;
     console.log(this.userPlanKey);
@@ -74,6 +80,7 @@ export class FitnessPlan2Page {
       console.log("for");
       if (this.userPlanKey == this.dataFitnessPlan[j].$key) {
         this.dataFitnessPlanUser = this.dataFitnessPlan[j];
+        console.log(this.dataFitnessPlanUser);
       }
     }
     this.days();
@@ -81,7 +88,7 @@ export class FitnessPlan2Page {
       daysend: this.day,
       key: this.onlogUser.UserKey
     })
-    console.log(this.datasend);
+    console.log(this.dataAnswer);
   }
 
   days() {
@@ -111,7 +118,19 @@ export class FitnessPlan2Page {
     } else {
       this.day = 27;
     }
+    if(this.day > 27){
+      this.day = 27;
+    }
     console.log("aa");
+  }
+
+  checkWeek(){
+    this.b = this.day % 7;
+    var d = this.day / 7;
+          this.c = Number.parseInt(d.toFixed(0));
+          if (this.b >= 4) {
+            this.c = this.c - 1;
+          }
   }
 
   ionViewDidLoad() {
@@ -119,8 +138,27 @@ export class FitnessPlan2Page {
   }
 
   submit() {
-    console.log(this.onlogUser);
+    this.checkWeek();
+    console.log(this.c);
+    if(this.c == 0 && this.dataStart[0].update == 0){
+      this.fireTest.update(this.dataStart[0],{update:this.dataStart[0].update+1} );
+      this.navCtrl.setRoot(UpdatePage,this.datasend);
+    }else if(this.c == 1 && this.dataStart[0].update == 1){console.log("if");
+      this.fireTest.update(this.dataStart[0],{update:this.dataStart[0].update+1} );
+      this.navCtrl.setRoot(UpdatePage,this.datasend);
+    }else if(this.c == 2 && this.dataStart[0].update == 2){
+      this.fireTest.update(this.dataStart[0],{update:this.dataStart[0].update+1} );
+      this.navCtrl.setRoot(UpdatePage,this.datasend);
+    }else if(this.c == 3 && this.dataStart[0].update == 3){
+      this.fireTest.update(this.dataStart[0],{update:this.dataStart[0].update+1} );
+      this.navCtrl.setRoot(UpdatePage,this.datasend);
+    }else{
     this.navCtrl.setRoot(FitnessPlan3Page, this.datasend);
+    }
+  }
+
+  change(){
+    this.navCtrl.setRoot(TestPage, this.onlogUser)
   }
 
   back() {

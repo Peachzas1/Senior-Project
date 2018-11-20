@@ -1,26 +1,56 @@
-<ion-header >
-  		<ion-navbar>
-  			<ion-icon item-end name="md-person" (click) = "profile()"></ion-icon>
-			<ion-title><h1>TrainHere</h1></ion-title>
-  		</ion-navbar>
+<ion-header>
+	<ion-navbar>
+		<ion-icon item-end name="md-person" (click)="profile()"></ion-icon>
+		<ion-title>
+			<h1>TrainHere</h1>
+		</ion-title>
+	</ion-navbar>
 </ion-header>
-<ion-content  class="body">
-	<div id="stripe">
-		<button ion-button class="navButton" (click) = collection()>Collections</button>
-		<button ion-button class="navButton" (click) = workouts()>Workouts</button>
-		<button ion-button class="navButton" (click) = startPlan()>Plan</button>	
+<ion-content class="body">
+	<div *ngIf="buttonClicked1">
+		<div id="stripe">
+			<button ion-button class="navButton" (click)=collection()>Collections</button>
+			<button ion-button class="navButton" (click)=workouts()>Workouts</button>
+			<button ion-button class="navButton" (click)=startPlan()>Plan</button>
+		</div>
+		<br><br>
+ 		<div class="frame" (click)=startPlan()><p>Welcome {{name}}.</p> 
+ 			<p>Do you want to start plan?</p>
+ 			<p>If yes click this.</p>
+ 			<button ion-button class="planButton" (click)=startPlan()>Plan</button>
+
+ 		</div>
+		<p class="label">Popular workout collections</p>
+		<ion-slides autoplay="5000" loop="true" speed="3000">
+			<ion-slide *ngFor="let slide of Collections">
+				<img src="{{slide.imageCollections}}" (click)="click(slide.imageCollections)">
+			</ion-slide>
+		</ion-slides>
 	</div>
-	<p class="label">Popular workout collections</p>
-	<ion-slides autoplay="5000" loop="true" speed="3000">
-   		<ion-slide *ngFor="let slide of Collections">
-   			<img src="{{slide.imageCollections}}" />
-    	</ion-slide>
-  	</ion-slides>
-	<p class="label">New workouts</p>
-	<ion-slides autoplay="5000" loop="true" speed="3000">
-    	<ion-slide *ngFor="let slide of Workouts">
-      		<img src="{{slide.imageWorkouts}}" />
-    	</ion-slide>
-  	</ion-slides>
+	<div *ngIf="buttonClicked2">
+		<div id="stripe">
+			<button ion-button class="navButton" (click)=collection()>Collections</button>
+			<button ion-button class="navButton" (click)=workouts()>Workouts</button>
+			<button ion-button class="navButton" (click)=startPlan()>Plan</button>
+		</div>
+		<br>
+		<br>
+		<div class="frame" (click)=go()>
+			<div class="per">Success plan <br><p class="percent"> {{per}} %</p></div>
+			<div class="per2">
+				<p> Goal: {{lastGoal}} </p>
+				<p> Week: {{c}} </p>
+				<p> Day: {{b}} </p>
+			</div>
+			<button ion-button class="planButton" (click)=startPlan()>Plan</button>
+		</div>
+		<p class="label">Popular workout collections</p>
+		<ion-slides autoplay="5000" loop="true" speed="3000">
+			<ion-slide *ngFor="let slide of Collections">
+				<img src="{{slide.imageCollections}}" (click)="click(slide.imageCollections)">
+			</ion-slide>
+		</ion-slides>
+	</div>
 
 </ion-content>
+

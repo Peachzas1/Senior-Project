@@ -5,6 +5,8 @@ import { User } from '../DataProvider/User';
 import { HomePage } from '../home/home';
 import { Events } from 'ionic-angular';
 import { LoginPage } from '../login/login';
+import { ProgressPage} from '../progress/progress';
+import { EditprofilePage } from '../editprofile/editprofile';
 
 /**
  * Generated class for the ProfilePage page.
@@ -54,7 +56,15 @@ export class ProfilePage {
     this.navCtrl.setRoot(HomePage,this.onlogUser);
   }
 
+  progress(){
+    this.navCtrl.setRoot(ProgressPage,this.onlogUser);
+  }
+
   logout(){
     this.navCtrl.setRoot(LoginPage);
+  }
+
+  edit(){
+    this.navCtrl.setRoot(EditprofilePage,this.onlogUser);
   }
 }

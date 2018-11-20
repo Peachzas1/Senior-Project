@@ -37,27 +37,10 @@ export class FoodPlan2Page {
   fireUser: FirebaseListObservable<any[]>;
   userPlanKey: string;
 
-  
-
-
-
-  carbohydrateAfter: any[] =[];
-  fatAfter: any[] =[];
-  proteinAfter: any[] =[];
-
-  carbohydrateBefore: any[] =[];
-  fatBefore: any[] =[];
-  proteinBefore: any[] =[];
-
-  carbohydrateBreakfast: any[] =[];
-  fatBreakfast: any[] =[];
-  proteinBreakfast: any[] =[];
-
-  carbohydrateLunch: any[] =[];
-  fatLunch: any[] =[];
-  proteinLunch: any[] =[];
-
-  volume: number;
+  proteinEach:any[] = [];
+  carbsEach:any[] = [];;
+  fatsEach:any[] = [];;
+  volume:number;
   
 
   buttonClicked1: boolean = true;
@@ -83,11 +66,6 @@ export class FoodPlan2Page {
       this.dataFoodPlan = data;
       console.log(data);
       });
-      this.fireFoodPlanUser = this.angularfire.list('/FoodPlan/'+this.onlogUser.foodplan);
-        this.fireFoodPlanUser.subscribe(data => {
-        this.dataFoodPlanUser = data;
-        console.log(data);
-        });
         
         this.angularfire.list('/User/'+this.onlogUser.UserKey+'/userAnswer/').subscribe(data => {
       this.itemKey = data;    
@@ -102,50 +80,27 @@ export class FoodPlan2Page {
 
 
 
-      for(let j = 0; j < this.dataFoodPlan.length; j++){
-         console.log("for");
-
-         if(this.userPlanKey == this.dataFoodPlan[j].$key){
-          this.dataFoodPlanUser = this.dataFoodPlan[j];
-          console.log(this.dataFoodPlanUser);
-          console.log(this.userPlanKey);
-          for(let i = 0; i < this.dataFoodNutrition.length; i++){
-            
-            console.log("for");
-            if(this.dataFoodNutrition[i].protein >= 0){
-              console.log("test");
-              this.proteinAfter.push((this.dataFoodPlan[j].meals.afterWorkout.protein*this.dataFoodNutrition[i].volume)/this.dataFoodNutrition[i].protein);
-              console.log("proteinAfter" + this.proteinAfter);
-              this.proteinBefore.push((this.dataFoodPlan[j].meals.beforeWorkout.protein*this.dataFoodNutrition[i].volume)/this.dataFoodNutrition[i].protein);
-              console.log("proteinBefore" + this.proteinBefore);
-              this.proteinBreakfast.push((this.dataFoodPlan[j].meals.breakfast.protein*this.dataFoodNutrition[i].volume)/this.dataFoodNutrition[i].protein);
-              console.log("proteinBreakfast" + this.proteinBreakfast);
-              this.proteinLunch.push((this.dataFoodPlan[j].meals.lunch.protein*this.dataFoodNutrition[i].volume)/this.dataFoodNutrition[i].protein);
-              console.log("proteinLunch" + this.proteinLunch);
-            }if(this.dataFoodNutrition[i].carbs >= 0){
-              this.carbohydrateAfter.push((this.dataFoodPlan[j].meals.afterWorkout.carbohydrate*this.dataFoodNutrition[i].volume)/this.dataFoodNutrition[i].carbs);
-              console.log("carbohydrateAfter" + this.carbohydrateAfter);
-              this.carbohydrateBefore.push((this.dataFoodPlan[j].meals.beforeWorkout.carbohydrate*this.dataFoodNutrition[i].volume)/this.dataFoodNutrition[i].carbs);
-              console.log("carbohydrateBefore" + this.carbohydrateBefore);
-              this.carbohydrateBreakfast.push((this.dataFoodPlan[j].meals.breakfast.carbohydrate*this.dataFoodNutrition[i].volume)/this.dataFoodNutrition[i].carbs);
-              console.log("carbohydrateBreakfast" + this.carbohydrateBreakfast);
-              this.carbohydrateLunch.push((this.dataFoodPlan[j].meals.lunch.carbohydrate*this.dataFoodNutrition[i].volume)/this.dataFoodNutrition[i].carbs);
-              console.log("carbohydrateLunch" + this.carbohydrateLunch);
-            
-            }if(this.dataFoodNutrition[i].fat >= 0){
-              this.fatAfter.push((this.dataFoodPlan[j].meals.afterWorkout.fat*this.dataFoodNutrition[i].volume)/this.dataFoodNutrition[i].fat);
-              console.log("fatAfter" + this.fatAfter);
-              this.fatBefore.push((this.dataFoodPlan[j].meals.beforeWorkout.fat*this.dataFoodNutrition[i].volume)/this.dataFoodNutrition[i].fat);
-              console.log("fatBefore" + this.fatBefore);
-              this.fatBreakfast.push((this.dataFoodPlan[j].meals.breakfast.fat*this.dataFoodNutrition[i].volume)/this.dataFoodNutrition[i].fat);
-              console.log("fatBreakfast" + this.fatBreakfast);
-              this.fatLunch.push((this.dataFoodPlan[j].meals.lunch.fat*this.dataFoodNutrition[i].volume)/this.dataFoodNutrition[i].fat);
-              console.log("fatLunch" + this.fatLunch);
-            }
-            
+      for (let j = 0; j < this.dataFoodPlan.length; j++){
+      console.log("for");
+      if(this.onlogUser.UserKey == this.dataFoodPlan[j].UserKey){
+        this.dataFoodPlanUser = this.dataFoodPlan[j];
+        console.log(this.dataFoodPlanUser);
+        console.log(this.dataFoodPlan[j].EachMealProtein);
+        for(let i = 0; i < this.dataFoodNutrition.length; i++){
+          if(this.dataFoodNutrition[i].protein >= 0){
+            this.proteinEach.push((this.dataFoodPlan[j].EachMealProtein*this.dataFoodNutrition[i].volume)/this.dataFoodNutrition[i].protein);
+            console.log("proteinEach" + this.proteinEach);
+          }if(this.dataFoodNutrition[i].carbs >= 0){
+            this.carbsEach.push((this.dataFoodPlan[j].EachMealCarbs*this.dataFoodNutrition[i].volume)/this.dataFoodNutrition[i].carbs);
+            console.log("proteinEach" + this.carbsEach);
+          }if(this.dataFoodNutrition[i].fat >= 0){
+            this.fatsEach.push(((this.dataFoodPlan[j].EachMealFats*this.dataFoodNutrition[i].volume)/this.dataFoodNutrition[i].fat));
+            console.log("proteinEach" + this.fatsEach);
           }
-       }
+        }
+      }
   }
+
 
   }
 
@@ -153,6 +108,6 @@ export class FoodPlan2Page {
     console.log('ionViewDidLoad FoodPlan2Page');
   }
   back(){
-    this.navCtrl.setRoot(FoodPlanPage,this.dataUserSend);
+    this.navCtrl.setRoot(FoodPlanPage,this.onlogUser);
   }
 }

@@ -25,7 +25,8 @@ export class CollectionPage {
   dataUser: any[] = [];
   dataName: any = [];
   dataSend: any[] = [];
-  today: number = Date.now();
+  today = new Date().getDate();
+  month = new Date().getMonth() + 1;
   constructor(public navCtrl: NavController, public navParams: NavParams, public angularfire: AngularFireDatabase,
     public events: Events, private alertCtrl: AlertController) {
     this.onlogUser = this.navParams.data;
@@ -61,8 +62,8 @@ export class CollectionPage {
   }
 
   click(name:any){
-    this.today = Math.floor((this.today / (1000 * 3600 * 24)));
     this.fireUser.update(this.onlogUser.UserKey,{startcollection:this.today});
+    this.fireUser.update(this.onlogUser.UserKey,{startmonthcollection:this.month});
     this.fireUser.update(this.onlogUser.UserKey,{collection:name});
     for(let a = 0;a<this.dataUser.length;a++){
       if(this.onlogUser.UserKey == this.dataUser[a].$key){

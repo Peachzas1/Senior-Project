@@ -7,6 +7,10 @@ import { Questionnaires } from '../DataProvider/Question';
 import { AlertController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { FoodPlan2Page } from '../food-plan2/food-plan2';
+import { ProteinPage } from '../protein/protein';
+import { CarbsPage } from '../carbs/carbs';
+import { FatsPage } from '../fats/fats';
+
 // import { FoodNutrition } from '../DataProvider/FoodNutrition';
 
 /**
@@ -107,9 +111,19 @@ export class FoodPlanPage {
     console.log('ionViewDidLoad FoodPlanPage');
   }
   submit(){
-    this.navCtrl.setRoot(FoodPlan2Page,this.dataUserSend);
+    this.navCtrl.setRoot(FoodPlan2Page,this.onlogUser);
   }
   back(){
-    this.navCtrl.setRoot(HomePage,this.dataUserSend);
+    this.navCtrl.setRoot(HomePage,this.onlogUser);
+  }
+
+  goToProtein(){
+    this.navCtrl.setRoot(ProteinPage,this.onlogUser);
+  }
+  goToCarbs(){
+    this.navCtrl.setRoot(CarbsPage,this.onlogUser);
+  }
+  goToFats(){
+    this.navCtrl.setRoot(FatsPage,this.onlogUser);
   }
 }

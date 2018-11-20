@@ -27,8 +27,8 @@
 				  <ion-list  *ngFor="let a of dataFoodNutrition; let i = index">
 				  
 					  <p  *ngIf="a.category == 'Protein'" class="FoodName">{{a.name}}</p>
-					  <p  *ngIf="a.category == 'Protein'&& a.name !='Whole egg, raw, fresh'" class="WeightDetail">Weight: {{proteinBreakfast[i].toFixed()}} Grams</p>
-					  <p  *ngIf="a.name == 'Whole egg, raw, fresh'" class="WeightDetail">Weight: {{proteinBreakfast[i].toFixed()}} Portions</p>
+					  <p  *ngIf="a.category == 'Protein'&& a.name !='Whole egg, raw, fresh'" class="WeightDetail">Weight: {{proteinEach[i].toFixed()}} Grams</p>
+					  <p  *ngIf="a.name == 'Whole egg, raw, fresh'" class="WeightDetail">Weight: {{proteinEach[i].toFixed()}} Portions</p>
 			  </ion-list>
 			  </div>
 		  </div>
@@ -43,7 +43,7 @@
 				  <ion-list  *ngFor="let a of dataFoodNutrition; let i = index">
 				  
 					  <p  *ngIf="a.category == 'Carbohydrate'" class="FoodName">{{a.name}}</p>
-					  <p  *ngIf="a.category == 'Carbohydrate'"class="WeightDetail">Weight: {{carbohydrateBreakfast[i].toFixed()}} Grams</p>
+					  <p  *ngIf="a.category == 'Carbohydrate'"class="WeightDetail">Weight: {{carbsEach[i].toFixed()}} Grams</p>
 			  </ion-list>
 			  </div>
 		  </div>
@@ -58,7 +58,7 @@
 				  <ion-list  *ngFor="let a of dataFoodNutrition; let i = index">
 				  
 					  <p  *ngIf="a.category == 'Fat'" class="FoodName">{{a.name}}</p>
-					  <p  *ngIf="a.category == 'Fat'"class="WeightDetail">Weight: {{fatBreakfast[i].toFixed()}} Table spoon</p>
+					  <p  *ngIf="a.category == 'Fat'"class="WeightDetail">Weight: {{fatsEach[i].toFixed()}} Table spoon</p>
 			  </ion-list>
 			  </div>
 		  </div>

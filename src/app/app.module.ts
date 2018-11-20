@@ -35,6 +35,12 @@ import { WorkoutCategoryBackPage } from '../pages/workout-category-back/workout-
 import { WorkoutCategoryChestPage } from '../pages/workout-category-chest/workout-category-chest';
 import { WorkoutCategoryLegsPage } from '../pages/workout-category-legs/workout-category-legs';
 import { WorkoutCategoryCardioPage } from '../pages/workout-category-cardio/workout-category-cardio';
+import { UpdatePage } from '../pages/update/update';
+import { ProgressPage } from '../pages/progress/progress';
+import { ProteinPage } from '../pages/protein/protein';
+import { CarbsPage } from '../pages/carbs/carbs';
+import { FatsPage } from '../pages/fats/fats';
+import { EditprofilePage } from '../pages/editprofile/editprofile';
 
 export const config = {
   apiKey: "AIzaSyACQbDFnbhv5uJCBcyd6Sy1ylmBzvd44AM",
@@ -70,7 +76,13 @@ export const config = {
     WorkoutCategoryBackPage,
     WorkoutCategoryChestPage,
     WorkoutCategoryLegsPage,
-    WorkoutCategoryCardioPage
+    WorkoutCategoryCardioPage,
+    UpdatePage,
+    ProgressPage,
+    ProteinPage,
+    CarbsPage,
+    FatsPage,
+    EditprofilePage
   ],
   imports: [
     BrowserModule,
@@ -106,7 +118,13 @@ export const config = {
     WorkoutCategoryBackPage,
     WorkoutCategoryChestPage,
     WorkoutCategoryLegsPage,
-    WorkoutCategoryCardioPage
+    WorkoutCategoryCardioPage,
+    UpdatePage,
+    ProgressPage,
+    ProteinPage,
+    CarbsPage,
+    FatsPage,
+    EditprofilePage
   ],
   providers: [
     StatusBar,

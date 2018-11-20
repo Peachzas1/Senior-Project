@@ -3,6 +3,11 @@ page-food-plan {
 		margin-left:5%;
         zoom:2.0;
         color:white;
+        
+    }
+    
+    h1{
+        color: white;
     }
     
     .toolbar-background {
@@ -10,7 +15,7 @@ page-food-plan {
     }
     
     .planDetail{
-        padding-left: 30px;
+
         background-color: #353945; 
         color:white;
         
@@ -22,31 +27,45 @@ page-food-plan {
         padding-left:20px;
     }
 
-    .planDetail .resultAllDayFrame{
-        border-style:solid;
-        border-size:10px;
-        margin:20px;
-    }
-    ion-list{
-        padding-left:20px;
-    }
-    .planDetail .resultAllDayFrame{
-        padding-left:20px;
-        border-radius:10px;
-    }
-    .planDetail .resultAllDayFrame .icon{
-        padding-top:20px;
-    }
-    .planDetail .resultAllDayFrame .h3{
+    .planDetail .resultAllDayFrame h3{
         text-align:center;
         color:white;
+
     }
 
-    .planDetail .resultAllDayFrame .header{
+    .planDetail .resultAllDayFrame .resultAllDay .header{
         margin-left:10px;
+        color:white;
+
     }
     .submitButton1{
         margin-left:25%;
     }
+
+    .planDetail .resultAllDay {
+        background-color:#edd06a;
+        width:100%;
+        border-style:solid;
+        border-width:5px;
+        border-color:white;
+        border-radius:20px;
+        
+    }
+
+    .planDetail .resultAllDayFrame .resultAllDay .weight{
+        color:black;
+        font-size:16px;
+        display: inline-block;
+        text-align:right;
+        vertical-align: 10px;
 }
+    ion-icon .icon1 {
+        text-align:right;
+    }
+
+
+
+}
+
+
 

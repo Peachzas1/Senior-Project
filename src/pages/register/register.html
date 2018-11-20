@@ -19,15 +19,15 @@
   </ion-item>
   <ion-item class="otherInput">
     <ion-label>Weight (kg) : </ion-label>
-    <ion-input [(ngModel)]="weight" type="number" min="20" max="300" placeholder="Weight" required ></ion-input>
+    <ion-input [(ngModel)]="weight" type="number" min="30" max="200" placeholder="Weight" required ></ion-input>
   </ion-item>
   <ion-item class="otherInput">
     <ion-label>Hegiht (cm) : </ion-label>
-    <ion-input [(ngModel)]="height" type="number" min="50" max="300" placeholder="Height" required ></ion-input>CM
+    <ion-input [(ngModel)]="height" type="number" min="120" max="250" placeholder="Height" required ></ion-input>CM
   </ion-item>
   <ion-item class="otherInput">
     <ion-label>Waist (inch) : </ion-label>
-    <ion-input [(ngModel)]="waistMeasurement" type="number" min="10" max="50" required placeholder = "Waist Measurement"></ion-input>Inch
+    <ion-input [(ngModel)]="waistMeasurement" type="number" min="15" max="50" required placeholder = "Waist Measurement"></ion-input>Inch
   </ion-item>
   <ion-item class="otherInput">
     <ion-label>Gender : </ion-label>
@@ -38,7 +38,7 @@
   </ion-item>
   <ion-item class="dateInput">
     <ion-label>Date of birth : </ion-label>
-    <ion-datetime displayFormat="DD/MM/YYYY" max="2010-12-31" [(ngModel)]="dateofbirth" placeholder = "DD/MM/YYYY"></ion-datetime>
+    <ion-datetime displayFormat="DD/MM/YYYY" min="1910" max="2005-12-31" [(ngModel)]="dateofbirth" placeholder = "DD/MM/YYYY"></ion-datetime>
   </ion-item>
   <button ion-button round small class="backButton" (click)="back()">Back</button>
   <button ion-button round small class="signUpButton" (click)="register(email,password,fName,lName,weight,height,waistMeasurement,dateofbirth,gender)">Sign Up</button>

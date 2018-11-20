@@ -1,0 +1,47 @@
+<!--
+  Generated template for the EditprofilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-content padding class="body">
+  <br><br>
+  <h1>Edit Profile</h1>
+  <ion-item class="otherInput">
+    <ion-label>Firstname : </ion-label>
+    <ion-input [(ngModel)]="fName" type="text" placeholder="Firstname" required ></ion-input>
+  </ion-item>
+  <ion-item class="otherInput">
+    <ion-label>Lastname : </ion-label>
+    <ion-input [(ngModel)]="lName" type="text" placeholder="Lastname" required ></ion-input>
+  </ion-item>
+  <ion-item class="otherInput">
+    <ion-label>Weight (kg) : </ion-label>
+    <ion-input [(ngModel)]="weight" type="number" min="30" max="200" placeholder="Weight" required ></ion-input>
+  </ion-item>
+  <ion-item class="otherInput">
+    <ion-label>Hegiht (cm) : </ion-label>
+    <ion-input [(ngModel)]="height" type="number" min="120" max="250" placeholder="Height" required ></ion-input>CM
+  </ion-item>
+  <ion-item class="otherInput">
+    <ion-label>Waist (inch) : </ion-label>
+    <ion-input [(ngModel)]="waistMeasurement" type="number" min="15" max="50" required placeholder = "Waist Measurement"></ion-input>Inch
+  </ion-item>
+  <ion-item class="otherInput">
+    <ion-label>Gender : </ion-label>
+    <ion-select [(ngModel)]="gender" required >
+        <ion-option value="Male">Male</ion-option>
+        <ion-option value="Female">Female</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item class="dateInput">
+    <ion-label>Date of birth : </ion-label>
+    <ion-datetime displayFormat="DD/MM/YYYY" min="1910" max="2005-12-31" [(ngModel)]="dateofbirth" placeholder = "DD/MM/YYYY"></ion-datetime>
+  </ion-item>
+  <button ion-button round small class="backButton" (click)="back()">Back</button>
+  <button ion-button round small class="signUpButton" (click)="edit(fName,lName,weight,height,waistMeasurement,dateofbirth,gender)">Edit</button>
+
+</ion-content>
+

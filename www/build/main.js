@@ -2739,11 +2739,11 @@ var map = {
 		26
 	],
 	"../pages/collection/collection.module": [
-		349,
+		350,
 		25
 	],
 	"../pages/collection15/collection15.module": [
-		350,
+		349,
 		24
 	],
 	"../pages/collection2/collection2.module": [
@@ -2751,11 +2751,11 @@ var map = {
 		23
 	],
 	"../pages/editprofile/editprofile.module": [
-		352,
+		353,
 		22
 	],
 	"../pages/fats/fats.module": [
-		368,
+		352,
 		21
 	],
 	"../pages/fitness-plan/fitness-plan.module": [
@@ -2763,31 +2763,31 @@ var map = {
 		20
 	],
 	"../pages/fitness-plan2/fitness-plan2.module": [
-		353,
+		355,
 		19
 	],
 	"../pages/fitness-plan3/fitness-plan3.module": [
-		355,
+		356,
 		18
 	],
 	"../pages/food-plan/food-plan.module": [
-		356,
+		357,
 		17
 	],
 	"../pages/food-plan2/food-plan2.module": [
-		357,
+		358,
 		16
 	],
 	"../pages/login/login.module": [
-		364,
+		359,
 		15
 	],
 	"../pages/profile/profile.module": [
-		358,
+		361,
 		14
 	],
 	"../pages/progress/progress.module": [
-		359,
+		374,
 		13
 	],
 	"../pages/protein/protein.module": [
@@ -2799,19 +2799,19 @@ var map = {
 		11
 	],
 	"../pages/register/register.module": [
-		361,
+		364,
 		10
 	],
 	"../pages/test/test.module": [
-		363,
+		365,
 		9
 	],
 	"../pages/update/update.module": [
-		366,
+		363,
 		8
 	],
 	"../pages/workout-category-abs/workout-category-abs.module": [
-		365,
+		366,
 		7
 	],
 	"../pages/workout-category-arms/workout-category-arms.module": [
@@ -2819,27 +2819,27 @@ var map = {
 		6
 	],
 	"../pages/workout-category-back/workout-category-back.module": [
-		369,
+		368,
 		5
 	],
 	"../pages/workout-category-cardio/workout-category-cardio.module": [
-		370,
+		369,
 		4
 	],
 	"../pages/workout-category-chest/workout-category-chest.module": [
-		373,
+		370,
 		3
 	],
 	"../pages/workout-category-legs/workout-category-legs.module": [
-		371,
+		372,
 		2
 	],
 	"../pages/workout-category-shoulders/workout-category-shoulders.module": [
-		372,
+		373,
 		1
 	],
 	"../pages/workout/workout.module": [
-		374,
+		371,
 		0
 	]
 };
@@ -3446,32 +3446,32 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/calendar/calendar.module#CalendarPageModule', name: 'CalendarPage', segment: 'calendar', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/carbs/carbs.module#CarbsPageModule', name: 'CarbsPage', segment: 'carbs', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/collection/collection.module#CollectionPageModule', name: 'CollectionPage', segment: 'collection', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/collection15/collection15.module#Collection15PageModule', name: 'Collection15Page', segment: 'collection15', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/collection/collection.module#CollectionPageModule', name: 'CollectionPage', segment: 'collection', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/collection2/collection2.module#Collection2PageModule', name: 'Collection2Page', segment: 'collection2', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/fats/fats.module#FatsPageModule', name: 'FatsPage', segment: 'fats', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/editprofile/editprofile.module#EditprofilePageModule', name: 'EditprofilePage', segment: 'editprofile', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/fitness-plan2/fitness-plan2.module#FitnessPlan2PageModule', name: 'FitnessPlan2Page', segment: 'fitness-plan2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fitness-plan/fitness-plan.module#FitnessPlanPageModule', name: 'FitnessPlanPage', segment: 'fitness-plan', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/fitness-plan2/fitness-plan2.module#FitnessPlan2PageModule', name: 'FitnessPlan2Page', segment: 'fitness-plan2', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fitness-plan3/fitness-plan3.module#FitnessPlan3PageModule', name: 'FitnessPlan3Page', segment: 'fitness-plan3', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/food-plan/food-plan.module#FoodPlanPageModule', name: 'FoodPlanPage', segment: 'food-plan', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/food-plan2/food-plan2.module#FoodPlan2PageModule', name: 'FoodPlan2Page', segment: 'food-plan2', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/progress/progress.module#ProgressPageModule', name: 'ProgressPage', segment: 'progress', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/protein/protein.module#ProteinPageModule', name: 'ProteinPage', segment: 'protein', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/question/question.module#QuestionPageModule', name: 'QuestionPage', segment: 'question', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/test/test.module#TestPageModule', name: 'TestPage', segment: 'test', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/workout-category-abs/workout-category-abs.module#WorkoutCategoryAbsPageModule', name: 'WorkoutCategoryAbsPage', segment: 'workout-category-abs', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/protein/protein.module#ProteinPageModule', name: 'ProteinPage', segment: 'protein', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/question/question.module#QuestionPageModule', name: 'QuestionPage', segment: 'question', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/update/update.module#UpdatePageModule', name: 'UpdatePage', segment: 'update', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/test/test.module#TestPageModule', name: 'TestPage', segment: 'test', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/workout-category-abs/workout-category-abs.module#WorkoutCategoryAbsPageModule', name: 'WorkoutCategoryAbsPage', segment: 'workout-category-abs', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/workout-category-arms/workout-category-arms.module#WorkoutCategoryArmsPageModule', name: 'WorkoutCategoryArmsPage', segment: 'workout-category-arms', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/fats/fats.module#FatsPageModule', name: 'FatsPage', segment: 'fats', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/workout-category-back/workout-category-back.module#WorkoutCategoryBackPageModule', name: 'WorkoutCategoryBackPage', segment: 'workout-category-back', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/workout-category-cardio/workout-category-cardio.module#WorkoutCategoryCardioPageModule', name: 'WorkoutCategoryCardioPage', segment: 'workout-category-cardio', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/workout-category-chest/workout-category-chest.module#WorkoutCategoryChestPageModule', name: 'WorkoutCategoryChestPage', segment: 'workout-category-chest', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/workout/workout.module#WorkoutPageModule', name: 'WorkoutPage', segment: 'workout', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/workout-category-legs/workout-category-legs.module#WorkoutCategoryLegsPageModule', name: 'WorkoutCategoryLegsPage', segment: 'workout-category-legs', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/workout-category-shoulders/workout-category-shoulders.module#WorkoutCategoryShouldersPageModule', name: 'WorkoutCategoryShouldersPage', segment: 'workout-category-shoulders', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/workout-category-chest/workout-category-chest.module#WorkoutCategoryChestPageModule', name: 'WorkoutCategoryChestPage', segment: 'workout-category-chest', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/workout/workout.module#WorkoutPageModule', name: 'WorkoutPage', segment: 'workout', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/progress/progress.module#ProgressPageModule', name: 'ProgressPage', segment: 'progress', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_7_angularfire2__["a" /* AngularFireModule */],
